@@ -15,22 +15,26 @@ func set_rect(r: Rect2):
 	var start = rect.position
 	var end = rect.end
 	# Top wall
-	wall(start, Vector2(end.x,start.y+BORDER_THICKNESS))
+	wall(start, Vector2(end.x,start.y+BORDER_THICKNESS), \"top\")
 	# Left wall
-	wall(start, Vector2(start.x+BORDER_THICKNESS,end.y))
+	wall(start, Vector2(start.x+BORDER_THICKNESS,end.y), \"left\")
 	# Bottom wall
-	wall(end, Vector2(start.x,end.y-BORDER_THICKNESS))
+	wall(end, Vector2(start.x,end.y+BORDER_THICKNESS),  \"bottom\")
 	# Right
-	wall(end, Vector2(end.x-BORDER_THICKNESS, start.y))
+	wall(end, Vector2(end.x+BORDER_THICKNESS, start.y), \"right\")
+	
 	update()
 
-func wall(from: Vector2, to: Vector2):
+func wall(from: Vector2, to: Vector2, name: String):
+	var start = Vector2(min(from.x, to.x),min(from.y, to.y))
+	var end = Vector2(max(from.x, to.x),max(from.y, to.y))
 	var col = CollisionShape2D.new()
+	col.name = name
 	var shape = RectangleShape2D.new()
-	col.position = from
-	shape.extents = to-from
+	col.position = start
+	shape.extents = end-start
 	col.shape = shape
-	add_child(col)
+	add_child(col, true)
 
 func _draw():
 	draw_rect(rect, Color.white,false, BORDER_THICKNESS*2.0)

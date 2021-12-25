@@ -1,19 +1,25 @@
 extends KinematicBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var snapped_to_ground = false
+# Returns true if found a ground to snap to
+func snap_to_ground() -> bool:
+	var col = get_world_2d().direct_space_state.intersect_ray(position,Vector2(0.0,10.0),[self])
+	if col != {}:
+		# warning-ignore:return_value_discarded
+		move_and_collide(Vector2(0.0,2000.0))
+		return true
+	else:
+		return false
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
-		move_and_slide(Vector2(100.0,0.0)) 
+	# warning-ignore:return_value_discarded
+		move_and_slide(Vector2(300.0,0.0)) 
 	if Input.is_action_pressed("ui_left"):
-		move_and_slide(Vector2(-100.0,0.0)) 
-		
+	# warning-ignore:return_value_discarded
+		move_and_slide(Vector2(-300.0,0.0))
+
+	# Wait until you manage to find a ground to teleport to
+	if not snapped_to_ground:
+		snapped_to_ground = snap_to_ground()
