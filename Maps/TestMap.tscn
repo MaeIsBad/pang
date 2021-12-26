@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ball/Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Maps/Level.tscn" type="PackedScene" id=3]
+
+[node name="Level" instance=ExtResource( 3 )]
+
+[node name="Ball" parent="." index="1" instance=ExtResource( 1 )]
+position = Vector2( 868, 430 )
+linear_velocity = Vector2( 300, 0 )
+
+[node name="Player" parent="." index="3"]
+position = Vector2( 854, 1035 )

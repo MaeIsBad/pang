@@ -1,5 +1,7 @@
 extends KinematicBody2D
+class_name Player
 
+signal touched_ball(Ball)
 
 var snapped_to_ground = false
 # Returns true if found a ground to snap to
@@ -12,7 +14,7 @@ func snap_to_ground() -> bool:
 	else:
 		return false
 
-var bullet_scn = preload("res://Player/Bullet.tscn")
+var bullet_scn = load("res://Player/Bullet.tscn")
 
 func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
@@ -29,3 +31,6 @@ func _process(_delta):
 	# Wait until you manage to find a ground to teleport to
 	if not snapped_to_ground:
 		snapped_to_ground = snap_to_ground()
+
+func touched_ball(ball: Ball):
+	emit_signal("touched_ball", ball)

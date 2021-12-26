@@ -43,3 +43,7 @@ func pop():
 
 func _draw():
 	draw_circle(Vector2(0.0,0.0), get_radius(), Color.black)
+
+func touched_body(body: Node2D):
+	if body.has_method("touched_ball"):
+		body.touched_ball(self)

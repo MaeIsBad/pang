@@ -18,16 +18,22 @@ _global_script_classes=[ {
 "class": "Bullet",
 "language": "GDScript",
 "path": "res://Player/Bullet.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Player/Player.gd"
 } ]
 _global_script_class_icons={
 "Ball": "",
-"Bullet": ""
+"Bullet": "",
+"Player": ""
 }
 
 [application]
 
 config/name="pang"
-run/main_scene="res://Maps/TestScene.tscn"
+run/main_scene="res://Maps/TestMap.tscn"
 config/icon="res://Assets/icon.png"
 
 [display]
@@ -40,6 +46,7 @@ window/stretch/aspect="keep"
 [global]
 
 scene=false
+default=false
 
 [physics]
 

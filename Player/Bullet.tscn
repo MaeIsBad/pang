@@ -14,3 +14,6 @@ script = ExtResource( 1 )
 shape = SubResource( 3 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="queue_free"]

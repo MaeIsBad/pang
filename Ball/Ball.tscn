@@ -10,9 +10,10 @@ bounce = 1.0
 radius = 40.0
 
 [node name="Ball" type="RigidBody2D"]
-position = Vector2( 839, 470 )
 collision_layer = 0
 physics_material_override = SubResource( 3 )
+contacts_reported = 4
+contact_monitor = true
 linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource( 1 )
@@ -22,3 +23,5 @@ shape = SubResource( 4 )
 
 [node name="PopSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="touched_body"]
