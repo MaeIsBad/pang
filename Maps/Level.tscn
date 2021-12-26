@@ -7,7 +7,5 @@
 
 [node name="CameraWithBorder" parent="." instance=ExtResource( 3 )]
 
-[node name="GameOverHandler" type="Node" parent="."]
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 634, 992 )
