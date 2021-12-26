@@ -11,6 +11,7 @@ radius = 40.0
 
 [node name="Ball" type="RigidBody2D"]
 position = Vector2( 839, 470 )
+collision_layer = 0
 physics_material_override = SubResource( 3 )
 linear_damp = 0.0
 angular_damp = 0.0

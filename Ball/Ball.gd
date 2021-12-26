@@ -33,6 +33,8 @@ func pop():
 		var parent = get_parent()
 		parent.call_deferred("add_child", spawn_child_ball())
 		parent.call_deferred("add_child", spawn_child_ball(true))
+	
+	# TODO: Despawn the ball instantly without waiting for the sound to finish
 	$PopSound.play()
 	visible = false
 	$CollisionShape2D.free()
