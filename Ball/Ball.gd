@@ -5,7 +5,7 @@ class_name Ball
 export(int) var size = 4
 export(int) var base_size = 10
 
-var ball_scn = load("res://Ball.tscn")
+var ball_scn = load("res://Ball/Ball.tscn")
 
 func get_radius():
 	return size*base_size

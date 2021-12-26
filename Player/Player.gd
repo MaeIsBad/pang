@@ -12,7 +12,7 @@ func snap_to_ground() -> bool:
 	else:
 		return false
 
-var bullet_scn = preload("res://Bullet.tscn")
+var bullet_scn = preload("res://Player/Bullet.tscn")
 
 func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
