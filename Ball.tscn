@@ -6,7 +6,7 @@
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 41.7732
+radius = 40.0
 
 [node name="Ball" type="RigidBody2D"]
 position = Vector2( 838, 470 )

@@ -7,16 +7,13 @@ export(int) var base_size = 10
 
 var ball_scn = load("res://Ball.tscn")
 
-func get_collision_shape() -> CircleShape2D:
-	var circle = $CollisionShape2D.shape as CircleShape2D
-	assert(circle != null)
-	return circle
-
 func get_radius():
 	return size*base_size
 	
 func _ready():
-	get_collision_shape().radius = get_radius()
+	var shape = CircleShape2D.new()
+	shape.radius = get_radius()
+	$CollisionShape2D.shape = shape
 
 func spawn_child_ball(flip_x: bool = false) -> Ball:
 	var ball = ball_scn.instance()
@@ -35,15 +32,9 @@ func spawn_child_ball(flip_x: bool = false) -> Ball:
 func pop():
 	if size > 0:
 		var parent = get_parent()
-		parent.add_child(spawn_child_ball())
-		parent.add_child(spawn_child_ball(true))
+		parent.call_deferred("add_child", spawn_child_ball())
+		parent.call_deferred("add_child", spawn_child_ball(true))
 	queue_free()
-
-func _process(_delta):
-	if not Engine.editor_hint:
-		if Input.is_action_just_released("ui_accept"):
-			print("POP")
-			pop()
 
 func _draw():
 	draw_circle(Vector2(0.0,0.0), get_radius(), Color.black)

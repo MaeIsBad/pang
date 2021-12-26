@@ -12,6 +12,8 @@ func snap_to_ground() -> bool:
 	else:
 		return false
 
+var bullet_scn = preload("res://Bullet.tscn")
+
 func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
 	# warning-ignore:return_value_discarded
@@ -19,6 +21,10 @@ func _process(_delta):
 	if Input.is_action_pressed("ui_left"):
 	# warning-ignore:return_value_discarded
 		move_and_slide(Vector2(-300.0,0.0))
+	if Input.is_action_just_pressed("ui_accept"):
+		var bullet = bullet_scn.instance()
+		bullet.position = position - Vector2(0.0,100.0)
+		get_parent().add_child(bullet)
 
 	# Wait until you manage to find a ground to teleport to
 	if not snapped_to_ground:

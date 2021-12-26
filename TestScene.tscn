@@ -12,4 +12,4 @@
 position = Vector2( 131, 1019 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
-linear_velocity = Vector2( 200, 0 )
+linear_velocity = Vector2( 300, 0 )

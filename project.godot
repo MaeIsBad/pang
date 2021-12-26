@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Ball",
 "language": "GDScript",
 "path": "res://Ball.gd"
+}, {
+"base": "RigidBody2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://Bullet.gd"
 } ]
 _global_script_class_icons={
-"Ball": ""
+"Ball": "",
+"Bullet": ""
 }
 
 [application]
