@@ -23,7 +23,7 @@ func _process(_delta):
 		move_and_slide(Vector2(-300.0,0.0))
 	if Input.is_action_just_pressed("ui_accept"):
 		var bullet = bullet_scn.instance()
-		bullet.position = position - Vector2(0.0,100.0)
+		bullet.position = position
 		get_parent().add_child(bullet)
 
 	# Wait until you manage to find a ground to teleport to
