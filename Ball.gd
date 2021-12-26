@@ -17,7 +17,6 @@ func _ready():
 
 func spawn_child_ball(flip_x: bool = false) -> Ball:
 	var ball = ball_scn.instance()
-	
 	ball.size = size-1
 	ball.base_size = base_size
 	ball.linear_velocity = linear_velocity	
@@ -34,6 +33,10 @@ func pop():
 		var parent = get_parent()
 		parent.call_deferred("add_child", spawn_child_ball())
 		parent.call_deferred("add_child", spawn_child_ball(true))
+	$PopSound.play()
+	visible = false
+	$CollisionShape2D.free()
+	yield($PopSound,"finished")
 	queue_free()
 
 func _draw():

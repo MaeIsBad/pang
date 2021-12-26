@@ -9,7 +9,7 @@
 [node name="CameraWithBorder" parent="." instance=ExtResource( 3 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 131, 1019 )
+position = Vector2( 633, 992 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 linear_velocity = Vector2( 300, 0 )
