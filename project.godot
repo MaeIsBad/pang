@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="pang"
-run/main_scene="res://Maps/TestMap.tscn"
+run/main_scene="res://UI/Main.tscn"
 config/icon="res://Assets/icon.png"
 
 [display]
