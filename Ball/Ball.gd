@@ -34,11 +34,12 @@ func pop():
 		parent.call_deferred("add_child", spawn_child_ball())
 		parent.call_deferred("add_child", spawn_child_ball(true))
 	
-	# TODO: Despawn the ball instantly without waiting for the sound to finish
-	$PopSound.play()
-	visible = false
-	$CollisionShape2D.free()
-	yield($PopSound,"finished")
+	
+	var pop: AudioStreamPlayer2D = $PopSound
+	remove_child(pop)
+	pop.position = position
+	get_parent().call_deferred("add_child", pop)
+	pop.play()
 	queue_free()
 
 func _draw():
