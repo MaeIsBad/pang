@@ -14,7 +14,7 @@ collision_layer = 0
 physics_material_override = SubResource( 3 )
 contacts_reported = 4
 contact_monitor = true
-linear_damp = 0.0
+linear_damp = -0.1
 angular_damp = 0.0
 script = ExtResource( 1 )
 
@@ -25,3 +25,4 @@ shape = SubResource( 4 )
 stream = ExtResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="touched_body"]
+[connection signal="finished" from="PopSound" to="PopSound" method="queue_free"]
