@@ -9,5 +9,5 @@
 position = Vector2( 868, 430 )
 linear_velocity = Vector2( 300, 0 )
 
-[node name="Player" parent="." index="3"]
+[node name="Player" parent="." index="2"]
 position = Vector2( 854, 1035 )
