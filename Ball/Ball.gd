@@ -29,8 +29,8 @@ func spawn_child_ball(flip_x: bool = false) -> Ball:
 	return ball
 
 func pop():
-	if size > 0:
-		var parent = get_parent()
+	var parent = get_parent()
+	if size > 1:
 		parent.call_deferred("add_child", spawn_child_ball())
 		parent.call_deferred("add_child", spawn_child_ball(true))
 	
@@ -38,7 +38,7 @@ func pop():
 	var pop: AudioStreamPlayer2D = $PopSound
 	remove_child(pop)
 	pop.position = position
-	get_parent().call_deferred("add_child", pop)
+	parent.call_deferred("add_child", pop)
 	pop.play()
 	queue_free()
 
