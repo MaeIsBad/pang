@@ -6,11 +6,12 @@
 [node name="Level" instance=ExtResource( 3 )]
 
 [node name="Player" parent="." index="0"]
-position = Vector2( 533, 830 )
+position = Vector2( 628, 801 )
 
 [node name="Ball" parent="." index="1" instance=ExtResource( 1 )]
 position = Vector2( 868, 430 )
 linear_velocity = Vector2( 300, 0 )
+size = 6
 
 [node name="Camera2D" parent="." index="3"]
 current = true

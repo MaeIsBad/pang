@@ -14,26 +14,42 @@ extents = Vector2( 10, 450 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 634, 992 )
+position = Vector2( 936, 516 )
+scale = Vector2( 2, 2 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Top" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 960, 0 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Left" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 0, 450 )
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Right" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 1920, 450 )
+position = Vector2( 1920, 460 )
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Bottom" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 960, 900 )
+position = Vector2( 960, 910 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

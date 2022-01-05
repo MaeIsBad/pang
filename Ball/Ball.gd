@@ -2,14 +2,20 @@ tool
 extends RigidBody2D
 class_name Ball
 
+# The amount of times this ball will "pop" into smaller balls
 export(int) var size = 4
+# The size of the smallest instance of the ball
 export(int) var base_size = 10
+# The amount of 
+export(float) var bounce_damp = 25.0
+# The smallest height the ball should bounce to
+export(float) var smallest_bounce_height = 300.0
 
 var ball_scn = load("res://Ball/Ball.tscn")
 
 func get_radius():
 	return size*base_size
-	
+
 func _ready():
 	var shape = CircleShape2D.new()
 	shape.radius = get_radius()
@@ -28,6 +34,7 @@ func spawn_child_ball(flip_x: bool = false) -> Ball:
 	ball.position = position+offset
 	return ball
 
+# Destroy the ball, play the "pop" sound and spawn 2 child balls
 func pop():
 	var parent = get_parent()
 	if size > 1:
@@ -45,6 +52,18 @@ func pop():
 func _draw():
 	draw_circle(Vector2(0.0,0.0), get_radius(), Color.black)
 
-func touched_body(body: Node2D):
+func body_entered(body: Node2D):
 	if body.has_method("touched_ball"):
 		body.touched_ball(self)
+
+# To ensure that the ball bounces lower with time, and that the ball always bounces a bit higher than the player height
+# after the body has finished colliding we need to update the vertical velocity 
+func _integrate_forces(state: Physics2DDirectBodyState):
+	for i in range(state.get_contact_count()):
+		var colider_normal = state.get_contact_local_normal(i)
+		#Check if the collison occured under the ball
+		if colider_normal.y == -1:
+			var vel = state.linear_velocity
+			vel.y += bounce_damp
+			vel.y = min(vel.y, smallest_bounce_height*-1.0)
+			state.linear_velocity = vel
