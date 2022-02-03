@@ -11,6 +11,7 @@ var snapped_to_ground = false
 var ladder: Ladder = null
 
 const UP = Vector2(0.0, -1.0)
+const GRAVITY = 400.0
 
 # Returns true if found a ground to snap to
 func snap_to_ground() -> bool:
@@ -67,6 +68,8 @@ func walking_process(_delta):
 	# warning-ignore:return_value_discarded
 		move_and_slide(Vector2(-300.0,0.0), UP)
 		
+	move_and_slide(Vector2(0.0,GRAVITY), UP)
+	
 	var can_switch_to_climbing = self.ladder && abs(self.ladder.position.x - self.position.x) < 10
 	if (Input.is_action_pressed("ui_up") || Input.is_action_pressed("ui_down")) && can_switch_to_climbing:
 		self.switch_to_climbing()
