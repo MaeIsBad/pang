@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Ball/Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://MapElements/Ladder.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Maps/Level.tscn" type="PackedScene" id=3]
 
 [node name="Level" instance=ExtResource( 3 )]
@@ -16,3 +17,7 @@ size = 6
 [node name="Camera2D" parent="." index="3"]
 current = true
 editor_draw_screen = false
+
+[node name="Ladder" parent="." index="4" instance=ExtResource( 2 )]
+position = Vector2( 269, 598 )
+height = 300.0

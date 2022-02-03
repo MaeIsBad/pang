@@ -16,6 +16,7 @@ extents = Vector2( 32, 32 )
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 100
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -23,3 +24,8 @@ frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+
+[node name="Feet" type="RayCast2D" parent="."]
+position = Vector2( 0, 32 )
+enabled = true
+cast_to = Vector2( 0, 5 )

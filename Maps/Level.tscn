@@ -18,6 +18,7 @@ position = Vector2( 936, 516 )
 scale = Vector2( 2, 2 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
+collision_mask = 0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
