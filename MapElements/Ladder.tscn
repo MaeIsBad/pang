@@ -4,13 +4,14 @@
 [ext_resource path="res://MapElements/Ladder.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29, 25 )
+extents = Vector2( 29, 150 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 29, 1 )
 
 [node name="Ladder" type="Area2D"]
 scale = Vector2( 2, 2 )
+z_index = 100
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 2 )

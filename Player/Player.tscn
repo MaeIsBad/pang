@@ -15,7 +15,7 @@ animations = [ {
 extents = Vector2( 32, 32 )
 
 [node name="Player" type="KinematicBody2D"]
-z_index = 100
+z_index = 1000
 collision_layer = 2
 script = ExtResource( 2 )
 
