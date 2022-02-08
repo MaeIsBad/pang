@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://UI/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/stars.jpg" type="Texture" id=2]
-[ext_resource path="res://UI/MainMenuCamera.gd" type="Script" id=3]
+[ext_resource path="res://UI/MainMenu/MainMenuCamera.gd" type="Script" id=3]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
