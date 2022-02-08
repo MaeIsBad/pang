@@ -52,7 +52,9 @@ func switch_to_walking():
 	state = State.Walking
 	
 func climbing_process(delta):
-	var can_start_walking = $Feet.is_colliding()
+	var colliding_with_top = $Feet.get_collision_normal() == Vector2(0.0,-1.0)
+	var can_start_walking = $Feet.is_colliding() && colliding_with_top
+	
 	if Input.is_action_pressed("ui_up"):
 		move_and_slide(Vector2(0.0,-200.0), UP) 
 	if Input.is_action_pressed("ui_down"):
