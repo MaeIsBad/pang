@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/stars.jpg" type="Texture" id=2]
 [ext_resource path="res://UI/MainMenu/MainMenuCamera.gd" type="Script" id=3]
+[ext_resource path="res://UI/MainMenu/LevelSelect.tscn" type="PackedScene" id=4]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
@@ -57,45 +58,10 @@ margin_right = 63.0
 margin_bottom = 68.0
 text = "Exit"
 
-[node name="LevelSelect" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="LevelSelect" parent="." instance=ExtResource( 4 )]
 margin_left = 2137.0
 margin_right = 2137.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelect"]
-margin_left = 927.0
-margin_top = 509.0
-margin_right = 993.0
-margin_bottom = 571.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start" type="Button" parent="LevelSelect/VBoxContainer"]
-margin_right = 66.0
-margin_bottom = 20.0
-text = "Start"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="LevelSelect/VBoxContainer"]
-margin_top = 24.0
-margin_right = 66.0
-margin_bottom = 38.0
-text = "First Level"
-
-[node name="Button" type="Button" parent="LevelSelect/VBoxContainer"]
-margin_top = 42.0
-margin_right = 66.0
-margin_bottom = 62.0
-text = "Back"
 
 [connection signal="pressed" from="Main/VBoxContainer/Start" to="." method="on_start_button_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/Exit" to="." method="on_exit_button_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Start" to="." method="on_start_level_button_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Button" to="." method="on_back_button_pressed"]
+[connection signal="back" from="LevelSelect" to="." method="on_level_select_back"]

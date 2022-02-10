@@ -51,7 +51,7 @@ func switch_to_walking():
 	collision_mask = 1<<0
 	state = State.Walking
 	
-func climbing_process(delta):
+func climbing_process(_delta):
 	var colliding_with_top = $Feet.get_collision_normal() == Vector2(0.0,-1.0)
 	var can_start_walking = $Feet.is_colliding() && colliding_with_top
 	
