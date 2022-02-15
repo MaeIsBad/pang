@@ -25,6 +25,15 @@ position = Vector2( 444, 255 )
 linear_velocity = Vector2( 300, 0 )
 size = 6
 
+[node name="Walls" parent="." index="2"]
+script = null
+
+[node name="Left" parent="Walls" index="1"]
+position = Vector2( -10, 450 )
+
+[node name="Right" parent="Walls" index="2"]
+position = Vector2( 1920, 470 )
+
 [node name="Camera2D" parent="." index="3"]
 current = true
 editor_draw_screen = false

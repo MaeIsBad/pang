@@ -6,9 +6,9 @@ class_name Ball
 export(int) var size = 4
 # The size of the smallest instance of the ball
 export(int) var base_size = 10
-# The amount of 
+# The amount of energy lost on every bonuce 
 export(float) var bounce_damp = 25.0
-# The smallest height the ball should bounce to
+# The minimal height the ball should bounce to
 export(float) var smallest_bounce_height = 300.0
 
 var ball_scn = load("res://Ball/Ball.tscn")

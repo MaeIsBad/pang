@@ -18,7 +18,7 @@ script = ExtResource( 3 )
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Stars" type="Sprite" parent="."]
-position = Vector2( 2473, 2380 )
+position = Vector2( 2518, 513 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 

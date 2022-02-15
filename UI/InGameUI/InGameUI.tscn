@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/InGameUI/InGameUI.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Poppins/Poppins-Black.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 72
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
 [node name="Main" type="VSplitContainer"]
 anchor_right = 1.0
@@ -9,7 +16,8 @@ collapsed = true
 dragger_visibility = 2
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ -222.0 ]
 }
 
 [node name="LevelContainer" type="ViewportContainer" parent="."]
@@ -23,7 +31,33 @@ render_target_update_mode = 3
 
 [node name="Map" parent="LevelContainer/Viewport" instance_placeholder="res://Maps/TestMap.tscn"]
 
-[node name="Placeholder" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 margin_top = 900.0
 margin_right = 1920.0
 margin_bottom = 1080.0
+color = Color( 1, 0.843137, 0.843137, 1 )
+
+[node name="Placeholder" type="MarginContainer" parent="."]
+margin_top = 900.0
+margin_right = 1920.0
+margin_bottom = 1104.0
+custom_constants/margin_right = 100
+custom_constants/margin_top = 50
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Placeholder"]
+margin_left = 100.0
+margin_top = 50.0
+margin_right = 1820.0
+margin_bottom = 154.0
+
+[node name="LivesLeft" type="Label" parent="Placeholder/HBoxContainer"]
+margin_top = 1.0
+margin_right = 28.0
+margin_bottom = 103.0
+custom_fonts/font = SubResource( 1 )
+text = "1"
