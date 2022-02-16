@@ -6,10 +6,12 @@ class_name Ball
 export(int) var size = 4
 # The size of the smallest instance of the ball
 export(int) var base_size = 10
-# The amount of energy lost on every bonuce 
-export(float) var bounce_damp = 25.0
+# The amount of bonuce height to remove per size
+export(float) var bounce_damp = 200.0
 # The minimal height the ball should bounce to
-export(float) var smallest_bounce_height = 300.0
+export(float) var smallest_bounce_height = 100.0
+# Minimal x velocity
+export(float) var min_horizontal_velocity = 200.0
 
 var ball_scn = load("res://Ball/Ball.tscn")
 
@@ -63,7 +65,9 @@ func _integrate_forces(state: Physics2DDirectBodyState):
 		var colider_normal = state.get_contact_local_normal(i)
 		#Check if the collison occured under the ball
 		if colider_normal.y == -1:
-			var vel = state.linear_velocity
-			vel.y += bounce_damp
-			vel.y = min(vel.y, smallest_bounce_height*-1.0)
-			state.linear_velocity = vel
+			var y_vel = smallest_bounce_height + size * bounce_damp
+			state.linear_velocity.y = -y_vel
+
+	if abs(state.linear_velocity.x) < min_horizontal_velocity:
+		var direction = 1 if state.linear_velocity.x > 0 else -1
+		state.linear_velocity.x = min_horizontal_velocity*direction

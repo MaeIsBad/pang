@@ -19,6 +19,9 @@ contact_monitor = true
 linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource( 1 )
+bounce_damp = 25.0
+smallest_bounce_height = 300.0
+min_horizontal_velocity = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 4 )
