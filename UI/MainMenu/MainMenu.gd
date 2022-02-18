@@ -11,7 +11,7 @@ func view_to_camera_center_pos(view: int):
 		VIEWS.MAIN:
 			return $Main.rect_position
 		VIEWS.LEVEL_SELECT:
-			return $LevelSelect.rect_position
+			return $Stage1LevelSelect.rect_position
 		_:
 			print("INVALID VIEW, ", view)
 			get_tree().quit()

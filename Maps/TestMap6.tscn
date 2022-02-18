@@ -23,16 +23,7 @@ position = Vector2( 628, 801 )
 [node name="Ball" parent="." index="1" instance=ExtResource( 1 )]
 position = Vector2( 444, 255 )
 linear_velocity = Vector2( 300, 0 )
-size = 2
-
-[node name="Walls" parent="." index="2"]
-script = null
-
-[node name="Left" parent="Walls" index="1"]
-position = Vector2( -10, 450 )
-
-[node name="Right" parent="Walls" index="2"]
-position = Vector2( 1920, 470 )
+size = 6
 
 [node name="Camera2D" parent="." index="3"]
 current = true
@@ -52,3 +43,14 @@ texture = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" index="1"]
 position = Vector2( 0, 0.5 )
 shape = SubResource( 3 )
+
+[node name="Label" type="Label" parent="." index="6"]
+margin_left = 123.0
+margin_top = 65.0
+margin_right = 163.0
+margin_bottom = 79.0
+rect_scale = Vector2( 4, 4 )
+text = "Level 6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
