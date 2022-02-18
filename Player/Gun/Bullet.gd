@@ -5,9 +5,8 @@ class_name Bullet
 export(int,0,100) var UNITS_PER_SECOND = 800.0
 
 func body_entered(body: Node2D):
-	var ball = body as Ball
-	if ball != null:
-		ball.pop()
+	if body.has_method("touched_bullet"):
+		body.touched_bullet(self)
 		queue_free()
 
 func _process(delta):

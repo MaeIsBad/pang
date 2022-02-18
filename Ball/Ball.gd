@@ -51,6 +51,10 @@ func pop():
 	pop.play()
 	queue_free()
 
+# React to touching a bullet
+func touched_bullet(_bullet):
+	pop()
+
 func _draw():
 	draw_circle(Vector2(0.0,0.0), get_radius(), Color.black)
 
