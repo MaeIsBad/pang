@@ -23,14 +23,8 @@ func snap_to_ground() -> bool:
 	else:
 		return false
 
-var bullet_scn = load("res://Player/Bullet.tscn")
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		var bullet = bullet_scn.instance()
-		bullet.position = position
-		get_parent().add_child(bullet)
-
 	if(state == State.Walking):
 		walking_process(delta)
 	if(state == State.Climbing):

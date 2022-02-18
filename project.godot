@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Bullet",
 "language": "GDScript",
-"path": "res://Player/Bullet.gd"
+"path": "res://Player/Gun/Bullet.gd"
 }, {
 "base": "VSplitContainer",
 "class": "InGameUI",
