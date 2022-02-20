@@ -50,8 +50,10 @@ func climbing_process(_delta):
 	var can_start_walking = $Feet.is_colliding() && colliding_with_top
 	
 	if Input.is_action_pressed("ui_up"):
+		# warning-ignore:return_value_discarded
 		move_and_slide(Vector2(0.0,-200.0), UP) 
 	if Input.is_action_pressed("ui_down"):
+		# warning-ignore:return_value_discarded
 		move_and_slide(Vector2(0.0,200.0), UP)
 	if can_start_walking && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")):
 		switch_to_walking()
@@ -64,6 +66,7 @@ func walking_process(_delta):
 	# warning-ignore:return_value_discarded
 		move_and_slide(Vector2(-300.0,0.0), UP)
 		
+# warning-ignore:return_value_discarded
 	move_and_slide(Vector2(0.0,GRAVITY), UP)
 	
 	var can_switch_to_climbing = self.ladder && abs(self.ladder.position.x - self.position.x) < 10

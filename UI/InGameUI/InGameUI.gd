@@ -26,16 +26,15 @@ func win():
 	LevelManager.load_next()
 
 func lose():
-	get_tree().change_scene("res://UI/MainMenu/MainMenu.tscn")
+	assert(get_tree().change_scene("res://UI/MainMenu/MainMenu.tscn") == OK)
 
 func set_map(map: Map):
 	var old_map = $LevelContainer/Viewport.get_child(0)
 	old_map.queue_free()
 	$LevelContainer/Viewport.add_child(map)
 
-	map.connect("player_touched_ball", self, "on_player_touched_ball")
-	map.connect("won", self, "win")
-	map.connect("lost", self, "lose")
+	assert(map.connect("player_touched_ball", self, "on_player_touched_ball") == OK)
+	assert(map.connect("won", self, "win") == OK)
 
 func set_level(level: Level):
 	current_level = level

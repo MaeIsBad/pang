@@ -6,7 +6,7 @@ signal won
 
 # Global var used to keep track if we've already won
 var won = false
-func _process(delta):
+func _process(_delta):
 	# Check if any balls still exist, if they don't win.
 	# This is not the fastest way to do this,
 	# but it's the least error prone and there is no need to optimize it.
