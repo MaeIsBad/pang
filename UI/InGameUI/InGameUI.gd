@@ -11,7 +11,6 @@ func update_lives(lives_: int):
 	$Placeholder/HBoxContainer/LivesLeft.text = String(lives)
 
 func on_player_touched_ball():
-	print("Player touched ball")
 	self.lives -= 1
 	if self.lives == 0:
 		lose()
