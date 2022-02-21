@@ -31,7 +31,7 @@ func lose():
 func set_map(map: Map):
 	var old_map = $LevelContainer/Viewport.get_child(0)
 	old_map.queue_free()
-	$LevelContainer/Viewport.add_child(map)
+	$LevelContainer/Viewport.call_deferred("add_child", map)
 
 	assert(map.connect("player_touched_ball", self, "on_player_touched_ball") == OK)
 	assert(map.connect("won", self, "win") == OK)
