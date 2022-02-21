@@ -33,7 +33,11 @@ func _process(delta):
 	if not snapped_to_ground:
 		snapped_to_ground = snap_to_ground()
 
-
+enum Rotation {
+	Left,
+	Right
+}
+var curr_rotation = Rotation.Right
 
 func switch_to_climbing():
 	assert(ladder != null)
@@ -60,10 +64,16 @@ func climbing_process(_delta):
 	
 func walking_process(_delta):
 	if Input.is_action_pressed("ui_right"):
+		if curr_rotation != Rotation.Right:
+			scale.x *= -1.0
+			curr_rotation = Rotation.Right
 	# warning-ignore:return_value_discarded
 		move_and_slide(Vector2(300.0,0.0), UP) 
 	if Input.is_action_pressed("ui_left"):
-	# warning-ignore:return_value_discarded
+		if curr_rotation != Rotation.Left:
+			scale.x *= -1.0
+			curr_rotation = Rotation.Left
+		# warning-ignore:return_value_discarded
 		move_and_slide(Vector2(-300.0,0.0), UP)
 		
 # warning-ignore:return_value_discarded
@@ -81,3 +91,6 @@ func ladder_entered(l_entered: Ladder):
 
 func ladder_exited(_ladder: Ladder):
 	self.ladder = null
+
+
+# Wojsko kwarciane
