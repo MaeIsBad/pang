@@ -2,7 +2,7 @@ tool
 extends Node2D
 class_name Bullet
 
-export(int,0,100) var UNITS_PER_SECOND = 800.0
+export(float,0,1000) var UNITS_PER_SECOND = 800.0
 
 func body_entered(body: Node2D):
 	if body.has_method("touched_bullet"):

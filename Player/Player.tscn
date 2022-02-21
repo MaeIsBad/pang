@@ -24,8 +24,6 @@ script = ExtResource( 2 )
 scale = Vector2( 1.85, 1.85 )
 frames = SubResource( 1 )
 
-[node name="Gun" parent="." instance=ExtResource( 3 )]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
@@ -33,3 +31,5 @@ shape = SubResource( 2 )
 position = Vector2( 0, 32 )
 enabled = true
 cast_to = Vector2( 0, 5 )
+
+[node name="FingerGun" parent="." instance=ExtResource( 3 )]
