@@ -6,6 +6,15 @@ var current_level: Level
 var current_map: PackedScene
 var lives: int setget update_lives
 
+func _ready():
+	Console.remove_command("set_lives")
+	Console.add_command("set_lives", self, "command_set_lives")\
+	.add_argument("lives", TYPE_INT)\
+	.register()
+
+func command_set_lives(lives_: int):
+	self.lives = lives_
+
 func update_lives(lives_: int):
 	lives = lives_	
 	$Placeholder/HBoxContainer/LivesLeft.text = String(lives)
