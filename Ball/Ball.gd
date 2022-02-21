@@ -38,6 +38,10 @@ func spawn_child_ball(flip_x: bool = false) -> Ball:
 
 # Destroy the ball, play the "pop" sound and spawn 2 child balls
 func pop():
+	# Don't destroy the ball more than once
+	if self.is_queued_for_deletion():
+		return
+
 	var parent = get_parent()
 	if size > 1:
 		parent.call_deferred("add_child", spawn_child_ball())
