@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Player/Animations/Static/frame0016.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://Player/Laser/LaserGun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/RPG/RPG.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Player/Animations/Static/frame0003.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Player/Animations/Static/frame0000.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Player/Animations/Static/frame0005.png" type="Texture" id=6]
@@ -33,6 +33,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "running",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "static",
@@ -41,11 +46,6 @@ animations = [ {
 "frames": [ ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
 "loop": true,
 "name": "climbing",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "running",
 "speed": 10.0
 } ]
 
@@ -61,17 +61,17 @@ script = ExtResource( 2 )
 position = Vector2( 1, -12 )
 scale = Vector2( 1.85, 1.85 )
 frames = SubResource( 1 )
-animation = "climbing"
+animation = "static"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 5.5 )
 shape = SubResource( 2 )
 
-[node name="LaserGun" parent="." instance=ExtResource( 3 )]
-position = Vector2( 18, 13 )
-
 [node name="Feet" type="RayCast2D" parent="."]
 position = Vector2( 3, 32 )
 enabled = true
 cast_to = Vector2( 0, 5 )
+
+[node name="RPG" parent="." instance=ExtResource( 3 )]

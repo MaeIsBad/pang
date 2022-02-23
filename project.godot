@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Player.gd"
 }, {
+"base": "Node2D",
+"class": "RPGBullet",
+"language": "GDScript",
+"path": "res://Player/RPG/RPGBullet.gd"
+}, {
 "base": "LevelManagerImpl",
 "class": "Stage1LevelManager",
 "language": "GDScript",
@@ -63,6 +68,7 @@ _global_script_class_icons={
 "LevelManagerImpl": "",
 "Map": "",
 "Player": "",
+"RPGBullet": "",
 "Stage1LevelManager": ""
 }
 
