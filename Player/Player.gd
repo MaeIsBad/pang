@@ -24,6 +24,7 @@ func snap_to_ground() -> bool:
 		return false
 
 func _ready():
+	$AnimationPlayer.stop(false)
 	switch_to_walking()
 
 func _process(delta):
@@ -42,7 +43,7 @@ enum Rotation {
 var curr_rotation = Rotation.Right
 
 func switch_to_climbing():
-	$AnimatedSprite.animation = "climbing"	
+	$AnimationPlayer.current_animation = "Climbing"
 	assert(ladder != null)
 	self.position.x = ladder.position.x
 	collision_mask = 1<<3
@@ -51,7 +52,6 @@ func switch_to_climbing():
 func switch_to_walking():
 	collision_mask = 1<<0
 	state = State.Walking
-	$AnimatedSprite.playing = true
 	
 func climbing_process(_delta):
 	var colliding_with_top = $Feet.get_collision_normal() == Vector2(0.0,-1.0)
@@ -63,8 +63,11 @@ func climbing_process(_delta):
 	if Input.is_action_pressed("ui_down"):
 		direction = 1
 	# warning-ignore:return_value_discarded
-	move_and_slide(Vector2(0.0,direction*200.0), UP) 
-	$AnimatedSprite.playing = direction != 0.0
+	move_and_slide(Vector2(0.0,direction*200.0), UP)
+	if direction == 0: 
+		$AnimationPlayer.stop(false)
+	else:
+		$AnimationPlayer.play("Climbing")
 	if can_start_walking && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")):
 		switch_to_walking()
 	
@@ -84,9 +87,9 @@ func walking_process(_delta):
 	# warning-ignore:return_value_discarded
 	move_and_slide(Vector2(direction*300.0,0.0), UP)
 	if direction == 0.0:
-		$AnimatedSprite.animation = "static"
+		$AnimationPlayer.current_animation = "Static"
 	else:
-		$AnimatedSprite.animation = "running"
+		$AnimationPlayer.current_animation = "Running"
 	# warning-ignore:return_value_discarded
 	move_and_slide(Vector2(0.0,GRAVITY), UP)
 	

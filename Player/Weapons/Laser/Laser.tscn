@@ -17,7 +17,6 @@ script = ExtResource( 1 )
 texture = SubResource( 5 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-visible = false
 enabled = true
 cast_to = Vector2( 0, -1000 )
 
