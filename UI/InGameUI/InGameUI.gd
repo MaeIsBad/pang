@@ -34,8 +34,7 @@ func win():
 	LevelManager.load_next()
 
 func lose():
-	assert(get_tree().change_scene("res://UI/MainMenu/MainMenu.tscn") == OK)
-
+	LevelManager.lose()
 func set_map(map: Map):
 	var old_map = $LevelContainer/Viewport.get_child(0)
 	old_map.queue_free()

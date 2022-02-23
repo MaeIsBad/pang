@@ -1,7 +1,7 @@
 class_name Stage1LevelManager
 extends LevelManagerImpl
 
-var main_menu_scn = load("res://UI/MainMenu/MainMenu.tscn")
+var main_menu_scn: PackedScene = load("res://UI/MainMenu/MainMenu.tscn")
 
 var difficulty = Level.Difficulty.Easy
 
@@ -22,8 +22,9 @@ func get_next_level():
 	var level = levels_bag.pop_back()
 	prev_level = level
 	return level
+	
 func load_next(): 
 	LevelLoader.load_level(get_next_level())
-#	var main_menu = main_menu_scn.instance()
-#	main_menu.current_view = main_menu.VIEWS.LEVEL_SELECT
-#	LevelLoader.replace_current_scene_with_node(main_menu)
+	
+func lose():
+	LevelLoader.replace_current_scene_with_node(main_menu_scn.instance())
