@@ -10,11 +10,14 @@ export(float) var firing_rate := 1.0
 # The countdown until the next shot can be fired
 var next_shot := 0.0
 
-func shoot():
+func spawn_bullet():
 	var bullet = bullet_scn.instance()
 	bullet.global_position = global_position
 	get_parent().get_parent().add_child(bullet)
+
+func shoot():
 	next_shot = firing_rate
+	self.spawn_bullet()
 
 func try_shoot():
 	if next_shot <= 0.0:
