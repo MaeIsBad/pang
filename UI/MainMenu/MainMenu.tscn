@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/stars.jpg" type="Texture" id=2]
 [ext_resource path="res://UI/MainMenu/MainMenuCamera.gd" type="Script" id=3]
 [ext_resource path="res://UI/MainMenu/Stage1LevelSelect/Stage1LevelSelect.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Background/dust.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Background/stars.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Background/planets.png" type="Texture" id=7]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
@@ -16,11 +18,6 @@ script = ExtResource( 3 )
 [node name="Tween" type="Tween" parent="MainMenuCamera"]
 
 [node name="Node2D" type="Node2D" parent="."]
-
-[node name="Stars" type="Sprite" parent="."]
-position = Vector2( 2518, 513 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 2 )
 
 [node name="Main" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -61,6 +58,33 @@ text = "Exit"
 [node name="Stage1LevelSelect" parent="." instance=ExtResource( 4 )]
 margin_left = 2137.0
 margin_right = 2137.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0.3 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1941, 2006 )
+scale = Vector2( 5.54883, 5.54883 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.4 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 1941, 2006 )
+scale = Vector2( 5.54883, 5.54883 )
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 1941, 2006 )
+rotation = 3.14159
+scale = Vector2( 5.54883, 5.54883 )
+texture = ExtResource( 7 )
 
 [connection signal="pressed" from="Main/VBoxContainer/Start" to="." method="on_start_button_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/Exit" to="." method="on_exit_button_pressed"]
