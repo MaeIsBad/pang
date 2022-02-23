@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Player/astronaut.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://Player/FingerGun/Gun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Laser/LaserGun.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,9 +27,9 @@ frames = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
+[node name="LaserGun" parent="." instance=ExtResource( 3 )]
+
 [node name="Feet" type="RayCast2D" parent="."]
 position = Vector2( 0, 32 )
 enabled = true
 cast_to = Vector2( 0, 5 )
-
-[node name="FingerGun" parent="." instance=ExtResource( 3 )]

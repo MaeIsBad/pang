@@ -15,6 +15,8 @@ export(float) var min_horizontal_velocity = 200.0
 
 var ball_scn = load("res://Ball/Ball.tscn")
 
+var invincible := true
+
 func get_radius():
 	return size*base_size
 
@@ -22,6 +24,8 @@ func _ready():
 	var shape = CircleShape2D.new()
 	shape.radius = get_radius()
 	$CollisionShape2D.shape = shape
+	yield(get_tree().create_timer(0.1),"timeout")
+	invincible = false
 
 func spawn_child_ball(flip_x: bool = false) -> Ball:
 	var ball = ball_scn.instance()
@@ -38,6 +42,8 @@ func spawn_child_ball(flip_x: bool = false) -> Ball:
 
 # Destroy the ball, play the "pop" sound and spawn 2 child balls
 func pop():
+	if self.invincible:
+		return
 	# Don't destroy the ball more than once
 	if self.is_queued_for_deletion():
 		return

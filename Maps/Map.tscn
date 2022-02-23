@@ -22,7 +22,7 @@ collision_mask = 0
 script = ExtResource( 3 )
 
 [node name="Top" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 960, 0 )
+position = Vector2( 960, -10 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -36,7 +36,7 @@ __meta__ = {
 }
 
 [node name="Right" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 1920, 460 )
+position = Vector2( 1920, 450 )
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
