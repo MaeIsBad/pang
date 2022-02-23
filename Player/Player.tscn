@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Assets/Player/Animations/Static/frame0016.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://Player/Weapons/Laser/LaserGun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/WeaponManager.gd" type="Script" id=4]
+[ext_resource path="res://Player/Weapons/Gun/Gun.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Player/Animations/Static/frame0021.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Player/Animations/Static/frame0019.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Player/Animations/Static/frame0020.png" type="Texture" id=12]
@@ -32,15 +33,15 @@ animations = [ {
 "name": "climbing",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "static",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "running",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "static",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=4]
@@ -201,7 +202,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.85, 1.85 )
 frames = SubResource( 1 )
-animation = "running"
+animation = "climbing"
 
 [node name="Feet" type="RayCast2D" parent="."]
 position = Vector2( 2, 27 )
@@ -220,7 +221,8 @@ shape = SubResource( 2 )
 
 [node name="Weapon" type="Node2D" parent="."]
 position = Vector2( 6, 11 )
+script = ExtResource( 4 )
 
-[node name="LaserGun" parent="Weapon" instance=ExtResource( 3 )]
+[node name="Gun" parent="Weapon" instance=ExtResource( 5 )]
 
-[connection signal="emit_bullet" from="Weapon/LaserGun" to="." method="on_weapon_emit_bullet"]
+[connection signal="emit_bullet" from="Weapon/Gun" to="Weapon" method="weapon_emit_bullet"]

@@ -107,7 +107,3 @@ func ladder_entered(l_entered: Ladder):
 
 func ladder_exited(_ladder: Ladder):
 	self.ladder = null
-
-
-func on_weapon_emit_bullet(bullet: Node2D):
-	get_parent().add_child(bullet)
