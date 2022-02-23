@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player/Laser/LaserGun.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Player/finger_gun.png" type="Texture" id=2]
+
+[node name="LaserGun" type="Node2D"]
+position = Vector2( 5, -11 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -2, 0 )
+scale = Vector2( 1.85, 1.85 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="BulletSpawner" type="Node2D" parent="."]
+position = Vector2( 11, 10 )
