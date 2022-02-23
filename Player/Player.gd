@@ -23,6 +23,8 @@ func snap_to_ground() -> bool:
 	else:
 		return false
 
+func _ready():
+	switch_to_walking()
 
 func _process(delta):
 	if(state == State.Walking):
