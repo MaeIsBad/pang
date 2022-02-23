@@ -1,6 +1,6 @@
 tool
 extends Node2D
-class_name Bullet
+class_name GunBullet
 
 export(float,0,1000) var UNITS_PER_SECOND = 800.0
 

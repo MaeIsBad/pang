@@ -1,6 +1,6 @@
 extends Node2D
 class_name RPGBullet
-var explosion_script = preload("res://Player/RPG/RPGExplosion.gd")
+var explosion_script = preload("res://Player/Weapons/RPG/RPGExplosion.gd")
 
 export(float,0,1000) var UNITS_PER_SECOND = 800.0
 export var explosion_radius := 50.0
