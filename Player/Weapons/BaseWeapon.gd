@@ -23,6 +23,8 @@ func try_shoot():
 func _process(delta):
 	if next_shot > 0:
 		next_shot = max(0.0, next_shot-delta)
-	if Input.is_action_just_pressed("ui_accept"):
+		
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("ui_accept"):
+		get_tree().set_input_as_handled()
 		try_shoot()
-
