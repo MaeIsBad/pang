@@ -1,6 +1,8 @@
 extends Node2D
 class_name BaseWeapon
 
+signal emit_bullet(bullet)
+
 export(PackedScene) var bullet_scn: PackedScene = null
 
 # The amount of time after shooting in 
@@ -13,7 +15,7 @@ var next_shot := 0.0
 func spawn_bullet():
 	var bullet = bullet_scn.instance()
 	bullet.global_position = global_position
-	get_parent().get_parent().add_child(bullet)
+	emit_signal("emit_bullet",bullet)
 
 func shoot():
 	next_shot = firing_rate

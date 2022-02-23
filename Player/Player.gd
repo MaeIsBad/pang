@@ -2,6 +2,7 @@ extends KinematicBody2D
 class_name Player
 
 signal touched_ball(Ball)
+
 enum State {Walking, Climbing}
 
 var state = State.Walking
@@ -25,6 +26,7 @@ func snap_to_ground() -> bool:
 
 func _ready():
 	$AnimationPlayer.stop(false)
+	
 	switch_to_walking()
 
 func _process(delta):
@@ -107,4 +109,5 @@ func ladder_exited(_ladder: Ladder):
 	self.ladder = null
 
 
-# Wojsko kwarciane
+func on_weapon_emit_bullet(bullet: Node2D):
+	get_parent().add_child(bullet)
