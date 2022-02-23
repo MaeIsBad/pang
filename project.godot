@@ -63,6 +63,11 @@ _global_script_classes=[ {
 "class": "Stage1LevelManager",
 "language": "GDScript",
 "path": "res://Autoloads/LevelManager/Stage1LevelManager.gd"
+}, {
+"base": "LevelManagerImpl",
+"class": "Stage2LevelManager",
+"language": "GDScript",
+"path": "res://Autoloads/LevelManager/Stage2LevelManager.gd"
 } ]
 _global_script_class_icons={
 "Ball": "",
@@ -75,7 +80,8 @@ _global_script_class_icons={
 "Map": "",
 "Player": "",
 "RPGBullet": "",
-"Stage1LevelManager": ""
+"Stage1LevelManager": "",
+"Stage2LevelManager": ""
 }
 
 [application]

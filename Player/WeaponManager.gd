@@ -24,8 +24,6 @@ func command_give_weapon(name: String):
 			return
 	change_weapon(weapon_scn.instance())
 
-func _exit_tree():
-	Console.remove_command("give_weapon")
 	
 func change_weapon(weapon: BaseWeapon):
 	current_weapon.queue_free()
