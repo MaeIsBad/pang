@@ -40,6 +40,7 @@ enum Rotation {
 var curr_rotation = Rotation.Right
 
 func switch_to_climbing():
+	$AnimatedSprite.animation = "climbing"	
 	assert(ladder != null)
 	self.position.x = ladder.position.x
 	collision_mask = 1<<3
@@ -48,35 +49,43 @@ func switch_to_climbing():
 func switch_to_walking():
 	collision_mask = 1<<0
 	state = State.Walking
+	$AnimatedSprite.playing = true
 	
 func climbing_process(_delta):
 	var colliding_with_top = $Feet.get_collision_normal() == Vector2(0.0,-1.0)
 	var can_start_walking = $Feet.is_colliding() && colliding_with_top
 	
+	var direction := 0
 	if Input.is_action_pressed("ui_up"):
-		# warning-ignore:return_value_discarded
-		move_and_slide(Vector2(0.0,-200.0), UP) 
+		direction = -1
 	if Input.is_action_pressed("ui_down"):
-		# warning-ignore:return_value_discarded
-		move_and_slide(Vector2(0.0,200.0), UP)
+		direction = 1
+	# warning-ignore:return_value_discarded
+	move_and_slide(Vector2(0.0,direction*200.0), UP) 
+	$AnimatedSprite.playing = direction != 0.0
 	if can_start_walking && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")):
 		switch_to_walking()
 	
 func walking_process(_delta):
+	var direction := 0
 	if Input.is_action_pressed("ui_right"):
 		if curr_rotation != Rotation.Right:
 			scale.x *= -1.0
 			curr_rotation = Rotation.Right
-	# warning-ignore:return_value_discarded
-		move_and_slide(Vector2(300.0,0.0), UP) 
+		direction = 1
 	if Input.is_action_pressed("ui_left"):
 		if curr_rotation != Rotation.Left:
 			scale.x *= -1.0
 			curr_rotation = Rotation.Left
-		# warning-ignore:return_value_discarded
-		move_and_slide(Vector2(-300.0,0.0), UP)
-		
-# warning-ignore:return_value_discarded
+		direction = -1
+
+	# warning-ignore:return_value_discarded
+	move_and_slide(Vector2(direction*300.0,0.0), UP)
+	if direction == 0.0:
+		$AnimatedSprite.animation = "static"
+	else:
+		$AnimatedSprite.animation = "running"
+	# warning-ignore:return_value_discarded
 	move_and_slide(Vector2(0.0,GRAVITY), UP)
 	
 	var can_switch_to_climbing = self.ladder && abs(self.ladder.position.x - self.position.x) < 10
