@@ -1,12 +1,15 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://UI/MainMenu/Splashes.gd" type="Script" id=2]
 [ext_resource path="res://UI/MainMenu/MainMenuCamera.gd" type="Script" id=3]
 [ext_resource path="res://UI/MainMenu/Stage1LevelSelect/Stage1LevelSelect.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Background/dust.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Background/stars.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Background/stars_2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Background/planets.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Background/stars_3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Background/stars_1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Background/stars_4.png" type="Texture" id=10]
 
 [sub_resource type="Image" id=20]
 data = {
@@ -172,10 +175,10 @@ margin_right = 1920.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Dunst" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.3, 0.3 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Dunst"]
 position = Vector2( 1941, 2006 )
 scale = Vector2( 5.54883, 5.54883 )
 texture = ExtResource( 5 )
@@ -183,10 +186,32 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Stars4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.35, 0.35 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Stars4"]
+position = Vector2( 1941, 2006 )
+scale = Vector2( 5.54883, 5.54883 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Stars3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.4, 0.4 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Stars3"]
+position = Vector2( 1941, 2006 )
+scale = Vector2( 5.54883, 5.54883 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Stars2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.45, 0.45 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Stars2"]
 position = Vector2( 1941, 2006 )
 scale = Vector2( 5.54883, 5.54883 )
 texture = ExtResource( 6 )
@@ -194,10 +219,21 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Stars1" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.5, 0.5 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Stars1"]
+position = Vector2( 1941, 2006 )
+scale = Vector2( 5.54883, 5.54883 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
 position = Vector2( 1941, 2006 )
 rotation = 3.14159
 scale = Vector2( 5.54883, 5.54883 )
