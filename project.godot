@@ -39,7 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Autoloads/Levels/Level.gd"
 }, {
-"base": "Reference",
+"base": "Object",
 "class": "LevelManagerImpl",
 "language": "GDScript",
 "path": "res://Autoloads/LevelManager/LevelManagerImpl.gd"
