@@ -9,7 +9,7 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[node name="Main" type="VSplitContainer"]
+[node name="InGameUI" type="VSplitContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 collapsed = true
@@ -57,7 +57,17 @@ margin_bottom = 154.0
 
 [node name="LivesLeft" type="Label" parent="Placeholder/HBoxContainer"]
 margin_top = 1.0
-margin_right = 28.0
+margin_right = 858.0
 margin_bottom = 103.0
+size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
 text = "1"
+
+[node name="Score" type="Label" parent="Placeholder/HBoxContainer"]
+margin_left = 862.0
+margin_top = 1.0
+margin_right = 1720.0
+margin_bottom = 103.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "0"

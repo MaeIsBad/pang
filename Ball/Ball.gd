@@ -59,6 +59,9 @@ func pop():
 	pop.position = position
 	parent.call_deferred("add_child", pop)
 	pop.play()
+	
+	if parent.has_method("ball_popped"):
+		parent.ball_popped(self)
 	queue_free()
 
 # React to touching a bullet

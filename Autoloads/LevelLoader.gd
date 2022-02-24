@@ -1,12 +1,12 @@
 extends Node
-var in_game_ui_scn = preload("res://UI/InGameUI/InGameUI.tscn")
+var in_game_scn = preload("res://InGame/InGame.tscn")
 
 func load_level(level: Level):
-	var in_game_ui = get_current_scene() as InGameUI
-	if !in_game_ui:
-		in_game_ui = in_game_ui_scn.instance()
-		replace_current_scene_with_node(in_game_ui)
-	in_game_ui.set_level(level)
+	var in_game = get_current_scene() as InGame
+	if !in_game:
+		in_game = in_game_scn.instance()
+		replace_current_scene_with_node(in_game)
+	in_game.set_level(level)
 
 func get_current_scene():
 	var root = get_tree().get_root()

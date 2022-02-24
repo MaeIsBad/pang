@@ -24,10 +24,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Weapons/Gun/Bullet.gd"
 }, {
-"base": "VSplitContainer",
-"class": "InGameUI",
+"base": "Node",
+"class": "InGame",
 "language": "GDScript",
-"path": "res://UI/InGameUI/InGameUI.gd"
+"path": "res://InGame/InGame.gd"
 }, {
 "base": "Area2D",
 "class": "Ladder",
@@ -73,7 +73,7 @@ _global_script_class_icons={
 "Ball": "",
 "BaseWeapon": "",
 "GunBullet": "",
-"InGameUI": "",
+"InGame": "",
 "Ladder": "",
 "Level": "",
 "LevelManagerImpl": "",

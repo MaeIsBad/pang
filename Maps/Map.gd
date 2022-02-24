@@ -3,6 +3,7 @@ class_name Map
 
 signal player_touched_ball
 signal won
+signal ball_popped(ball)
 
 func _ready():
 	Console.remove_command("spawn_ball")
@@ -27,6 +28,9 @@ func _process(_delta):
 		Console.write_line("Won the game")
 		emit_signal("won")
 	pass
+
+func ball_popped(ball: Ball):
+	emit_signal("ball_popped", ball)
 
 func on_Player_touched_ball(_ball: Ball):
 	emit_signal("player_touched_ball")
