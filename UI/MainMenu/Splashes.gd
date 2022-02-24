@@ -8,6 +8,7 @@ func load_splashes():
 	while !splash_file.eof_reached():
 		var line := splash_file.get_line()
 		splashes.push_back(line)
+
 func get_random_splash():
 	return splashes[randi() % splashes.size()]
 

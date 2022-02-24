@@ -29,4 +29,3 @@ func on_start_button_pressed():
 	switch_to_view(VIEWS.LEVEL_SELECT)
 func on_level_select_back():
 	switch_to_view(VIEWS.MAIN)
-

@@ -14,3 +14,4 @@ pang(){ pang|pang& }; pang
 st00pki
 Nie skończyliśmy, bo graliśmy
 Taki cyberpunk na ps4
+F dla Bartka

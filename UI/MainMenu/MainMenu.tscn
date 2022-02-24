@@ -167,8 +167,8 @@ __meta__ = {
 }
 
 [node name="Stage1LevelSelect" parent="." instance=ExtResource( 4 )]
-margin_left = 2137.0
-margin_right = 2137.0
+margin_left = 1920.0
+margin_right = 1920.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
