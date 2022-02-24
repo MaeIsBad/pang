@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://UI/MainMenu/Label.gd" type="Script" id=2]
+[ext_resource path="res://UI/MainMenu/Splashes.gd" type="Script" id=2]
 [ext_resource path="res://UI/MainMenu/MainMenuCamera.gd" type="Script" id=3]
 [ext_resource path="res://UI/MainMenu/Stage1LevelSelect/Stage1LevelSelect.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Background/dust.png" type="Texture" id=5]
@@ -165,7 +165,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-splashes = [ "SŁOWACKI WIELKIM POETĄ BYŁ", "// written by github copilot", "jak robić science cup jak advent of code", "Pang peaked at commit 07f74efa443652d6f990d2faaf7f098dca24542c", "Pomimo licznych próśb soundtracku nie tworzył Hans Zimmer", "Krowa jest static", "Godot 4 jest dużo lepszy trzeba było użyć bety ", "przez lasery chce sobie coś zrobić", "Biednemu zawsze laser w oczy", "Pijesz z pączka czy ze szklanki?", "unity > godot" ]
 
 [node name="Stage1LevelSelect" parent="." instance=ExtResource( 4 )]
 margin_left = 2137.0
