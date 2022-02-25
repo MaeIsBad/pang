@@ -10,12 +10,20 @@ func _ready():
 	Console.add_command("spawn_ball", self, "command_spawn_ball")\
 	.add_argument("ball_size", TYPE_INT)\
 	.register()
+	
+	Console.remove_command("nuke")
+	Console.add_command("nuke", self, "command_nuke")\
+	.register()
 
 func command_spawn_ball(size: int):
 	var ball = preload("res://Ball/Ball.tscn").instance()
 	ball.global_position = get_viewport().get_mouse_position()
 	ball.size = size
 	add_child(ball)
+
+func command_nuke():
+	for ball in  get_tree().get_nodes_in_group("Balls"):
+		ball.pop()
 
 # Global var used to keep track if we've already won
 var won = false
