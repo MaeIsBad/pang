@@ -9,18 +9,26 @@ signal won
 signal died
 signal lost
 
-var current_level: Level
-# Cache the current map
-var current_map: PackedScene
+# Level manager needs to be set by an external
+# script before adding this scene to the tree
+var level_manager: LevelManagerBase
+
 var lives: int setget set_lives
+
+var game_over_scn := preload("res://UI/GameOver/GameOver.tscn")
 
 onready var ui := $UI
 
 func _ready():
+	assert(level_manager != null, "Need to initialize the level_manager property before adding this node to the scene tree")
+
 	Console.remove_command("set_lives")
 	Console.add_command("set_lives", self, "command_set_lives")\
 	.add_argument("lives", TYPE_INT)\
 	.register()
+	
+	set_level(level_manager.get_current_level())
+	
 
 func command_set_lives(lives_: int):
 	set_lives(lives_)
@@ -40,15 +48,27 @@ func on_player_touched_ball():
 
 func win():
 	emit_signal("won")
-	LevelManager.load_next()
-
+	next_level()
 func lose():
 	emit_signal("lost")
-	LevelManager.lose()
+	game_over()
+
+func next_level():
+	var next_level := level_manager.next_level()
+	if next_level:
+		set_level(next_level)
+	else:
+		game_over()
 
 func load_current_map():
-	set_map(current_map.instance())
-
+	set_map(level_manager.load_map())
+	
+func game_over():
+	var score: int = $ScoreHandler.score
+	var game_over_node: GameOver = game_over_scn.instance()
+	game_over_node.score = score
+	SceneLoader.replace_current_scene_with_node(game_over_node)
+	
 func set_map(map: Map):
 	ui.set_map(map)
 	assert(map.connect("player_touched_ball", self, "on_player_touched_ball") == OK)
@@ -56,9 +76,7 @@ func set_map(map: Map):
 	emit_signal("map_changed",map)
 
 func set_level(level: Level):
-	current_level = level
-	current_map = level.load_map()
-	self.lives = current_level.lives
+	self.lives = level.lives
 	emit_signal("level_changed",level)
 	load_current_map()
 	

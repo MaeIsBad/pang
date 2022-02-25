@@ -27,5 +27,4 @@ func prev_button_pressed():
 	show_level()
 	
 func start_button_pressed():
-	LevelManager.set_stage(manager)
-	manager.load_current()
+	SceneLoader.switch_to_in_game_with_manager(manager)

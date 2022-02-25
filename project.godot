@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://Player/Weapons/BaseWeapon.gd"
 }, {
 "base": "Node2D",
+"class": "GameOver",
+"language": "GDScript",
+"path": "res://UI/GameOver/GameOver.gd"
+}, {
+"base": "Node2D",
 "class": "GunBullet",
 "language": "GDScript",
 "path": "res://Player/Weapons/Gun/Bullet.gd"
@@ -40,9 +45,9 @@ _global_script_classes=[ {
 "path": "res://Autoloads/Levels/Level.gd"
 }, {
 "base": "Reference",
-"class": "LevelManagerImpl",
+"class": "LevelManagerBase",
 "language": "GDScript",
-"path": "res://Autoloads/LevelManager/LevelManagerImpl.gd"
+"path": "res://InGame/LevelManager/LevelManagerBase.gd"
 }, {
 "base": "Node2D",
 "class": "Map",
@@ -59,24 +64,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Weapons/RPG/RPGBullet.gd"
 }, {
-"base": "LevelManagerImpl",
+"base": "LevelManagerBase",
 "class": "Stage1LevelManager",
 "language": "GDScript",
-"path": "res://Autoloads/LevelManager/Stage1LevelManager.gd"
+"path": "res://InGame/LevelManager/Stage1LevelManager.gd"
 }, {
-"base": "LevelManagerImpl",
+"base": "LevelManagerBase",
 "class": "Stage2LevelManager",
 "language": "GDScript",
-"path": "res://Autoloads/LevelManager/Stage2LevelManager.gd"
+"path": "res://InGame/LevelManager/Stage2LevelManager.gd"
 } ]
 _global_script_class_icons={
 "Ball": "",
 "BaseWeapon": "",
+"GameOver": "",
 "GunBullet": "",
 "InGame": "",
 "Ladder": "",
 "Level": "",
-"LevelManagerImpl": "",
+"LevelManagerBase": "",
 "Map": "",
 "Player": "",
 "RPGBullet": "",
@@ -93,10 +99,9 @@ config/icon="res://Assets/icon.png"
 [autoload]
 
 Levels="*res://Autoloads/Levels/Levels.gd"
-LevelLoader="*res://Autoloads/LevelLoader.gd"
-LevelManager="*res://Autoloads/LevelManager/LevelManagerGlobal.gd"
 Init="res://Autoloads/Init.gd"
 Console="*res://addons/quentincaffeino/console/src/Console.tscn"
+SceneLoader="*res://Autoloads/SceneLoader.gd"
 
 [display]
 
