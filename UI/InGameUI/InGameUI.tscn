@@ -28,6 +28,8 @@ margin_bottom = 900.0
 size = Vector2( 1920, 900 )
 handle_input_locally = false
 render_target_update_mode = 3
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
 
 [node name="Map" parent="LevelContainer/Viewport" instance_placeholder="res://Maps/TestMap.tscn"]
 
