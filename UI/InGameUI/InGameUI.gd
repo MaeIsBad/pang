@@ -12,5 +12,7 @@ func set_score(score: int):
 	score_display.text = String(score)
 
 func set_map(map: Map):
-	viewport.get_child(0).queue_free()
+	var curr_map := viewport.get_child(0)
+	curr_map.queue_free()
+	viewport.call_deferred("remove_child",curr_map)
 	viewport.call_deferred("add_child",map)
