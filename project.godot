@@ -64,12 +64,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Weapons/RPG/RPGBullet.gd"
 }, {
-"base": "LevelManagerBase",
+"base": "Reference",
 "class": "Stage1LevelManager",
 "language": "GDScript",
 "path": "res://InGame/LevelManager/Stage1LevelManager.gd"
 }, {
-"base": "LevelManagerBase",
+"base": "Reference",
 "class": "Stage2LevelManager",
 "language": "GDScript",
 "path": "res://InGame/LevelManager/Stage2LevelManager.gd"
@@ -99,6 +99,8 @@ config/icon="res://Assets/icon.png"
 [autoload]
 
 Levels="*res://Autoloads/Levels/Levels.gd"
+LevelLoader="*res://Autoloads/LevelLoader.gd"
+LevelManager="*res://Autoloads/LevelManager/LevelManagerGlobal.gd"
 Init="res://Autoloads/Init.gd"
 Console="*res://addons/quentincaffeino/console/src/Console.tscn"
 SceneLoader="*res://Autoloads/SceneLoader.gd"
