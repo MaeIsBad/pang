@@ -21,8 +21,4 @@ func update_levels_globals():
 
 func _ready():
 	update_levels_globals()
-
-# Save player progress
-# TODO
-func _exit_tree():
-	print("saving")
+	

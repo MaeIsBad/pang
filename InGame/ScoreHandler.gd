@@ -9,7 +9,14 @@ var score := 0 setget set_score
 func set_score(score_: int):
 	score = score_
 	$"..".ui.set_score(score)
-	
+
+func get_leaderboard_score() -> LeaderboardManager.Score:
+	var module = $"..".level_manager.get_module_num()
+	var leaderboard_score := LeaderboardManager.Score.new()
+	leaderboard_score.module = module
+	leaderboard_score.points = score
+	return leaderboard_score
+
 func on_map_changed(map: Map):
 	assert(map.connect("ball_popped", self, "ball_popped") == OK)
 	

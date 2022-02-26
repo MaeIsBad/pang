@@ -5,12 +5,54 @@
 [node name="GameOver" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 40.0
-margin_bottom = 14.0
-text = "Koniec gry
-Twój wynik to: $SCORE
-koniec"
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_right = 143.0
+margin_bottom = 51.0
+custom_constants/margin_bottom = 20
+
+[node name="ScoreDisplayLabel" type="Label" parent="HBoxContainer/MarginContainer"]
+margin_right = 143.0
+margin_bottom = 31.0
+text = "Koniec gry
+Twój wynik to: $SCORE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_top = 55.0
+margin_right = 143.0
+margin_bottom = 121.0
+
+[node name="YourNick" type="Label" parent="HBoxContainer/HBoxContainer"]
+margin_right = 143.0
+margin_bottom = 14.0
+text = "Twój nick:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NickInput" type="LineEdit" parent="HBoxContainer/HBoxContainer"]
+margin_top = 18.0
+margin_right = 143.0
+margin_bottom = 42.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubmitButton" type="Button" parent="HBoxContainer/HBoxContainer"]
+margin_top = 46.0
+margin_right = 143.0
+margin_bottom = 66.0
+disabled = true
+text = "Dodaj wynik"
+
+[connection signal="text_changed" from="HBoxContainer/HBoxContainer/NickInput" to="." method="nick_text_changed"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer/SubmitButton" to="." method="submit_button_pressed"]

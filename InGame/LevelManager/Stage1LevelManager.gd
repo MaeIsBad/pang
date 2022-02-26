@@ -27,3 +27,6 @@ func get_current_level() -> Level:
 	if cur_level == null:
 		return next_level()
 	return cur_level
+
+func get_module_num() -> int:
+	return 1

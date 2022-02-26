@@ -18,6 +18,7 @@ var lives: int setget set_lives
 var game_over_scn := preload("res://UI/GameOver/GameOver.tscn")
 
 onready var ui := $UI
+onready var score_handler := $ScoreHandler
 
 func _ready():
 	assert(level_manager != null, "Need to initialize the level_manager property before adding this node to the scene tree")
@@ -64,9 +65,8 @@ func load_current_map():
 	set_map(level_manager.load_map())
 	
 func game_over():
-	var score: int = $ScoreHandler.score
 	var game_over_node: GameOver = game_over_scn.instance()
-	game_over_node.score = score
+	game_over_node.score = score_handler.get_leaderboard_score()
 	SceneLoader.replace_current_scene_with_node(game_over_node)
 	
 func set_map(map: Map):
