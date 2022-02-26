@@ -3,6 +3,20 @@ extends Node
 var in_game_scn := preload("res://InGame/InGame.tscn")
 var main_menu_scn := preload("res://UI/MainMenu/MainMenu.tscn")
 
+func _ready():
+	Console.add_command("switch_to_scene", self, "command_switch_to_scene")\
+	.add_argument("scene name", TYPE_STRING).register()
+
+func command_switch_to_scene(scene_name: String):
+	if !ResourceLoader.exists(scene_name):
+		Console.write_line("Invalid scene name: %s" % scene_name)
+		return
+	var scene := load(scene_name)
+	if scene is PackedScene:
+		replace_current_scene_with_node(scene.instance())
+	else:
+		Console.write_line("%s is not a scene but a %s, not switching" % [scene_name, scene])
+		
 func switch_to_in_game_with_manager(level_manager: LevelManagerBase):
 	var in_game: InGame = in_game_scn.instance()
 	in_game.level_manager = level_manager
