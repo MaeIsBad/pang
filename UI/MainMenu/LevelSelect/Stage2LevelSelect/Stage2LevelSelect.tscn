@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://UI/MainMenu/Stage2LevelSelect/Stage2LevelSelect.gd" type="Script" id=1]
+[ext_resource path="res://UI/MainMenu/LevelSelect/Stage2LevelSelect/Stage2LevelSelect.gd" type="Script" id=1]
 
 [node name="LevelSelect" type="CenterContainer"]
 anchor_right = 1.0
