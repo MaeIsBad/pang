@@ -3,7 +3,7 @@
 [ext_resource path="res://Player/Weapons/Gun/Bullet.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 12.0
+radius = 14.0
 
 [node name="Bullet" type="Node2D"]
 z_index = 500

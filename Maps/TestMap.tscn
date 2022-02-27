@@ -1,19 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MapElements/Ladder.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Maps/Map.tscn" type="PackedScene" id=3]
-
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 1 )
-colors = PoolColorArray( 0, 0, 0, 1 )
-
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
-width = 1000
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 500, 23.5 )
+[ext_resource path="res://MapElements/Platforms.gd" type="Script" id=4]
 
 [node name="Map" instance=ExtResource( 3 )]
 
@@ -41,13 +31,6 @@ editor_draw_screen = false
 [node name="Ladder" parent="." index="4" instance=ExtResource( 2 )]
 position = Vector2( 268, 598 )
 
-[node name="Platform" type="StaticBody2D" parent="." index="5"]
-position = Vector2( 585, 461 )
-
-[node name="Sprite" type="Sprite" parent="Platform" index="0"]
-scale = Vector2( 1, 46.5 )
-texture = SubResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" index="1"]
-position = Vector2( 0, 0.5 )
-shape = SubResource( 3 )
+[node name="Platforms" parent="." index="5"]
+tile_data = PoolIntArray( 655365, 1, 131072, 655366, 1, 131073, 655367, 1, 131073, 655368, 1, 131073, 655369, 1, 131073, 655370, 1, 131073, 655371, 1, 131073, 655372, 1, 131073, 655373, 1, 131073, 655374, 1, 131073, 655375, 1, 131073, 655376, 1, 131073, 655377, 1, 131073, 655378, 1, 131073, 655379, 1, 131074 )
+script = ExtResource( 4 )
