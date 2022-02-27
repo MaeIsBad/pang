@@ -47,7 +47,7 @@ var curr_rotation = Rotation.Right
 func switch_to_climbing():
 	$AnimationPlayer.current_animation = "Climbing"
 	assert(ladder != null)
-	self.position.x = ladder.position.x
+	self.global_position.x = ladder.global_position.x
 	collision_mask = 1<<3
 	state = State.Climbing
 	
@@ -95,7 +95,7 @@ func walking_process(_delta):
 	# warning-ignore:return_value_discarded
 	move_and_slide(Vector2(0.0,GRAVITY), UP)
 	
-	var can_switch_to_climbing = self.ladder && abs(self.ladder.position.x - self.position.x) < 10
+	var can_switch_to_climbing = self.ladder && abs(self.ladder.global_position.x - self.global_position.x) < 10
 	if (Input.is_action_pressed("ui_up") || Input.is_action_pressed("ui_down")) && can_switch_to_climbing:
 		self.switch_to_climbing()
 

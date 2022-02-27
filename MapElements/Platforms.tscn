@@ -1,11 +1,7 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=55 format=2]
 
-[ext_resource path="res://Ball/Ball.tscn" type="PackedScene" id=1]
-[ext_resource path="res://MapElements/Ladder.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Maps/Map.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Level/MapElements/Ladder.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Level/Platforms/Tilemap_4.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Level/MapElements/Glass.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Level/Platforms/Tilemap_4.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Level/MapElements/Glass.png" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -162,7 +158,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="TileSet" id=3]
 0/name = "Tilemap_4.png 0"
-0/texture = ExtResource( 5 )
+0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 176, 128 )
@@ -492,7 +488,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 0/z_index = 0
 1/name = "Glass.png 0"
-1/texture = ExtResource( 6 )
+1/texture = ExtResource( 2 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 176, 128 )
@@ -515,62 +511,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="TileSet" id=60]
-0/name = "ladder.png 0"
-0/texture = ExtResource( 4 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 16, 16 )
-0/tile_mode = 1
-0/autotile/bitmask_mode = 1
-0/autotile/bitmask_flags = [  ]
-0/autotile/icon_coordinate = Vector2( 0, 0 )
-0/autotile/tile_size = Vector2( 16, 16 )
-0/autotile/spacing = 0
-0/autotile/occluder_map = [  ]
-0/autotile/navpoly_map = [  ]
-0/autotile/priority_map = [  ]
-0/autotile/z_index_map = [  ]
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-
-[node name="Map" instance=ExtResource( 3 )]
-
-[node name="Player" parent="." index="0"]
-position = Vector2( 628, 801 )
-
-[node name="Ball" parent="." index="1" instance=ExtResource( 1 )]
-position = Vector2( 444, 255 )
-linear_velocity = Vector2( 300, 0 )
-size = 2
-
-[node name="Camera2D" parent="." index="3"]
-current = true
-editor_draw_screen = false
-
-[node name="Ladder" parent="." index="4" instance=ExtResource( 2 )]
-position = Vector2( 551, -32 )
-
-[node name="Label" type="Label" parent="." index="5"]
-margin_left = 123.0
-margin_top = 65.0
-margin_right = 163.0
-margin_bottom = 79.0
-rect_scale = Vector2( 4, 4 )
-text = "Level 2"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Platforms" parent="." index="6"]
+[node name="Platforms" type="TileMap"]
+scale = Vector2( 4, 4 )
 tile_set = SubResource( 3 )
-
-[node name="MapElements" parent="." index="7"]
-tile_set = SubResource( 60 )
-tile_data = PoolIntArray( 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 524295, 0, 0, 589828, 0, 0, 589831, 0, 0, 655364, 0, 0, 655367, 0, 0, 720900, 0, 0, 720903, 0, 0, 786436, 0, 0, 786439, 0, 0, 851972, 0, 0, 851975, 0, 0 )
+cell_size = Vector2( 16, 16 )
+cell_tile_origin = 1
+format = 1
