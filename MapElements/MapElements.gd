@@ -27,6 +27,7 @@ func create_ladders():
 			ladder.position.y += cell_size.y
 			
 			ladder.top -= cell_size.y
+			ladder.top += 4.0
 			ladder.bottom += 4.0
 			
 		ladder.top -= cell_size.y
