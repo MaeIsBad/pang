@@ -205,7 +205,7 @@ frames = SubResource( 1 )
 animation = "climbing"
 
 [node name="Feet" type="RayCast2D" parent="."]
-position = Vector2( 2, 27 )
+position = Vector2( 1, 24 )
 enabled = true
 cast_to = Vector2( 0, 5 )
 
@@ -220,6 +220,7 @@ position = Vector2( 1, 2.75 )
 shape = SubResource( 2 )
 
 [node name="Weapon" type="Node2D" parent="."]
+visible = false
 position = Vector2( 6, 11 )
 script = ExtResource( 4 )
 

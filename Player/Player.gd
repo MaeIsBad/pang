@@ -14,6 +14,11 @@ var ladder: Ladder = null
 const UP = Vector2(0.0, -1.0)
 const GRAVITY = 400.0
 
+enum CollisionMask {
+	CLIMBING = 1 << 3,
+	WALKING  = 1 << 0
+}
+
 # Returns true if found a ground to snap to
 func snap_to_ground() -> bool:
 	var col = get_world_2d().direct_space_state.intersect_ray(position,Vector2(0.0,10.0),[self])
@@ -48,17 +53,21 @@ func switch_to_climbing():
 	$AnimationPlayer.current_animation = "Climbing"
 	assert(ladder != null)
 	self.global_position.x = ladder.global_position.x
-	collision_mask = 1<<3
+	collision_mask = CollisionMask.CLIMBING
 	state = State.Climbing
 	
 func switch_to_walking():
-	collision_mask = 1<<0
+	collision_mask = CollisionMask.WALKING
 	state = State.Walking
 	
 func climbing_process(_delta):
-	var colliding_with_top = $Feet.get_collision_normal() == Vector2(0.0,-1.0)
-	var can_start_walking = $Feet.is_colliding() && colliding_with_top
+	var colliding_with_top = $Feet.get_collision_normal() == Vector2(0.0,-1.0) && $Feet.is_colliding()
+	collision_mask = CollisionMask.WALKING
+	var in_block := test_move(transform, Vector2(1.0,-1.0))
+	collision_mask = CollisionMask.CLIMBING
 	
+	var can_start_walking = !in_block && colliding_with_top
+
 	var direction := 0
 	if Input.is_action_pressed("ui_up"):
 		direction = -1
