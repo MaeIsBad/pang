@@ -104,9 +104,9 @@ config/icon="res://Assets/icon.png"
 
 [autoload]
 
-Console="*res://addons/quentincaffeino/console/src/Console.tscn"
 Levels="*res://Autoloads/Levels/Levels.gd"
 Init="res://Autoloads/Init.gd"
+Console="*res://addons/quentincaffeino/console/src/Console.tscn"
 SceneLoader="*res://Autoloads/SceneLoader.gd"
 Leaderboard="*res://Autoloads/Leaderboard.gd"
 

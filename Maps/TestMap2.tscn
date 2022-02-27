@@ -520,11 +520,11 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 16, 16 )
+0/region = Rect2( 0, 0, 48, 48 )
 0/tile_mode = 1
 0/autotile/bitmask_mode = 1
-0/autotile/bitmask_flags = [  ]
-0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 144, Vector2( 0, 1 ), 146 ]
+0/autotile/icon_coordinate = Vector2( 0, 1 )
 0/autotile/tile_size = Vector2( 16, 16 )
 0/autotile/spacing = 0
 0/autotile/occluder_map = [  ]
@@ -570,7 +570,8 @@ __meta__ = {
 
 [node name="Platforms" parent="." index="6"]
 tile_set = SubResource( 3 )
+tile_data = PoolIntArray( 327682, 0, 131072, 327683, 0, 131073, 327684, 0, 131073, 327685, 0, 131073, 327686, 0, 131073, 327687, 0, 131073, 327688, 0, 131073, 327689, 0, 131073, 327690, 0, 131073, 327691, 0, 131073, 327692, 0, 131074, 589830, 0, 131072, 589831, 0, 131073, 589832, 0, 131073, 589833, 0, 131073, 589834, 0, 131073, 589835, 0, 131073, 589836, 0, 131073, 589837, 0, 131073, 589838, 0, 131074 )
 
 [node name="MapElements" parent="." index="7"]
 tile_set = SubResource( 60 )
-tile_data = PoolIntArray( 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 524295, 0, 0, 589828, 0, 0, 589831, 0, 0, 655364, 0, 0, 655367, 0, 0, 720900, 0, 0, 720903, 0, 0, 786436, 0, 0, 786439, 0, 0, 851972, 0, 0, 851975, 0, 0 )
+tile_data = PoolIntArray( 262148, 0, 0, 327684, 0, 65536, 393220, 0, 65536, 458756, 0, 65536, 524292, 0, 65536, 524295, 0, 0, 589828, 0, 65536, 589831, 0, 65536, 655364, 0, 65536, 655367, 0, 65536, 720900, 0, 65536, 720903, 0, 65536, 786436, 0, 65536, 786439, 0, 65536, 851972, 0, 65536, 851975, 0, 65536 )
