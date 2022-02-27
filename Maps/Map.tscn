@@ -70,10 +70,11 @@ __meta__ = {
 anchor_mode = 0
 
 [node name="Platforms" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray(  )
 
 [node name="MapElements" parent="." instance=ExtResource( 5 )]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Background" type="Sprite" parent="."]
 position = Vector2( 959, 539 )
 scale = Vector2( 3.14251, 3.06597 )
 z_index = -99
