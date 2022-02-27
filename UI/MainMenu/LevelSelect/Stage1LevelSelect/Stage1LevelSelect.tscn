@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/MainMenu/LevelSelect/Stage1LevelSelect/Stage1LevelSelect.gd" type="Script" id=1]
+[ext_resource path="res://UI/Theme.tres" type="Theme" id=2]
 
 [node name="Stage1LevelSelect" type="CenterContainer"]
 anchor_right = 1.0
@@ -11,39 +12,45 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 882.0
-margin_top = 518.0
-margin_right = 1037.0
-margin_bottom = 562.0
+margin_left = 700.0
+margin_top = 420.0
+margin_right = 1220.0
+margin_bottom = 660.0
+custom_constants/separation = 32
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 155.0
-margin_bottom = 20.0
+margin_right = 520.0
+margin_bottom = 104.0
+custom_constants/separation = 32
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Easy" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_right = 40.0
-margin_bottom = 20.0
+margin_right = 132.0
+margin_bottom = 104.0
+theme = ExtResource( 2 )
 text = "Easy"
 
 [node name="Medium" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 44.0
-margin_right = 109.0
-margin_bottom = 20.0
+margin_left = 164.0
+margin_right = 351.0
+margin_bottom = 104.0
+theme = ExtResource( 2 )
 text = "Medium"
 
 [node name="Hard" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 113.0
-margin_right = 155.0
-margin_bottom = 20.0
+margin_left = 383.0
+margin_right = 520.0
+margin_bottom = 104.0
+theme = ExtResource( 2 )
 text = "Hard"
 
 [node name="Back" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 155.0
-margin_bottom = 44.0
+margin_top = 136.0
+margin_right = 520.0
+margin_bottom = 240.0
+theme = ExtResource( 2 )
 text = "Back"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Easy" to="." method="select_difficulty" binds= [ 0 ]]
