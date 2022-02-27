@@ -23,6 +23,7 @@ margin_left = 1920.0
 margin_right = 1920.0
 
 [node name="MainMenuBackground" parent="." instance=ExtResource( 5 )]
+scroll_ignore_camera_zoom = true
 
 [connection signal="start_pressed" from="MainScreen" to="." method="on_start_button_pressed"]
 [connection signal="back" from="Stage1LevelSelect" to="." method="on_level_select_back"]
