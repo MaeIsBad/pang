@@ -57,7 +57,6 @@ __meta__ = {
 anchor_mode = 0
 
 [node name="Platforms" parent="." instance=ExtResource( 4 )]
-tile_data = PoolIntArray(  )
 
 [node name="MapElements" parent="." instance=ExtResource( 5 )]
 

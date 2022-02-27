@@ -40,7 +40,6 @@ editor_draw_screen = false
 
 [node name="Ladder" parent="." index="4" instance=ExtResource( 2 )]
 position = Vector2( 268, 598 )
-height = 300.0
 
 [node name="Platform" type="StaticBody2D" parent="." index="5"]
 position = Vector2( 585, 461 )
