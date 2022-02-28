@@ -53,6 +53,9 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Platforms" parent="." instance=ExtResource( 4 )]
 
@@ -64,6 +67,9 @@ scale = Vector2( 3.14251, 3.06597 )
 z_index = -99
 texture = ExtResource( 7 )
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 Background = 1
 
 [connection signal="touched_ball" from="Player" to="." method="on_Player_touched_ball"]

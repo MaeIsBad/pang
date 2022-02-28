@@ -69,7 +69,7 @@ func touched_bullet(_bullet):
 	pop()
 
 func _draw():
-	draw_circle(Vector2(0.0,0.0), get_radius(), Color.black)
+	draw_circle(Vector2(0.0,0.0), get_radius(), Color.gray)
 
 func body_entered(body: Node2D):
 	if body.has_method("touched_ball"):
