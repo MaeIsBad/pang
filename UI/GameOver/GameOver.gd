@@ -1,5 +1,5 @@
 class_name GameOver
-extends Node2D
+extends CenterContainer
 
 onready var score: LeaderboardManager.Score
 onready var score_display := $HBoxContainer/MarginContainer/ScoreDisplayLabel
@@ -14,7 +14,7 @@ func set_score(score_: LeaderboardManager.Score):
 	score_display.text = score_display.text.replace("$SCORE", score.points)
 	
 func nick_text_changed(new_text: String):
-	score.name = new_text
+	#score.name = new_text
 	submit_button.disabled = len(new_text) == 0
 
 func submit_button_pressed():

@@ -1,4 +1,4 @@
-lextends Node
+extends Node
 
 var allLevels = [
 	Level.new("test.1","Test level 1", "res://Maps/TestMap.tscn", Level.Difficulty.Easy,6),
