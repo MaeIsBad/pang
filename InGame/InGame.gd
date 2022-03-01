@@ -13,6 +13,7 @@ signal lost
 # script before adding this scene to the tree
 var level_manager: LevelManagerBase
 
+var current_map: Map
 var lives: int setget set_lives
 
 var game_over_scn := preload("res://UI/GameOver/GameOver.tscn")
@@ -70,6 +71,7 @@ func game_over():
 	SceneLoader.replace_current_scene_with_node(game_over_node)
 	
 func set_map(map: Map):
+	current_map = map
 	ui.set_map(map)
 	assert(map.connect("player_touched_ball", self, "on_player_touched_ball") == OK)
 	assert(map.connect("won", self, "win") == OK)

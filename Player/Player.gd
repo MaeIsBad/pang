@@ -31,8 +31,6 @@ func snap_to_ground() -> bool:
 
 func _ready():
 	$AnimationPlayer.stop(false)
-	
-	switch_to_walking()
 
 func _process(delta):
 	if(state == State.Walking):
@@ -116,3 +114,30 @@ func ladder_entered(l_entered: Ladder):
 
 func ladder_exited(_ladder: Ladder):
 	self.ladder = null
+
+const props_to_save = [
+	"scale",
+	"curr_rotation",
+	"rotation",
+	"position",
+	"state",
+	"snapped_to_ground"
+]
+
+func save_node():
+	var props = {}
+	for prop in props_to_save:
+		props[prop] = get(prop)
+
+	var ladder_path = ""
+	if self.ladder:
+		ladder_path = get_path_to(ladder)
+	props["ladder_path"] = ladder_path
+	return props
+
+func load_node(props: Dictionary):
+	for prop in props_to_save:
+		set(prop, props[prop])
+	if props["ladder_path"]:
+		yield(self,"tree_entered")
+		ladder = get_node(props["ladder_path"])
