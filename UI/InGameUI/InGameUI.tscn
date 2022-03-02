@@ -20,7 +20,7 @@ font_data = SubResource( 3 )
 [node name="InGameUI" type="VSplitContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-collapsed = true
+split_offset = 900
 dragger_visibility = 2
 script = ExtResource( 1 )
 __meta__ = {
@@ -28,18 +28,22 @@ __meta__ = {
 "_edit_vertical_guides_": [ -222.0 ]
 }
 
-[node name="LevelContainer" type="ViewportContainer" parent="."]
+[node name="GlitchContainer" type="Control" parent="."]
 margin_right = 1920.0
 margin_bottom = 900.0
 
-[node name="Viewport" type="Viewport" parent="LevelContainer"]
+[node name="LevelContainer" type="ViewportContainer" parent="GlitchContainer"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="Viewport" type="Viewport" parent="GlitchContainer/LevelContainer"]
 size = Vector2( 1920, 900 )
 handle_input_locally = false
 render_target_update_mode = 3
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
 
-[node name="Map" parent="LevelContainer/Viewport" instance_placeholder="res://Maps/TestMap.tscn"]
+[node name="Map" parent="GlitchContainer/LevelContainer/Viewport" instance_placeholder="res://Maps/TestMap.tscn"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_top = 900.0
@@ -47,10 +51,9 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 color = Color( 0, 0.0901961, 0.168627, 1 )
 
-[node name="Placeholder" type="MarginContainer" parent="."]
-margin_top = 900.0
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 margin_right = 1920.0
-margin_bottom = 1080.0
+margin_bottom = 180.0
 custom_constants/margin_right = 100
 custom_constants/margin_top = 50
 custom_constants/margin_left = 100
@@ -59,13 +62,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Placeholder"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer"]
 margin_left = 100.0
 margin_top = 50.0
 margin_right = 1820.0
 margin_bottom = 130.0
 
-[node name="LivesLeft" type="Label" parent="Placeholder/HBoxContainer"]
+[node name="LivesLeft" type="Label" parent="ColorRect/MarginContainer/HBoxContainer"]
 margin_right = 858.0
 margin_bottom = 80.0
 size_flags_horizontal = 3
@@ -73,11 +76,10 @@ theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 2 )
 text = "1"
 
-[node name="Score" type="Label" parent="Placeholder/HBoxContainer"]
+[node name="Score" type="Label" parent="ColorRect/MarginContainer/HBoxContainer"]
 margin_left = 862.0
-margin_top = 39.0
 margin_right = 1720.0
-margin_bottom = 41.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 4 )

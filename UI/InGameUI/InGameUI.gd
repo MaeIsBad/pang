@@ -1,8 +1,8 @@
 extends VSplitContainer
 
-onready var lives_counter: Label = $Placeholder/HBoxContainer/LivesLeft
-onready var score_display: Label = $Placeholder/HBoxContainer/Score
-onready var viewport: Viewport = $LevelContainer/Viewport/
+onready var lives_counter: Label = $ColorRect/MarginContainer/HBoxContainer/LivesLeft
+onready var score_display: Label = $ColorRect/MarginContainer/HBoxContainer/Score
+onready var viewport: Viewport = $GlitchContainer/LevelContainer/Viewport/
 
 
 func set_lives_counter(lives: int):
