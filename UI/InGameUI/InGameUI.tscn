@@ -1,11 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UI/InGameUI/InGameUI.gd" type="Script" id=1]
 [ext_resource path="res://UI/Theme.tres" type="Theme" id=2]
 [ext_resource path="res://Maps/TestMap.tscn" type="PackedScene" id=3]
-
-[sub_resource type="ViewportTexture" id=5]
-viewport_path = NodePath("Main/ViewportContainer/Viewport")
 
 [sub_resource type="Shader" id=8]
 code = "/*
@@ -59,7 +56,7 @@ void fragment( )
 shader = SubResource( 8 )
 shader_param/shake_power = 0.03
 shader_param/shake_block_size = 30.5
-shader_param/fade = 0.0
+shader_param/fade = 0.01
 shader_param/direction_r = Vector2( 1, 0 )
 shader_param/direction_g = Vector2( 0.4, 1 )
 shader_param/direction_b = Vector2( -0.7, -0.3 )
@@ -95,26 +92,16 @@ __meta__ = {
 margin_right = 1920.0
 margin_bottom = 900.0
 
-[node name="ViewportContainer" type="Control" parent="Main"]
+[node name="ViewportContainer" type="ViewportContainer" parent="Main"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ViewportTexture" type="TextureRect" parent="Main/ViewportContainer"]
-margin_right = 1920.0
-margin_bottom = 900.0
-texture = SubResource( 5 )
-flip_v = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Viewport" type="Viewport" parent="Main/ViewportContainer"]
 size = Vector2( 1920, 900 )
 transparent_bg = true
 handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
 
