@@ -15,7 +15,7 @@ export(float) var min_horizontal_velocity = 200.0
 
 var ball_scn = load("res://Ball/Ball.tscn")
 
-var invincibility_left := 0.1
+var invincible := true
 
 func get_radius():
 	return size*base_size
@@ -24,11 +24,8 @@ func _ready():
 	var shape = CircleShape2D.new()
 	shape.radius = get_radius()
 	$CollisionShape2D.shape = shape
-
-func _process(delta):
-	if invincibility_left > 0.0:
-		invincibility_left -= delta
-		invincibility_left = max(invincibility_left, 0.0)
+	yield(get_tree().create_timer(0.1),"timeout")
+	invincible = false
 
 func spawn_child_ball(flip_x: bool = false) -> Ball:
 	var ball = ball_scn.instance()
@@ -45,7 +42,7 @@ func spawn_child_ball(flip_x: bool = false) -> Ball:
 
 # Destroy the ball, play the "pop" sound and spawn 2 child balls
 func pop():
-	if self.invincibility_left > 0.0:
+	if self.invincible:
 		return
 	# Don't destroy the ball more than once
 	if self.is_queued_for_deletion():
@@ -91,23 +88,3 @@ func _integrate_forces(state: Physics2DDirectBodyState):
 	if abs(state.linear_velocity.x) < min_horizontal_velocity:
 		var direction = 1 if state.linear_velocity.x > 0 else -1
 		state.linear_velocity.x = min_horizontal_velocity*direction
-
-const props_to_save = [
-	"position",
-	"linear_velocity",
-	"size",
-	"base_size",
-	"bounce_damp",
-	"smallest_bounce_height",
-	"min_horizontal_velocity",
-	"invincibility_left"
-]
-
-func save_node():
-	var props = {}
-	for prop in props_to_save:
-		props[prop] = get(prop)
-	return props
-func load_node(props: Dictionary):
-	for prop in props_to_save:
-		set(prop, props[prop])
