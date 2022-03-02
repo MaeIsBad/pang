@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://UI/MainMenu/MainScreen/MainScreen.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://UI/MainMenu/MainMenuBackground.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/MainMenu/LevelSelect/Stage2LevelSelect/Stage2LevelSelect.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/MainMenu/ModuleSelect.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/ScoreboardUI/Scoreboard.tscn" type="PackedScene" id=8]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
@@ -41,9 +42,15 @@ scroll_ignore_camera_zoom = true
 margin_left = 1920.0
 margin_right = 1920.0
 
+[node name="Scoreboard" parent="." instance=ExtResource( 8 )]
+margin_top = 1480.0
+margin_bottom = 1480.0
+
+[connection signal="score_pressed" from="MainScreen" to="." method="switch_to_view" binds= [ 4 ]]
 [connection signal="start_pressed" from="MainScreen" to="." method="switch_to_view" binds= [ 2 ]]
 [connection signal="back" from="Stage1LevelSelect" to="." method="switch_to_view" binds= [ 2 ]]
 [connection signal="back" from="Stage2LevelSelect" to="." method="switch_to_view" binds= [ 2 ]]
 [connection signal="back" from="ModuleSelect" to="." method="switch_to_view" binds= [ 0 ]]
 [connection signal="module_1_selected" from="ModuleSelect" to="." method="switch_to_view" binds= [ 1 ]]
 [connection signal="module_2_selected" from="ModuleSelect" to="." method="switch_to_view" binds= [ 3 ]]
+[connection signal="back" from="Scoreboard" to="." method="switch_to_view" binds= [ 0 ]]

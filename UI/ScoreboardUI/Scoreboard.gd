@@ -1,8 +1,12 @@
 extends Control
+
+# warning-ignore:unused_signal
+signal back
+
 onready var module_to_col = {
-		1: $HBoxContainer/Module1Scores,
-		2: $HBoxContainer/Module2Scores,
-		3: $HBoxContainer/Module3Scores
+		1: $VSplitContainer/HBoxContainer/Module1Scores,
+		2: $VSplitContainer/HBoxContainer/Module2Scores,
+		3: $VSplitContainer/HBoxContainer/Module3Scores
 }
 func _ready():
 	assert(Leaderboard.connect("score_changed", self, "score_changed") == OK)
