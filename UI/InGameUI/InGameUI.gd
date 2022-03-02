@@ -1,7 +1,7 @@
 extends VSplitContainer
 
-onready var lives_counter: Label = $ColorRect/MarginContainer/HBoxContainer/LivesLeft
-onready var score_display: Label = $ColorRect/MarginContainer/HBoxContainer/Score
+onready var lives_counter: Label = $ColorRect/MarginContainer/HBoxContainer/Info/HBoxContainer/LivesLeft
+onready var score_display: Label = $ColorRect/MarginContainer/HBoxContainer/Score/Score
 onready var viewport: Viewport = $Main/ViewportContainer/Viewport
 onready var glitch_texture: TextureRect = $Main/GlitchContainer/GlitchTexture
 
