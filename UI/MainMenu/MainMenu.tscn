@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://UI/MainMenu/MainScreen/MainScreen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/MainMenu/MainMenuCamera.gd" type="Script" id=3]
 [ext_resource path="res://UI/MainMenu/LevelSelect/Stage1LevelSelect/Stage1LevelSelect.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/MainMenu/MainMenuBackground.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/MainMenu/LevelSelect/Stage2LevelSelect/Stage2LevelSelect.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/MainMenu/ModuleSelect.tscn" type="PackedScene" id=7]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
@@ -20,10 +22,28 @@ script = ExtResource( 3 )
 
 [node name="Stage1LevelSelect" parent="." instance=ExtResource( 4 )]
 margin_left = 1920.0
+margin_top = -1080.0
 margin_right = 1920.0
+margin_bottom = -1080.0
+
+[node name="Stage2LevelSelect" parent="." instance=ExtResource( 6 )]
+margin_left = 1920.0
+margin_top = 1080.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 
 [node name="MainMenuBackground" parent="." instance=ExtResource( 5 )]
+offset = Vector2( 200, -1000 )
+transform = Transform2D( 1, 0, 0, 1, 200, -1000 )
 scroll_ignore_camera_zoom = true
 
-[connection signal="start_pressed" from="MainScreen" to="." method="on_start_button_pressed"]
-[connection signal="back" from="Stage1LevelSelect" to="." method="on_level_select_back"]
+[node name="ModuleSelect" parent="." instance=ExtResource( 7 )]
+margin_left = 1920.0
+margin_right = 1920.0
+
+[connection signal="start_pressed" from="MainScreen" to="." method="switch_to_view" binds= [ 2 ]]
+[connection signal="back" from="Stage1LevelSelect" to="." method="switch_to_view" binds= [ 2 ]]
+[connection signal="back" from="Stage2LevelSelect" to="." method="switch_to_view" binds= [ 2 ]]
+[connection signal="back" from="ModuleSelect" to="." method="switch_to_view" binds= [ 0 ]]
+[connection signal="module_1_selected" from="ModuleSelect" to="." method="switch_to_view" binds= [ 1 ]]
+[connection signal="module_2_selected" from="ModuleSelect" to="." method="switch_to_view" binds= [ 3 ]]

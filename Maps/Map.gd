@@ -22,7 +22,7 @@ func command_spawn_ball(size: int):
 	add_child(ball)
 
 func command_nuke():
-	for ball in  get_tree().get_nodes_in_group("Balls"):
+	for ball in get_tree().get_nodes_in_group("Balls"):
 		ball.pop()
 
 # Global var used to keep track if we've already won
