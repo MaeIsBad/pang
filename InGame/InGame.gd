@@ -70,6 +70,7 @@ func game_over():
 	SceneLoader.replace_current_scene_with_node(game_over_node)
 	
 func set_map(map: Map):
+	ui.glitch()	
 	ui.set_map(map)
 	assert(map.connect("player_touched_ball", self, "on_player_touched_ball") == OK)
 	assert(map.connect("won", self, "win") == OK)
