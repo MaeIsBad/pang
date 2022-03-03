@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Settings.png-4c0961f3ced12d87af05e59e04faf2df.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Settings.png"
+dest_files=[ "res://.import/Settings.png-4c0961f3ced12d87af05e59e04faf2df.image" ]
+
+[params]
+

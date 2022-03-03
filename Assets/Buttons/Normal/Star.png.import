@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Star.png-3c1b4b1c68c52425daa09891b37be1c0.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Star.png"
+dest_files=[ "res://.import/Star.png-3c1b4b1c68c52425daa09891b37be1c0.image" ]
+
+[params]
+

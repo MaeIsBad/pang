@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Score.png-bd9b65e20a82f17ad04d06df7f7b72d6.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Score.png"
+dest_files=[ "res://.import/Score.png-bd9b65e20a82f17ad04d06df7f7b72d6.image" ]
+
+[params]
+

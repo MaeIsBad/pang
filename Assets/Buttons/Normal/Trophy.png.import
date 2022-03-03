@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Trophy.png-89d32feb04e85989ed9abf1d02c7a502.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Trophy.png"
+dest_files=[ "res://.import/Trophy.png-89d32feb04e85989ed9abf1d02c7a502.image" ]
+
+[params]
+

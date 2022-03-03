@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Back.png-6dad107a1d273d6045b09f24ff8b734c.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Back.png"
+dest_files=[ "res://.import/Back.png-6dad107a1d273d6045b09f24ff8b734c.image" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Pause.png-9e1d2862e666264b0320fc4af43f5ff8.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Pause.png"
+dest_files=[ "res://.import/Pause.png-9e1d2862e666264b0320fc4af43f5ff8.image" ]
+
+[params]
+

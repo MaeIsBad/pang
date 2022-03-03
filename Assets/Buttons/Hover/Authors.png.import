@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Authors.png-d975c888062e355eb669995cd366f6a9.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Authors.png"
+dest_files=[ "res://.import/Authors.png-d975c888062e355eb669995cd366f6a9.image" ]
+
+[params]
+

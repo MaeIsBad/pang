@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Arrow_bottom.png-7b7920b791d971ee9676c38a651fd784.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Arrow_bottom.png"
+dest_files=[ "res://.import/Arrow_bottom.png-7b7920b791d971ee9676c38a651fd784.image" ]
+
+[params]
+

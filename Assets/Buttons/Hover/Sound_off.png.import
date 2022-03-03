@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Sound_off.png-214873858ba19aa413aee41ef06c4a1e.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Sound_off.png"
+dest_files=[ "res://.import/Sound_off.png-214873858ba19aa413aee41ef06c4a1e.image" ]
+
+[params]
+

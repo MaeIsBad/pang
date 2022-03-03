@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Authors.png-8d39e9948236fab8b136c7904ed21b1b.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Authors.png"
+dest_files=[ "res://.import/Authors.png-8d39e9948236fab8b136c7904ed21b1b.image" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Arrow_bottom.png-a4f2020dc69dff2b98dfff4c353dcab0.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Arrow_bottom.png"
+dest_files=[ "res://.import/Arrow_bottom.png-a4f2020dc69dff2b98dfff4c353dcab0.image" ]
+
+[params]
+

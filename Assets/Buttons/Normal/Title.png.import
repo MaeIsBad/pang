@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Title.png-27845849138be393dfae84a7ff68484d.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Title.png"
+dest_files=[ "res://.import/Title.png-27845849138be393dfae84a7ff68484d.image" ]
+
+[params]
+

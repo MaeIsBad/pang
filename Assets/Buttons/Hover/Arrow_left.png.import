@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Arrow_left.png-f615e871a91b6c9a73d04626ff520af9.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Arrow_left.png"
+dest_files=[ "res://.import/Arrow_left.png-f615e871a91b6c9a73d04626ff520af9.image" ]
+
+[params]
+

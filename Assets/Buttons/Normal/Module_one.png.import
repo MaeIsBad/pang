@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Module_one.png-df730a3372cb480ba8b25f31a0694300.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Module_one.png"
+dest_files=[ "res://.import/Module_one.png-df730a3372cb480ba8b25f31a0694300.image" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Arrow_right.png-28b0bcfe7f9bdd3a837d187ffa42f14e.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Arrow_right.png"
+dest_files=[ "res://.import/Arrow_right.png-28b0bcfe7f9bdd3a837d187ffa42f14e.image" ]
+
+[params]
+

@@ -12,44 +12,44 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 700.0
-margin_top = 420.0
-margin_right = 1220.0
-margin_bottom = 660.0
+margin_left = 685.0
+margin_top = 412.0
+margin_right = 1235.0
+margin_bottom = 668.0
 custom_constants/separation = 32
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 520.0
-margin_bottom = 104.0
+margin_right = 550.0
+margin_bottom = 112.0
 custom_constants/separation = 32
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Easy" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_right = 132.0
-margin_bottom = 104.0
+margin_right = 148.0
+margin_bottom = 112.0
 theme = ExtResource( 2 )
 text = "Easy"
 
 [node name="Medium" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 164.0
-margin_right = 351.0
-margin_bottom = 104.0
+margin_left = 180.0
+margin_right = 370.0
+margin_bottom = 112.0
 theme = ExtResource( 2 )
 text = "Medium"
 
 [node name="Hard" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 383.0
-margin_right = 520.0
-margin_bottom = 104.0
+margin_left = 402.0
+margin_right = 550.0
+margin_bottom = 112.0
 theme = ExtResource( 2 )
 text = "Hard"
 
 [node name="Back" type="Button" parent="VBoxContainer"]
-margin_top = 136.0
-margin_right = 520.0
-margin_bottom = 240.0
+margin_top = 144.0
+margin_right = 550.0
+margin_bottom = 256.0
 theme = ExtResource( 2 )
 text = "Back"
 

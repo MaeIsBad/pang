@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Exit.png-c00b2f8504f201c9d1f6d51970e12d4d.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Exit.png"
+dest_files=[ "res://.import/Exit.png-c00b2f8504f201c9d1f6d51970e12d4d.image" ]
+
+[params]
+

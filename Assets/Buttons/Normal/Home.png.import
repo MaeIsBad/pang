@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Home.png-5d76abcdbf61a1a1ad6ddb8f56897b98.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Home.png"
+dest_files=[ "res://.import/Home.png-5d76abcdbf61a1a1ad6ddb8f56897b98.image" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Empty_hover.png-f84c310448a3daef20c01280e230b9eb.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Empty_hover.png"
+dest_files=[ "res://.import/Empty_hover.png-f84c310448a3daef20c01280e230b9eb.image" ]
+
+[params]
+

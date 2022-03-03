@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Delete.png-ec4f8c33a55860b361c355694eddf9bc.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Delete.png"
+dest_files=[ "res://.import/Delete.png-ec4f8c33a55860b361c355694eddf9bc.image" ]
+
+[params]
+

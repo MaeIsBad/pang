@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Delete.png-5dd3651a410158d23ac4f6e90243f9dd.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Delete.png"
+dest_files=[ "res://.import/Delete.png-5dd3651a410158d23ac4f6e90243f9dd.image" ]
+
+[params]
+

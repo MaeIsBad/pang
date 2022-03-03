@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Start.png-393f460283b5d076dceec6806acebae3.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Start.png"
+dest_files=[ "res://.import/Start.png-393f460283b5d076dceec6806acebae3.image" ]
+
+[params]
+

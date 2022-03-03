@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Module_two.png-004c860af02bf4dad05c58870fc06b45.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Module_two.png"
+dest_files=[ "res://.import/Module_two.png-004c860af02bf4dad05c58870fc06b45.image" ]
+
+[params]
+

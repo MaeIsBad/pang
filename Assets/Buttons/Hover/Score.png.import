@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Score.png-672d26609e5ec9632b7ce9ab4cbdbf43.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Score.png"
+dest_files=[ "res://.import/Score.png-672d26609e5ec9632b7ce9ab4cbdbf43.image" ]
+
+[params]
+

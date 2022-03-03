@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Pause.png-672038ff93134d17e3e51f68c11f43a4.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Pause.png"
+dest_files=[ "res://.import/Pause.png-672038ff93134d17e3e51f68c11f43a4.image" ]
+
+[params]
+
