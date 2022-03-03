@@ -20,7 +20,4 @@ func get_module_num() -> int:
 
 var map_cache: Resource
 func load_map() -> Map:
-	if !map_cache:
-		map_cache = get_current_level().load_map()
-	assert(map_cache != null)
-	return map_cache.instance()
+	return get_current_level().load_map().instance()
