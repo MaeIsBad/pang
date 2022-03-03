@@ -32,7 +32,7 @@ __meta__ = {
 [node name="Module1Scores" parent="VSplitContainer/HBoxContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 618.0
+margin_right = 944.0
 margin_bottom = 936.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -41,14 +41,15 @@ column_name = "Stage 1"
 [node name="Module2Scores" parent="VSplitContainer/HBoxContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 650.0
-margin_right = 1269.0
+margin_left = 976.0
+margin_right = 1920.0
 margin_bottom = 936.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 column_name = "Stage 2"
 
 [node name="Module3Scores" parent="VSplitContainer/HBoxContainer" instance=ExtResource( 1 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 1301.0
