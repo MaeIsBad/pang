@@ -38,7 +38,7 @@ func set_lives(lives_: int):
 	lives = lives_	
 	ui.set_lives_counter(lives)
 
-func on_player_touched_ball():
+func on_player_touched_ball(_ball):
 	self.lives -= 1
 	if self.lives == 0:
 		lose()
@@ -72,9 +72,12 @@ func game_over():
 func set_map(map: Map):
 	ui.glitch()	
 	ui.set_map(map)
-	assert(map.connect("player_touched_ball", self, "on_player_touched_ball") == OK)
+	assert(map.connect("player_ready", self, "on_player_ready") == OK)
 	assert(map.connect("won", self, "win") == OK)
 	emit_signal("map_changed",map)
+
+func on_player_ready(player: Player):
+	assert(player.connect("touched_ball", self, "on_player_touched_ball") == OK)
 
 func set_level(level: Level):
 	self.lives = level.lives

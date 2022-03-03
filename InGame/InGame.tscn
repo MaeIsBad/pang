@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/InGameUI/InGameUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://InGame/InGame.gd" type="Script" id=2]
 [ext_resource path="res://InGame/ScoreHandler.gd" type="Script" id=3]
+[ext_resource path="res://InGame/WeaponDisplay.gd" type="Script" id=4]
 
 [node name="InGame" type="Node"]
 script = ExtResource( 2 )
@@ -11,6 +12,9 @@ script = ExtResource( 2 )
 
 [node name="ScoreHandler" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="WeaponDisplay" type="Node" parent="."]
+script = ExtResource( 4 )
 
 [connection signal="died" from="." to="ScoreHandler" method="on_player_died"]
 [connection signal="lost" from="." to="ScoreHandler" method="on_player_lost"]

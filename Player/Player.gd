@@ -3,6 +3,8 @@ class_name Player
 
 signal touched_ball(Ball)
 
+onready var weapon := $Weapon
+
 enum State {Walking, Climbing}
 
 var state = State.Walking

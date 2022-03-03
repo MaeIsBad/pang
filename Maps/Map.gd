@@ -1,7 +1,7 @@
 extends Node2D
 class_name Map
 
-signal player_touched_ball
+signal player_ready(Player)
 signal won
 signal ball_popped(ball)
 
@@ -14,7 +14,8 @@ func _ready():
 	Console.remove_command("nuke")
 	Console.add_command("nuke", self, "command_nuke")\
 	.register()
-
+	emit_signal("player_ready", $Player)
+	
 func command_spawn_ball(size: int):
 	var ball = preload("res://Ball/Ball.tscn").instance()
 	ball.global_position = get_viewport().get_mouse_position()
