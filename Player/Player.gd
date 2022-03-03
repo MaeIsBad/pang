@@ -66,7 +66,7 @@ func climbing_process(_delta):
 	var in_block := test_move(transform, Vector2(1.0,-1.0))
 	collision_mask = CollisionMask.CLIMBING
 	
-	var can_start_walking = !in_block && colliding_with_top
+	var can_start_walking = !in_block #&& colliding_with_top
 
 	var direction := 0
 	if Input.is_action_pressed("ui_up"):
