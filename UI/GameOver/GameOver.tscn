@@ -75,3 +75,4 @@ disabled = true
 text = "Add result"
 
 [connection signal="text_changed" from="HBoxContainer/HBoxContainer/NickInput" to="." method="nick_text_changed"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer/SubmitButton" to="." method="submit_button_pressed"]
