@@ -166,16 +166,16 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 737.0
+margin_left = 681.0
 margin_top = 343.0
-margin_right = 1182.0
+margin_right = 1238.0
 margin_bottom = 736.0
 custom_constants/separation = 40
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 material = SubResource( 26 )
-margin_left = 22.0
-margin_right = 422.0
+margin_left = 78.0
+margin_right = 478.0
 margin_bottom = 150.0
 size_flags_horizontal = 4
 theme = ExtResource( 3 )
@@ -183,7 +183,7 @@ texture = SubResource( 12 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 190.0
-margin_right = 445.0
+margin_right = 557.0
 margin_bottom = 318.0
 size_flags_horizontal = 4
 custom_constants/separation = 15
@@ -197,14 +197,14 @@ texture_hover = SubResource( 30 )
 
 [node name="Score" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 margin_left = 143.0
-margin_right = 159.0
+margin_right = 271.0
 margin_bottom = 128.0
 texture_normal = SubResource( 25 )
 texture_hover = SubResource( 36 )
 
 [node name="Options" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
-margin_left = 174.0
-margin_right = 302.0
+margin_left = 286.0
+margin_right = 414.0
 margin_bottom = 128.0
 texture_normal = SubResource( 8 )
 texture_hover = SubResource( 44 )
@@ -213,8 +213,8 @@ __meta__ = {
 }
 
 [node name="Exit" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
-margin_left = 317.0
-margin_right = 445.0
+margin_left = 429.0
+margin_right = 557.0
 margin_bottom = 128.0
 texture_normal = SubResource( 10 )
 texture_hover = SubResource( 54 )
@@ -223,9 +223,9 @@ __meta__ = {
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
-margin_left = 222.0
+margin_left = 278.0
 margin_top = 358.0
-margin_right = 222.0
+margin_right = 278.0
 margin_bottom = 393.0
 size_flags_horizontal = 6
 size_flags_vertical = 2

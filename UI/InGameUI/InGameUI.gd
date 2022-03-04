@@ -36,4 +36,7 @@ func glitch():
 	glitch_texture.material.set_shader_param("fade",0.00)	
 	set_weapon_scale()
 
-
+func _on_pause_button_pressed():
+	get_tree().paused = true
+	$PausePopup.show()
+	
