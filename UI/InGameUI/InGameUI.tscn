@@ -31,7 +31,7 @@ data = {
 flags = 0
 flags = 0
 image = SubResource( 32 )
-size = Vector2( 82, 82 )
+size = Vector2( 76, 76 )
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Webpixel/webpixel bitmap_medium.otf"
@@ -208,22 +208,22 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/Info"]
-margin_right = 114.0
-margin_bottom = 82.0
+margin_right = 108.0
+margin_bottom = 76.0
 size_flags_horizontal = 0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/HBoxContainer/Info/HBoxContainer"]
-margin_right = 82.0
-margin_bottom = 82.0
+margin_right = 76.0
+margin_bottom = 76.0
 texture = SubResource( 31 )
 stretch_mode = 3
 
 [node name="LivesLeft" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/Info/HBoxContainer"]
-margin_left = 92.0
-margin_top = 11.0
-margin_right = 114.0
-margin_bottom = 71.0
+margin_left = 86.0
+margin_top = 8.0
+margin_right = 108.0
+margin_bottom = 68.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 2 )
@@ -232,10 +232,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WeaponCharge" type="HBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/Info"]
-margin_top = 86.0
+[node name="Container" type="Container" parent="ColorRect/MarginContainer/HBoxContainer/Info"]
+margin_top = 80.0
 margin_right = 838.0
-margin_bottom = 118.0
+margin_bottom = 94.0
+size_flags_vertical = 3
+
+[node name="WeaponCharge" type="HBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/Info"]
+margin_top = 98.0
+margin_right = 838.0
+margin_bottom = 130.0
 
 [node name="Weapon" type="TextureRect" parent="ColorRect/MarginContainer/HBoxContainer/Info/WeaponCharge"]
 margin_right = 96.0

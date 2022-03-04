@@ -9,7 +9,7 @@ onready var weapon_charge: ProgressBar = $ColorRect/MarginContainer/HBoxContaine
 
 
 func set_weapon_scale():
-	weapon_texture.rect_scale = Vector2(5.0, 5.0)
+	weapon_texture.rect_scale = Vector2(4.0, 4.0)
 	weapon_texture.rect_rotation = -25.0
 
 func set_lives_counter(lives: int):

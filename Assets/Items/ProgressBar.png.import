@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/ProgressBar.png-360f45d34d6063f05cbd126266e4332f.image"
+
+[deps]
+
+source_file="res://Assets/Items/ProgressBar.png"
+dest_files=[ "res://.import/ProgressBar.png-360f45d34d6063f05cbd126266e4332f.image" ]
+
+[params]
+
