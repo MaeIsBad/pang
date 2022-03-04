@@ -8,7 +8,7 @@ func _ready():
 	weapon_sprite.texture = weapon.weapon_sprite
 
 
-func body_entered(body):
+func on_body_entered(body):
 	var player := body as Player
 	if player:
 		player.weapon.change_weapon(self.weapon)
