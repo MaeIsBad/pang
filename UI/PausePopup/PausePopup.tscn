@@ -143,3 +143,4 @@ texture_normal = SubResource( 11 )
 texture_hover = SubResource( 13 )
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Play" to="." method="_on_pause_popup_close_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Home" to="." method="home_button_pressed"]
