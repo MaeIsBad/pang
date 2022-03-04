@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Player/Weapons/Gun/Bullet.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Image" id=17]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 198, 60, 159, 255, 198, 60, 159, 255, 0, 0, 0, 0, 198, 60, 159, 255, 226, 76, 183, 255, 226, 76, 183, 255, 198, 60, 159, 255, 198, 60, 159, 255, 226, 76, 183, 255, 226, 76, 183, 255, 198, 60, 159, 255, 0, 0, 0, 0, 198, 60, 159, 255, 198, 60, 159, 255, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture" id=11]
+flags = 0
+flags = 0
+image = SubResource( 17 )
+size = Vector2( 16, 16 )
+
+[sub_resource type="Curve" id=15]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -0.757576, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=16]
+curve = SubResource( 15 )
+
+[sub_resource type="ParticlesMaterial" id=13]
+emission_shape = 2
+emission_box_extents = Vector3( 4, 4, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 5.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 80.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 4.0
+scale_curve = SubResource( 16 )
+color = Color( 0.886275, 0.298039, 0.717647, 1 )
+
+[node name="Bullet" instance=ExtResource( 1 )]
+
+[node name="Sprite" parent="." index="2"]
+texture = SubResource( 11 )
+
+[node name="Particles2D" parent="Sprite" index="0"]
+process_material = SubResource( 13 )
+
+[connection signal="body_entered" from="Area2D" to="." method="body_entered"]

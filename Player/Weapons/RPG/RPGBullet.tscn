@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Weapons/RPG/RPGBullet.gd" type="Script" id=1]
 
-[sub_resource type="Image" id=7]
+[sub_resource type="Image" id=17]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 211, 92, 88, 255, 211, 92, 88, 255, 0, 0, 0, 0, 211, 92, 88, 255, 242, 115, 111, 255, 242, 115, 111, 255, 211, 92, 88, 255, 211, 92, 88, 255, 242, 115, 111, 255, 242, 115, 111, 255, 211, 92, 88, 255, 0, 0, 0, 0, 211, 92, 88, 255, 211, 92, 88, 255, 0, 0, 0, 0 ),
 "format": "RGBA8",
@@ -14,8 +14,26 @@ data = {
 [sub_resource type="ImageTexture" id=6]
 flags = 0
 flags = 0
-image = SubResource( 7 )
+image = SubResource( 17 )
 size = Vector2( 16, 16 )
+
+[sub_resource type="Curve" id=15]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -0.757576, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=16]
+curve = SubResource( 15 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 9.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 70.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 4.0
+scale_curve = SubResource( 16 )
+color = Color( 0.94902, 0.45098, 0.435294, 1 )
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 12.0
@@ -29,6 +47,9 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = SubResource( 6 )
+
+[node name="Particles2D" type="Particles2D" parent="Sprite"]
+process_material = SubResource( 10 )
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
