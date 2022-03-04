@@ -40,6 +40,3 @@ func _process(_delta):
 
 func ball_popped(ball: Ball):
 	emit_signal("ball_popped", ball)
-
-func on_Player_touched_ball(_ball: Ball):
-	emit_signal("player_touched_ball")

@@ -18,7 +18,6 @@ export(Texture) var weapon_sprite
 var sprite
 func _init():
 	var child := Sprite.new()
-	child.owner = self
 	add_child(child)
 	sprite = child
 

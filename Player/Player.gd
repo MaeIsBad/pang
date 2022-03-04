@@ -63,7 +63,7 @@ func switch_to_walking():
 	state = State.Walking
 	
 func climbing_process(_delta):
-	var colliding_with_top = $Feet.get_collision_normal() == Vector2(0.0,-1.0) && $Feet.is_colliding()
+	# var colliding_with_top = $Feet.get_collision_normal() == Vector2(0.0,-1.0) && $Feet.is_colliding()
 	collision_mask = CollisionMask.WALKING
 	var in_block := test_move(transform, Vector2(1.0,-1.0))
 	collision_mask = CollisionMask.CLIMBING
