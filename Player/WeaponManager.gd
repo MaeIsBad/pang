@@ -41,6 +41,10 @@ func change_weapon(weapon: BaseWeapon):
 func weapon_emit_bullet(bullet: Node2D):
 	get_parent().get_parent().add_child(bullet)
 
+func _process(delta):
+	if Input.is_action_pressed("ui_accept"):
+		current_weapon.try_shoot()
+
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("ui_accept"):
 		get_tree().set_input_as_handled()
