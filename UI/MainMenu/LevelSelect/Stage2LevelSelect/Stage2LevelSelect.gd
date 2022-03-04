@@ -1,5 +1,6 @@
 extends Node
 
+# warning-ignore:unused_signal
 signal back
 
 var in_game_ui_scn = preload("res://UI/InGameUI/InGameUI.tscn")

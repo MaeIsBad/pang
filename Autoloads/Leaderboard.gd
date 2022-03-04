@@ -47,16 +47,18 @@ func restore(data):
 const LEADERBOARD_FILE := "user://leaderboard.save"
 func save_to_file(_module):
 	var f := File.new()
-	f.open(LEADERBOARD_FILE, f.WRITE)
-	f.store_var(save())
-	f.flush()
-	f.close()
+	if f.open(LEADERBOARD_FILE, f.WRITE) == OK:
+		f.store_var(save())
+		f.flush()
+		f.close()
+	else:
+		print("Failed to open the leaderboard file")
 
 func load_from_file():
 	var f := File.new()
-	f.open(LEADERBOARD_FILE, f.READ)
-	restore(f.get_var())
-	f.close()
+	if f.open(LEADERBOARD_FILE, f.READ):
+		restore(f.get_var())
+		f.close()
 	
 func _ready():
 	if File.new().file_exists(LEADERBOARD_FILE):
@@ -68,7 +70,7 @@ func _ready():
 	.add_argument("module", TYPE_INT)\
 	.register()
 	
-	connect("score_changed",self,"save_to_file")
+	assert(connect("score_changed",self,"save_to_file") == OK)
 
 func command_add_score(name: String, points: int, module: int):
 	var score := Score.new()
