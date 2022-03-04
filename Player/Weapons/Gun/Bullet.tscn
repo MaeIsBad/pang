@@ -1,9 +1,24 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Weapons/Gun/Bullet.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 14.0
+
+[sub_resource type="Image" id=5]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 190, 140, 255, 0, 190, 140, 255, 0, 0, 0, 0, 0, 190, 140, 255, 0, 255, 188, 255, 0, 255, 188, 255, 0, 190, 140, 255, 0, 190, 140, 255, 0, 255, 188, 255, 0, 255, 188, 255, 0, 190, 140, 255, 0, 0, 0, 0, 0, 190, 140, 255, 0, 190, 140, 255, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture" id=4]
+flags = 0
+flags = 0
+image = SubResource( 5 )
+size = Vector2( 16, 16 )
 
 [node name="Bullet" type="Node2D"]
 z_index = 500
@@ -17,6 +32,9 @@ collision_mask = 5
 shape = SubResource( 3 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 4 )
 
 [connection signal="body_entered" from="Area2D" to="." method="body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="queue_free"]

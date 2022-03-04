@@ -24,8 +24,5 @@ func explode():
 func _process(delta):
 	position -= Vector2(0.0, UNITS_PER_SECOND)*delta
 
-func _draw():
-	draw_circle(Vector2(0.0,0.0), 7.0, Color.red)
-
 func hitbox_entered(_body):
 	explode()

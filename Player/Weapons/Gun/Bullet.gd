@@ -10,6 +10,3 @@ func body_entered(body: Node2D):
 
 func _process(delta):
 	position += (Vector2(0.0, -UNITS_PER_SECOND).rotated(rotation))*delta
-
-func _draw():
-	draw_circle(Vector2(0.0,0.0), 7.0, Color.blue)

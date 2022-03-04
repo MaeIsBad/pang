@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/weapon_bullet_2.png-217ecf4766788e5e841719728d34a903.image"
+
+[deps]
+
+source_file="res://Assets/Player/Weapons/weapon_bullet_2.png"
+dest_files=[ "res://.import/weapon_bullet_2.png-217ecf4766788e5e841719728d34a903.image" ]
+
+[params]
+

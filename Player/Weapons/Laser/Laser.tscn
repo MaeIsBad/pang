@@ -2,19 +2,20 @@
 
 [ext_resource path="res://Player/Weapons/Laser/Laser.gd" type="Script" id=1]
 
-[sub_resource type="Gradient" id=4]
-offsets = PoolRealArray( 1 )
-colors = PoolColorArray( 0.884956, 0.884956, 0.884956, 1 )
+[sub_resource type="Gradient" id=7]
+colors = PoolColorArray( 0.227451, 0.909804, 0.968627, 1, 0.227451, 0.909804, 0.968627, 1 )
 
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 4 )
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 0.5, 0.5 )
 
 [node name="Laser" type="Node2D"]
 script = ExtResource( 1 )
-texture = SubResource( 5 )
+texture = SubResource( 8 )
+laser_speed = 300.0
+width = 4.0
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
