@@ -1,8 +1,7 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://UI/InGameUI/InGameUI.gd" type="Script" id=1]
 [ext_resource path="res://UI/Theme.tres" type="Theme" id=2]
-[ext_resource path="res://Maps/Map1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Shaders/Glitch.gdshader" type="Shader" id=4]
 [ext_resource path="res://Assets/Shaders/Wave.gdshader" type="Shader" id=5]
 [ext_resource path="res://Assets/Player/Weapons/weapon_1.png" type="Texture" id=6]
@@ -12,7 +11,7 @@
 shader = ExtResource( 4 )
 shader_param/shake_power = 0.0
 shader_param/shake_block_size = 50.0
-shader_param/fade = 0.01
+shader_param/fade = 0.0
 shader_param/direction_r = Vector2( 1, 0 )
 shader_param/direction_g = Vector2( 0.4, 1 )
 shader_param/direction_b = Vector2( -0.7, -0.3 )
@@ -130,7 +129,6 @@ image = SubResource( 36 )
 size = Vector2( 128, 128 )
 
 [node name="InGameUI" type="VSplitContainer"]
-pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 split_offset = 900
@@ -161,7 +159,7 @@ render_target_update_mode = 3
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
 
-[node name="Map" parent="Main/ViewportContainer/Viewport" instance=ExtResource( 3 )]
+[node name="Map" parent="Main/ViewportContainer/Viewport" instance_placeholder="res://Maps/Map1.tscn"]
 
 [node name="GlitchContainer" type="Control" parent="Main"]
 anchor_right = 1.0

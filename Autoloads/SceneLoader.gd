@@ -19,8 +19,13 @@ func command_switch_to_scene(scene_name: String):
 		
 func switch_to_in_game_with_manager(level_manager: LevelManagerBase):
 	var in_game: InGame = in_game_scn.instance()
-	in_game.level_manager = level_manager
 	replace_current_scene_with_node(in_game)
+	in_game.set_level_manager(level_manager)
+
+func resume_game(game: GameSave):
+	var in_game = in_game_scn.instance()
+	SceneLoader.replace_current_scene_with_node(in_game)
+	in_game.restore(game)
 
 func switch_to_main_menu():
 	var main_menu := main_menu_scn.instance()

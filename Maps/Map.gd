@@ -14,6 +14,7 @@ func _ready():
 	Console.remove_command("nuke")
 	Console.add_command("nuke", self, "command_nuke")\
 	.register()
+
 	emit_signal("player_ready", $Player)
 	
 func command_spawn_ball(size: int):

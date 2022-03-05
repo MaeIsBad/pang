@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/GameOver/GameOver.gd"
 }, {
+"base": "Resource",
+"class": "GameSave",
+"language": "GDScript",
+"path": "res://Autoloads/GameSave/GameSaveResource.gd"
+}, {
 "base": "Node2D",
 "class": "GunBullet",
 "language": "GDScript",
@@ -93,6 +98,7 @@ _global_script_class_icons={
 "Ball": "",
 "BaseWeapon": "",
 "GameOver": "",
+"GameSave": "",
 "GunBullet": "",
 "InGame": "",
 "Ladder": "",
@@ -121,6 +127,7 @@ Init="res://Autoloads/Init.gd"
 Console="*res://addons/quentincaffeino/console/src/Console.tscn"
 SceneLoader="*res://Autoloads/SceneLoader.gd"
 Leaderboard="*res://Autoloads/Leaderboard.gd"
+GameSaveManager="*res://Autoloads/GameSave/GameSaveManager.gd"
 
 [display]
 

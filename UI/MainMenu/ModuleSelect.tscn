@@ -141,7 +141,7 @@ size_flags_vertical = 0
 texture_normal = SubResource( 13 )
 texture_hover = SubResource( 18 )
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="ResumeGame" type="Button" parent="VBoxContainer"]
 margin_top = 448.0
 margin_right = 544.0
 margin_bottom = 560.0
@@ -150,3 +150,4 @@ text = "Wznów ostatnią grę"
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Module1" to="." method="emit_signal" binds= [ "module_1_selected" ]]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Module2" to="." method="emit_signal" binds= [ "module_2_selected" ]]
 [connection signal="pressed" from="VBoxContainer/CenterContainer/Back" to="." method="emit_signal" binds= [ "back" ]]
+[connection signal="pressed" from="VBoxContainer/ResumeGame" to="." method="on_resume_game_pressed"]
