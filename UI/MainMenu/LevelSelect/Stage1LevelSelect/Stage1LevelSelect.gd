@@ -6,4 +6,6 @@ signal back
 
 
 func select_difficulty(diff: int):
-	SceneLoader.switch_to_in_game_with_manager(Stage1LevelManager.new(diff))
+	var level_manager := Stage1LevelManager.new()
+	level_manager.difficulty = diff
+	SceneLoader.switch_to_in_game_with_manager(level_manager)

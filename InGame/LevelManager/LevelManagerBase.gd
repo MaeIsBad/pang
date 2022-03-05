@@ -21,3 +21,9 @@ func get_module_num() -> int:
 var map_cache: Resource
 func load_map() -> Map:
 	return get_current_level().load_map().instance()
+
+func save():
+	assert(false)
+	
+func restore(_data):
+	assert(false)

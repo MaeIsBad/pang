@@ -40,15 +40,28 @@ func _ready():
 	set_level(level_manager.get_current_level())
 	
 
-var saved_map: PackedScene
+var save_data: Dictionary
 func command_save():
-	saved_map = current_map.save()
+	save_data = save()
 	
 func command_load():
-	restore(saved_map)
+	restore(save_data)
 
-func restore(data: PackedScene):
-	set_map(data.instance())
+func save() -> Dictionary:
+	return {
+		"map": current_map.save(),
+		"level_manager_data": level_manager.save(),
+		"level_manager_script": level_manager.get_script().get_path(),
+		"score_data": score_handler.save(),
+		"lives": lives
+	}
+
+func restore(data: Dictionary):
+	level_manager = load(data["level_manager_script"]).new()
+	level_manager.restore(data["level_manager_data"])
+	score_handler.restore(data["score_data"])
+	lives = data["lives"]	
+	set_map(data["map"].instance())
 
 func command_set_lives(lives_: int):
 	set_lives(lives_)

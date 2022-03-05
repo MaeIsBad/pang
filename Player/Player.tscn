@@ -219,6 +219,5 @@ position = Vector2( 1, 2.75 )
 shape = SubResource( 2 )
 
 [node name="Weapon" type="Node2D" parent="."]
-visible = false
 position = Vector2( 6, 11 )
 script = ExtResource( 4 )

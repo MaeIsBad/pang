@@ -120,8 +120,8 @@ func ladder_entered(l_entered: Ladder):
 func ladder_exited(_ladder: Ladder):
 	self.ladder = null
 	
-func set_ladder(ladder: Ladder):
-	ladder_path = get_path_to(ladder)
+func set_ladder(ladder_: Ladder):
+	ladder_path = get_path_to(ladder_)
 	
 func get_ladder():
 	if ladder_path:

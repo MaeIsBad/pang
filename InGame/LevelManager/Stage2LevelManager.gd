@@ -25,3 +25,10 @@ func next_level() -> Level:
 		
 func get_module_num() -> int:
 	return 1
+
+func save():
+	return {
+		"current_level": current_level_idx,
+	}
+func restore(data: Dictionary):
+	self.current_level_idx = data["current_level"]

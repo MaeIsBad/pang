@@ -29,3 +29,13 @@ func on_player_won():
 
 func on_player_died():
 	self.score = score_pre_current_level
+
+func save() -> Dictionary:
+	return {
+		"score": score,
+		"score_pre_current_level": score_pre_current_level
+	}
+
+func restore(data: Dictionary):
+	self.score = data["score"]
+	self.score_pre_current_level = data["score_pre_current_level"]	
