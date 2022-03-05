@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/light.png-0e54d78b3f7538a9bbaa235c8e302b3e.image"
+
+[deps]
+
+source_file="res://Assets/Player/Weapons/light.png"
+dest_files=[ "res://.import/light.png-0e54d78b3f7538a9bbaa235c8e302b3e.image" ]
+
+[params]
+
