@@ -39,7 +39,13 @@ func _process(_delta):
 	pass
 
 func save() -> PackedScene:
+	# PackedScene.pack only saves nodes owned by the root node(self in this case)
+	# We want to save all the nodes, so we just change the owner on all the nodes to self
 	self.propagate_call("set_owner", [self])
+	# When restoring the scene if a node is a instanced scene the whole scene gets restored,
+	# which duplicates nodes. 
+	# Since we restore all the nodes by calling set_owner, even the children of instanced scenes 
+	# we need to call set_filename to unlink the nodes created by instancing a scene from their scene
 	self.propagate_call("set_filename", [""])
 	var saved := PackedScene.new()
 	assert(saved.pack(self) == OK)
