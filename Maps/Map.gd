@@ -42,7 +42,7 @@ func save() -> PackedScene:
 	self.propagate_call("set_owner", [self])
 	self.propagate_call("set_filename", [""])
 	var saved := PackedScene.new()
-	saved.pack(self)
+	assert(saved.pack(self) == OK)
 	return saved
 
 func ball_popped(ball: Ball):

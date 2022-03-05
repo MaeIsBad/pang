@@ -24,9 +24,7 @@ func _ready():
 	var shape = CircleShape2D.new()
 	shape.radius = get_radius()
 	$CollisionShape2D.shape = shape
-	yield(get_tree().create_timer(0.1),"timeout")
-	invincible = false
-
+	
 func spawn_child_ball(flip_x: bool = false) -> Ball:
 	var ball = ball_scn.instance()
 	ball.size = size-1
@@ -88,3 +86,7 @@ func _integrate_forces(state: Physics2DDirectBodyState):
 	if abs(state.linear_velocity.x) < min_horizontal_velocity:
 		var direction = 1 if state.linear_velocity.x > 0 else -1
 		state.linear_velocity.x = min_horizontal_velocity*direction
+
+
+func on_invincibility_timeout():
+	invincible = false

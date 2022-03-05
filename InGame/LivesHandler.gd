@@ -43,4 +43,4 @@ func on_level_changed(level: Level):
 	self.lives = level.lives
 
 func on_map_changed(map: Map):
-	map.connect("player_ready",self,"on_player_ready")
+	assert(map.connect("player_ready",self,"on_player_ready") == OK)
