@@ -5,12 +5,15 @@ func get_center_offset():
 	return get_viewport_rect().size/(Vector2(2.0,2.0))
 
 func center_on(pos: Vector2):
+	$Tween.remove_all()
 	position = get_center_offset()+pos
 	
 
 const anim_time: float = 1.0
 # Animate the camera centering on a given position
 func animated_center_on(pos: Vector2):
+	$Tween.remove_all()
+	
 	var center_offset = get_center_offset()
 	
 	var tween = $Tween
