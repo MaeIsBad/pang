@@ -14,7 +14,12 @@ func _ready():
 	.add_argument("lives", TYPE_INT)\
 	.register()
 	
-
+func save():
+	return {
+		"lives": lives
+	}
+func restore(data: Dictionary):
+	self.lives = data["lives"]
 
 func command_set_lives(lives_: int):
 	set_lives(lives_)

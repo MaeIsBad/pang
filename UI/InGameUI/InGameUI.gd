@@ -1,5 +1,8 @@
 extends VSplitContainer
 
+# This signal is emitted by another node
+
+# warning-ignore:unused_signal
 signal pause_button_pressed
 
 onready var lives_counter: Label = $ColorRect/MarginContainer/HBoxContainer/Info/HBoxContainer/LivesLeft

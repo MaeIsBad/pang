@@ -5,9 +5,9 @@ onready var pause_menu: PausePopup = ui.pause_popup
 onready var in_game := get_parent()
 
 func _ready():
-	pause_menu.connect("game_over_button_pressed", self,"on_game_over_button_pressed")
-	pause_menu.connect("home_button_pressed", self,"on_home_button_pressed")
-	pause_menu.connect("pause_close_button_pressed", self,"on_pause_close_button_pressed")
+	assert(pause_menu.connect("game_over_button_pressed", self,"on_game_over_button_pressed") == OK)
+	assert(pause_menu.connect("home_button_pressed", self,"on_home_button_pressed") == OK)
+	assert(pause_menu.connect("pause_close_button_pressed", self,"on_pause_close_button_pressed") == OK)
 	
 func on_home_button_pressed():
 	pass # Replace with function body.
