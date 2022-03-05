@@ -38,5 +38,12 @@ func _process(_delta):
 		emit_signal("won")
 	pass
 
+func save() -> PackedScene:
+	self.propagate_call("set_owner", [self])
+	self.propagate_call("set_filename", [""])
+	var saved := PackedScene.new()
+	saved.pack(self)
+	return saved
+
 func ball_popped(ball: Ball):
 	emit_signal("ball_popped", ball)

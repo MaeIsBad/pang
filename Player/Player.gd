@@ -7,12 +7,13 @@ onready var weapon := $Weapon
 
 enum State {Walking, Climbing}
 
-var state = State.Walking
-var snapped_to_ground = false
+export(State) var state = State.Walking
+export var snapped_to_ground = false
+
+export(NodePath) var ladder_path: NodePath
 
 # The ladder the player is standing on
-var ladder: Ladder = null
-
+var ladder: Ladder setget set_ladder,get_ladder
 const UP = Vector2(0.0, -1.0)
 const GRAVITY = 400.0
 
@@ -34,7 +35,7 @@ func snap_to_ground() -> bool:
 func _ready():
 	$AnimationPlayer.stop(false)
 	
-	switch_to_walking()
+#	switch_to_walking()
 
 func _process(delta):
 	if(state == State.Walking):
@@ -49,12 +50,12 @@ enum Rotation {
 	Left,
 	Right
 }
-var curr_rotation = Rotation.Right
+export var curr_rotation = Rotation.Right
 
 func switch_to_climbing():
 	$AnimationPlayer.current_animation = "Climbing"
-	assert(ladder != null)
-	self.global_position.x = ladder.global_position.x
+	assert(self.ladder != null)
+	self.global_position.x = self.ladder.global_position.x
 	collision_mask = CollisionMask.CLIMBING
 	state = State.Climbing
 	
@@ -118,3 +119,10 @@ func ladder_entered(l_entered: Ladder):
 
 func ladder_exited(_ladder: Ladder):
 	self.ladder = null
+	
+func set_ladder(ladder: Ladder):
+	ladder_path = get_path_to(ladder)
+	
+func get_ladder():
+	if ladder_path:
+		return get_node(ladder_path)

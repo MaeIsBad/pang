@@ -13,6 +13,7 @@ signal lost
 # script before adding this scene to the tree
 var level_manager: LevelManagerBase
 
+var current_map: Map
 var lives: int setget set_lives
 
 var game_over_scn := preload("res://UI/GameOver/GameOver.tscn")
@@ -28,8 +29,26 @@ func _ready():
 	.add_argument("lives", TYPE_INT)\
 	.register()
 	
+	Console.remove_command("save")
+	Console.add_command("save", self, "command_save")\
+	.register()
+	
+	Console.remove_command("load")
+	Console.add_command("load", self, "command_load")\
+	.register()
+	
 	set_level(level_manager.get_current_level())
 	
+
+var saved_map: PackedScene
+func command_save():
+	saved_map = current_map.save()
+	
+func command_load():
+	restore(saved_map)
+
+func restore(data: PackedScene):
+	set_map(data.instance())
 
 func command_set_lives(lives_: int):
 	set_lives(lives_)
@@ -50,6 +69,7 @@ func on_player_touched_ball(_ball):
 func win():
 	emit_signal("won")
 	next_level()
+	
 func lose():
 	emit_signal("lost")
 	game_over()
@@ -74,6 +94,7 @@ func set_map(map: Map):
 	ui.set_map(map)
 	assert(map.connect("player_ready", self, "on_player_ready") == OK)
 	assert(map.connect("won", self, "win") == OK)
+	self.current_map = map
 	emit_signal("map_changed",map)
 
 func on_player_ready(player: Player):
