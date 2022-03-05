@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/InGameUI/InGameUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://InGame/InGame.gd" type="Script" id=2]
 [ext_resource path="res://InGame/ScoreHandler.gd" type="Script" id=3]
 [ext_resource path="res://InGame/WeaponDisplay.gd" type="Script" id=4]
+[ext_resource path="res://InGame/LivesHandler.gd" type="Script" id=5]
+[ext_resource path="res://InGame/PauseHandler.gd" type="Script" id=6]
 
 [node name="InGame" type="Node"]
 script = ExtResource( 2 )
@@ -16,7 +18,18 @@ script = ExtResource( 3 )
 [node name="WeaponDisplay" type="Node" parent="."]
 script = ExtResource( 4 )
 
-[connection signal="died" from="." to="ScoreHandler" method="on_player_died"]
-[connection signal="lost" from="." to="ScoreHandler" method="on_player_lost"]
+[node name="LivesHandler" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="PauseHandler" type="Node" parent="."]
+pause_mode = 2
+script = ExtResource( 6 )
+
+[connection signal="level_changed" from="." to="LivesHandler" method="on_level_changed"]
 [connection signal="map_changed" from="." to="ScoreHandler" method="on_map_changed"]
+[connection signal="map_changed" from="." to="LivesHandler" method="on_map_changed"]
 [connection signal="won" from="." to="ScoreHandler" method="on_player_won"]
+[connection signal="pause_button_pressed" from="UI" to="PauseHandler" method="on_pause_button_pressed"]
+[connection signal="died" from="LivesHandler" to="." method="on_die"]
+[connection signal="died" from="LivesHandler" to="ScoreHandler" method="on_player_died"]
+[connection signal="lost" from="LivesHandler" to="." method="lose"]

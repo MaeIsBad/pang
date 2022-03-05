@@ -4,30 +4,22 @@ class_name InGame
 
 signal level_changed(level)
 signal map_changed(map)
-
 signal won
-signal died
-signal lost
 
 # Level manager needs to be set by an external
 # script before adding this scene to the tree
 var level_manager: LevelManagerBase
 
 var current_map: Map
-var lives: int setget set_lives
 
 var game_over_scn := preload("res://UI/GameOver/GameOver.tscn")
 
 onready var ui := $UI
 onready var score_handler := $ScoreHandler
-
+onready var lives_handler := $LivesHandler
 func _ready():
 	assert(level_manager != null, "Need to initialize the level_manager property before adding this node to the scene tree")
-
-	Console.remove_command("set_lives")
-	Console.add_command("set_lives", self, "command_set_lives")\
-	.add_argument("lives", TYPE_INT)\
-	.register()
+	set_level(level_manager.get_current_level())
 	
 	Console.remove_command("save")
 	Console.add_command("save", self, "command_save")\
@@ -36,9 +28,6 @@ func _ready():
 	Console.remove_command("load")
 	Console.add_command("load", self, "command_load")\
 	.register()
-	
-	set_level(level_manager.get_current_level())
-	
 
 var save_data: Dictionary
 func command_save():
@@ -53,22 +42,16 @@ func save() -> Dictionary:
 		"level_manager_data": level_manager.save(),
 		"level_manager_script": level_manager.get_script().get_path(),
 		"score_data": score_handler.save(),
-		"lives": lives
+		"lives_data": lives_handler.save()
 	}
 
 func restore(data: Dictionary):
 	level_manager = load(data["level_manager_script"]).new()
 	level_manager.restore(data["level_manager_data"])
 	score_handler.restore(data["score_data"])
-	lives = data["lives"]	
+	lives_handler.restore(data["lives_data"])
 	set_map(data["map"].instance())
 
-func command_set_lives(lives_: int):
-	set_lives(lives_)
-
-func set_lives(lives_: int):
-	lives = lives_	
-	ui.set_lives_counter(lives)
 
 func on_player_touched_ball(_ball):
 	self.lives -= 1
@@ -84,7 +67,6 @@ func win():
 	next_level()
 	
 func lose():
-	emit_signal("lost")
 	game_over()
 
 func next_level():
@@ -105,16 +87,16 @@ func game_over():
 func set_map(map: Map):
 	ui.glitch()	
 	ui.set_map(map)
-	assert(map.connect("player_ready", self, "on_player_ready") == OK)
 	assert(map.connect("won", self, "win") == OK)
 	self.current_map = map
 	emit_signal("map_changed",map)
 
-func on_player_ready(player: Player):
-	assert(player.connect("touched_ball", self, "on_player_touched_ball") == OK)
 
 func set_level(level: Level):
-	self.lives = level.lives
 	emit_signal("level_changed",level)
 	load_current_map()
 	
+
+
+func on_die():
+	load_current_map()

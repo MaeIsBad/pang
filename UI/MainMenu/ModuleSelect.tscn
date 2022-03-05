@@ -104,9 +104,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 688.0
-margin_top = 333.0
+margin_top = 260.0
 margin_right = 1232.0
-margin_bottom = 747.0
+margin_bottom = 820.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 544.0
@@ -128,18 +128,24 @@ texture_hover = SubResource( 24 )
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 margin_top = 288.0
 margin_right = 544.0
-margin_bottom = 414.0
+margin_bottom = 416.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Back" type="TextureButton" parent="VBoxContainer/CenterContainer"]
-margin_left = 209.0
-margin_right = 335.0
-margin_bottom = 126.0
+margin_left = 208.0
+margin_right = 336.0
+margin_bottom = 128.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_normal = SubResource( 13 )
 texture_hover = SubResource( 18 )
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 448.0
+margin_right = 544.0
+margin_bottom = 560.0
+text = "Wznów ostatnią grę"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Module1" to="." method="emit_signal" binds= [ "module_1_selected" ]]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Module2" to="." method="emit_signal" binds= [ "module_2_selected" ]]

@@ -130,6 +130,7 @@ image = SubResource( 36 )
 size = Vector2( 128, 128 )
 
 [node name="InGameUI" type="VSplitContainer"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 split_offset = 900
@@ -318,4 +319,4 @@ texture_hover = SubResource( 30 )
 [node name="PausePopup" parent="." instance=ExtResource( 7 )]
 visible = false
 
-[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/Buttons/Pause" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/Buttons/Pause" to="." method="emit_signal" binds= [ "pause_button_pressed" ]]
