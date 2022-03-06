@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Accept.png-38ddc63852508d36b40c0f801a6c79a1.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Accept.png"
+dest_files=[ "res://.import/Accept.png-38ddc63852508d36b40c0f801a6c79a1.image" ]
+
+[params]
+

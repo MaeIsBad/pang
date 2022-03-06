@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Accept.png-1e71bc8a1a3c95385adbe43646aa52be.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Accept.png"
+dest_files=[ "res://.import/Accept.png-1e71bc8a1a3c95385adbe43646aa52be.image" ]
+
+[params]
+

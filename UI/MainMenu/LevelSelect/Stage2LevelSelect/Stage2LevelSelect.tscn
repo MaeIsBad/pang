@@ -138,9 +138,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 660.0
+margin_left = 550.0
 margin_top = 348.0
-margin_right = 1260.0
+margin_right = 1370.0
 margin_bottom = 732.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -158,7 +158,7 @@ texture_hover = SubResource( 4 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 160.0
-margin_right = 440.0
+margin_right = 660.0
 margin_bottom = 384.0
 alignment = 1
 __meta__ = {
@@ -166,8 +166,8 @@ __meta__ = {
 }
 
 [node name="Start" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
-margin_left = 76.0
-margin_right = 204.0
+margin_left = 186.0
+margin_right = 314.0
 margin_bottom = 128.0
 size_flags_horizontal = 4
 size_flags_vertical = 5
@@ -176,17 +176,19 @@ texture_hover = SubResource( 8 )
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_top = 160.0
-margin_right = 280.0
+margin_right = 500.0
 margin_bottom = 224.0
+rect_min_size = Vector2( 500, 0 )
 size_flags_horizontal = 4
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 25 )
 text = "First Level"
+align = 1
 
 [node name="Back" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
-margin_left = 76.0
+margin_left = 186.0
 margin_top = 256.0
-margin_right = 204.0
+margin_right = 314.0
 margin_bottom = 384.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -194,9 +196,9 @@ texture_normal = SubResource( 18 )
 texture_hover = SubResource( 20 )
 
 [node name="Next" type="TextureButton" parent="HBoxContainer"]
-margin_left = 472.0
+margin_left = 692.0
 margin_top = 128.0
-margin_right = 600.0
+margin_right = 820.0
 margin_bottom = 256.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
