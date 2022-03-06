@@ -17,8 +17,10 @@ enum LaserState {
 
 var state = LaserState.Grow
 
+
 func _ready():
 	$Area2D/CollisionShape2D.shape = RectangleShape2D.new()
+
 func _process(delta):
 	match state:
 		LaserState.Grow:
@@ -27,7 +29,12 @@ func _process(delta):
 			if self.laser_top <= grow_top:
 				self.laser_top = grow_top
 				state = LaserState.Stationary
-				yield(get_tree().create_timer(laser_stationary_duration),"timeout")
+				
+				var timer := Timer.new()
+				add_child(timer)
+				timer.one_shot = true
+				timer.start(laser_stationary_duration)
+				yield(timer,"timeout")
 				self.state =LaserState.Shrink
 		LaserState.Shrink:
 			self.laser_bottom -= laser_speed*delta

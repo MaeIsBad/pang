@@ -7,6 +7,13 @@ export var explosion_radius := 50.0
 
 const MAX_EXPLOSTION_TIME = 0.2
 
+func create_one_shot_timer(time: float) -> Timer:
+	var timer := Timer.new()
+	timer.autostart = true
+	get_parent().add_child(timer)
+	timer.start(time)
+	return timer
+
 func explode():
 	# Simulate explosion spreading to achieve a more satisfying
 	#; "pop" sound effect when the balls get destroyed
@@ -14,7 +21,7 @@ func explode():
 		if body.has_method("touched_bullet"):
 			var distance := global_position.distance_to(body.global_position)
 			if distance/200.0 < MAX_EXPLOSTION_TIME:
-				assert(get_tree().create_timer(distance/200.0).connect("timeout",body, "touched_bullet",[self]) == OK)
+				assert(create_one_shot_timer(distance/200.0).connect("timeout",body, "touched_bullet",[self]) == OK)
 			else:
 				body.touched_bullet(self)
 	var explosion = explosion_script.new(explosion_radius)
