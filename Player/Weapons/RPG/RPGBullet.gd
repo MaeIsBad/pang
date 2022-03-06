@@ -21,9 +21,9 @@ func explode():
 		if body.has_method("touched_bullet"):
 			var distance := global_position.distance_to(body.global_position)
 			if distance/200.0 < MAX_EXPLOSTION_TIME:
-				assert(create_one_shot_timer(distance/200.0).connect("timeout",body, "touched_bullet",[self]) == OK)
+				assert(create_one_shot_timer(distance/200.0).connect("timeout",body, "touched_bullet",[self], CONNECT_DEFERRED) == OK)
 			else:
-				body.touched_bullet(self)
+				body.call_deferred("touched_bullet", self)
 	var explosion = explosion_script.new(explosion_radius)
 	explosion.global_position = global_position
 	get_parent().add_child(explosion)

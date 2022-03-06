@@ -68,4 +68,4 @@ func _draw():
 
 func body_entered(body: Node2D):
 	if body.has_method("touched_bullet"):
-		body.touched_bullet(self)
+		body.call_deferred("touched_bullet", self)

@@ -5,7 +5,7 @@ export(float,0,1000) var UNITS_PER_SECOND = 800.0
 
 func body_entered(body: Node2D):
 	if body.has_method("touched_bullet"):
-		body.touched_bullet(self)
+		body.call_deferred("touched_bullet", self)
 	queue_free()
 
 func _process(delta):
