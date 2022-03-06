@@ -11,9 +11,14 @@ var timer := Timer.new()
 export var min_spawn_time := 5.0
 export var max_spawn_time := 15.0
 
-# The power ups that should spawn
-export(int, FLAGS, "Weapons", "Life") var spawnable_powerups = 1
+const MODULE_3_DROPS = [
+	life_drop_scn,
+	time_stop_drop_scn,
+	speed_boost_drop_scn,
+	ball_bounce_increase_scn
+]
 
+export var spawn_module_3_drops := false
 
 
 # Time to spawn the next power-up
@@ -30,8 +35,13 @@ func _ready():
 	randomize_time_to_spawn()
 	
 func on_timer_timeout():
-	var drop := ball_bounce_increase_scn.instance()	
-	#var drop := weapon_drop_scn.instance()
+	
+	var drop: Node2D
+	
+	if spawn_module_3_drops && randi()%2:
+		drop = MODULE_3_DROPS[randi()%len(MODULE_3_DROPS)].instance()
+	else:
+		drop = weapon_drop_scn.instance()
 	var xpos := rand_range(self.get_rect().position.x, self.get_rect().end.x)
 	
 	drop.position = self.get_rect().position
