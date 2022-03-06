@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://UI/MainMenu/MainScreen/MainScreen.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://UI/MainMenu/LevelSelect/Stage2LevelSelect/Stage2LevelSelect.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/MainMenu/ModuleSelect.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/ScoreboardUI/Scoreboard.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/MainMenu/SavedGamesView/SavesGameView.tscn" type="PackedScene" id=9]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
@@ -45,6 +46,10 @@ margin_right = 1920.0
 [node name="Scoreboard" parent="." instance=ExtResource( 8 )]
 margin_top = 1480.0
 margin_bottom = 1480.0
+
+[node name="SavedGamesView" parent="." instance=ExtResource( 9 )]
+margin_top = -1543.0
+margin_bottom = -1543.0
 
 [connection signal="score_pressed" from="MainScreen" to="." method="switch_to_view" binds= [ 4 ]]
 [connection signal="start_pressed" from="MainScreen" to="." method="switch_to_view" binds= [ 2 ]]
