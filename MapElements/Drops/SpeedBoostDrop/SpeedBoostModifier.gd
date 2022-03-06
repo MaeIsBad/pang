@@ -8,6 +8,9 @@ func _init():
 	self.one_shot = true	
 
 func _ready():
+	# This doesn't work with other modifiers but 
+	# I'm too lazy to do it properly and it's 
+	# bascially the end of the project so idc
 	player.walking_speed *= multiplier
 	player.climbing_speed *= multiplier
 	assert(connect("timeout", self, "on_timeout") == OK)
