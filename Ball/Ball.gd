@@ -81,13 +81,17 @@ func _integrate_forces(state: Physics2DDirectBodyState):
 		var colider_normal = state.get_contact_local_normal(i)
 		#Check if the collison occured under the ball
 		if colider_normal.y == -1:
+			# Ensure the ball bounces to the right height
 			var y_vel = smallest_bounce_height + size * bounce_damp
 			state.linear_velocity.y = -y_vel
+			
+			# Randomly flip the ball's direction to make it less predictable
+			if randi()%25 == 0:
+				state.linear_velocity.x *= -1
 
 	if abs(state.linear_velocity.x) < min_horizontal_velocity:
 		var direction = 1 if state.linear_velocity.x > 0 else -1
 		state.linear_velocity.x = min_horizontal_velocity*direction
-
 
 func on_invincibility_timeout():
 	invincible = false
