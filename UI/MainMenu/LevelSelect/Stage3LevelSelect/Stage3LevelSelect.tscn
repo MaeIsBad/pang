@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/MainMenu/LevelSelect/Stage2LevelSelect/Stage2LevelSelect.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/MainMenu/LevelSelect/Stage3LevelSelect/Stage3LevelSelect.gd" type="Script" id=2]
+
+[node name="LevelSelect" instance=ExtResource( 1 )]
+script = ExtResource( 2 )

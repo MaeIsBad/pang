@@ -181,4 +181,5 @@ texture_hover = SubResource( 18 )
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Module1" to="." method="emit_signal" binds= [ "module_1_selected" ]]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Module2" to="." method="emit_signal" binds= [ "module_2_selected" ]]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Module3" to="." method="emit_signal" binds= [ "module_3_selected" ]]
 [connection signal="pressed" from="VBoxContainer/CenterContainer/Back" to="." method="emit_signal" binds= [ "back" ]]

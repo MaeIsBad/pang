@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://UI/MainMenu/MainScreen/MainScreen.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://UI/MainMenu/ModuleSelect.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/ScoreboardUI/Scoreboard.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI/MainMenu/SavedGamesView/SavesGameView.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/MainMenu/LevelSelect/Stage3LevelSelect/Stage3LevelSelect.tscn" type="PackedScene" id=10]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
@@ -34,6 +35,10 @@ margin_top = 1080.0
 margin_right = 1920.0
 margin_bottom = 1080.0
 
+[node name="Stage3LevelSelect" parent="." instance=ExtResource( 10 )]
+margin_left = 3840.0
+margin_right = 3840.0
+
 [node name="MainMenuBackground" parent="." instance=ExtResource( 5 )]
 offset = Vector2( 200, -1000 )
 transform = Transform2D( 1, 0, 0, 1, 200, -1000 )
@@ -56,8 +61,10 @@ margin_bottom = -1543.0
 [connection signal="start_pressed" from="MainScreen" to="." method="switch_to_view" binds= [ 2 ]]
 [connection signal="back" from="Stage1LevelSelect" to="." method="switch_to_view" binds= [ 2 ]]
 [connection signal="back" from="Stage2LevelSelect" to="." method="switch_to_view" binds= [ 2 ]]
+[connection signal="back" from="Stage3LevelSelect" to="." method="switch_to_view" binds= [ 2 ]]
 [connection signal="back" from="ModuleSelect" to="." method="switch_to_view" binds= [ 0 ]]
 [connection signal="module_1_selected" from="ModuleSelect" to="." method="switch_to_view" binds= [ 1 ]]
 [connection signal="module_2_selected" from="ModuleSelect" to="." method="switch_to_view" binds= [ 3 ]]
+[connection signal="module_3_selected" from="ModuleSelect" to="." method="switch_to_view" binds= [ 6 ]]
 [connection signal="back" from="Scoreboard" to="." method="switch_to_view" binds= [ 0 ]]
 [connection signal="back" from="SavedGamesView" to="." method="switch_to_view" binds= [ 0 ]]

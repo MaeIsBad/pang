@@ -98,5 +98,6 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+spawn_module_3_drops = true
 
 [connection signal="touched_ball" from="Player" to="." method="on_Player_touched_ball"]

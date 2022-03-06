@@ -30,3 +30,6 @@ tile_data = PoolIntArray( 131082, 0, 0, 131091, 0, 0, 196618, 0, 65536, 196627, 
 [node name="Background" parent="." index="9"]
 texture = ExtResource( 3 )
 Background = 2
+
+[node name="WeaponSpawner" parent="." index="10"]
+spawn_module_3_drops = true

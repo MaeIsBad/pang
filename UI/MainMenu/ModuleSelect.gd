@@ -10,6 +10,8 @@ signal module_1_selected
 # warning-ignore:unused_signal
 signal module_2_selected
 # warning-ignore:unused_signal
+signal module_3_selected
+# warning-ignore:unused_signal
 signal back
 
 func _ready():

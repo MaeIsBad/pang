@@ -1,8 +1,6 @@
 class_name Stage2LevelManager
 extends LevelManagerBase
 
-var game_over_scn := preload("res://UI/GameOver/GameOver.tscn")
-
 # The order of the levels
 var level_path = Levels.allLevels
 
@@ -24,7 +22,7 @@ func next_level() -> Level:
 		return null
 		
 func get_module_num() -> int:
-	return 1
+	return 2
 
 func save():
 	return {

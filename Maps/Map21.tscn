@@ -25,3 +25,4 @@ Background = 3
 [node name="WeaponSpawner" parent="." index="8"]
 margin_top = 203.0
 margin_bottom = 221.0
+spawn_module_3_drops = true
