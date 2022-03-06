@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Easy_mode.png-8848cb8f41a32b1f48061bb6a672e2f3.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Easy_mode.png"
+dest_files=[ "res://.import/Easy_mode.png-8848cb8f41a32b1f48061bb6a672e2f3.image" ]
+
+[params]
+

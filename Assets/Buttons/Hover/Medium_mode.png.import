@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Medium_mode.png-7c6cae040376cb3147e35be38cca2729.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Medium_mode.png"
+dest_files=[ "res://.import/Medium_mode.png-7c6cae040376cb3147e35be38cca2729.image" ]
+
+[params]
+

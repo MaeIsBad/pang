@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Hard_mode.png-2fadb3b31210e4f3f4a6458bbbc1f78e.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Hard_mode.png"
+dest_files=[ "res://.import/Hard_mode.png-2fadb3b31210e4f3f4a6458bbbc1f78e.image" ]
+
+[params]
+

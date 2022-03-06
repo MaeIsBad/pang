@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Easy_mode.png-c226946c4e6cfe7f1018b7ebde3cbfc9.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Easy_mode.png"
+dest_files=[ "res://.import/Easy_mode.png-c226946c4e6cfe7f1018b7ebde3cbfc9.image" ]
+
+[params]
+

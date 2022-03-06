@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Clock.png-e84c00f327e26ffbae31089c63576de5.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Clock.png"
+dest_files=[ "res://.import/Clock.png-e84c00f327e26ffbae31089c63576de5.image" ]
+
+[params]
+

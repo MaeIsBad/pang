@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Clock.png-0368b592897dd3e83e4fb44fdc9a486f.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Clock.png"
+dest_files=[ "res://.import/Clock.png-0368b592897dd3e83e4fb44fdc9a486f.image" ]
+
+[params]
+

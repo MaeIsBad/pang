@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Hard_mode.png-268eee849ab419c5a34766965ef255b1.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Hard_mode.png"
+dest_files=[ "res://.import/Hard_mode.png-268eee849ab419c5a34766965ef255b1.image" ]
+
+[params]
+
