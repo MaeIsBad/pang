@@ -15,7 +15,7 @@ export(float) var min_horizontal_velocity = 200.0
 
 var ball_scn = load("res://Ball/Ball.tscn")
 
-var invincible := true
+export var invincible := true
 
 func get_radius():
 	return size*base_size
