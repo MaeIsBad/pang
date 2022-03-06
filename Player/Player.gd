@@ -9,11 +9,6 @@ signal picked_up_life_powerup
 
 onready var weapon := $Weapon
 
-# The speed power up
-export var speed_up := false
-export var speed_power_up_multipl_rate := 1.5
-
-
 enum State {Walking, Climbing}
 
 export(State) var state = State.Walking

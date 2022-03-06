@@ -14,6 +14,7 @@ export(float) var smallest_bounce_height = 100.0
 export(float) var min_horizontal_velocity = 200.0
 
 var ball_scn = load("res://Ball/Ball.tscn")
+onready var freeze_timer := $FreezeTimer
 
 export var invincible := true
 
@@ -90,3 +91,10 @@ func _integrate_forces(state: Physics2DDirectBodyState):
 
 func on_invincibility_timeout():
 	invincible = false
+
+func freeze(time: float):
+	freeze_timer.start(time+freeze_timer.time_left)
+	mode = MODE_STATIC
+	
+func on_freeze_timeout():
+	mode = MODE_RIGID

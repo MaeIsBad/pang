@@ -33,6 +33,9 @@ wait_time = 0.1
 one_shot = true
 autostart = true
 
+[node name="FreezeTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="body_entered"]
 [connection signal="finished" from="PopSound" to="PopSound" method="queue_free"]
 [connection signal="timeout" from="InvincibilityTimer" to="." method="on_invincibility_timeout"]
+[connection signal="timeout" from="FreezeTimer" to="." method="on_freeze_timeout"]
