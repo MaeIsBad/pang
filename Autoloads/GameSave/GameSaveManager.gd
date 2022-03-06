@@ -14,7 +14,6 @@ func save_to_file():
 		print("Failed to save resource to file, error: %" % result)
 
 func load_from_file():
-	print("ASDF")
 	if File.new().file_exists(SAVE_FILE):
 		var loaded = load(SAVE_FILE) as SavesRes
 		if loaded:
