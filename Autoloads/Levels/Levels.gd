@@ -17,12 +17,15 @@ var allLevels = [
 	Level.new("test.14","LHS 1140 b", "res://Maps/Map14.tscn", Level.Difficulty.Easy,3),
 	Level.new("test.15","HD 40307 g", "res://Maps/Map15.tscn", Level.Difficulty.Normal,4),
 	Level.new("test.16","Gliese 667 Cc", "res://Maps/Map16.tscn", Level.Difficulty.Normal,4),
+	Level.new("test.22","Gliese 229 Ac", "res://Maps/Map22.tscn", Level.Difficulty.Normal,4)
+]
+
+var module3Levels = [
 	Level.new("test.17","Kepler-186f", "res://Maps/Map17.tscn", Level.Difficulty.Hard,5),
 	Level.new("test.18","K2-72e", "res://Maps/Map18.tscn", Level.Difficulty.Hard,5),
 	Level.new("test.19","Ross 128 b", "res://Maps/Map19.tscn", Level.Difficulty.Easy,3),
 	Level.new("test.20","Kepler-443b", "res://Maps/Map20.tscn", Level.Difficulty.Easy,3),
-	Level.new("test.21","Wolf 1061c", "res://Maps/Map21.tscn", Level.Difficulty.Normal,4),
-	Level.new("test.22","Gliese 229 Ac", "res://Maps/Map22.tscn", Level.Difficulty.Normal,4)
+	Level.new("test.21","Wolf 1061c", "res://Maps/Map21.tscn", Level.Difficulty.Normal,4)
 ]
 
 var levelsByDifficulty = {
