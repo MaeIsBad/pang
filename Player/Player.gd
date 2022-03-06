@@ -18,8 +18,12 @@ export(NodePath) var ladder_path: NodePath
 
 # The ladder the player is standing on
 var ladder: Ladder setget set_ladder,get_ladder
+
 const UP = Vector2(0.0, -1.0)
-const GRAVITY = 400.0
+export var gravity := 400.0
+
+export var walking_speed := 300.0
+export var climbing_speed := 200.0
 
 enum CollisionMask {
 	CLIMBING = 1 << 3,
@@ -38,8 +42,6 @@ func snap_to_ground() -> bool:
 
 func _ready():
 	$AnimationPlayer.stop(false)
-	
-#	switch_to_walking()
 
 func _process(delta):
 	if(state == State.Walking):
@@ -81,7 +83,7 @@ func climbing_process(_delta):
 	if Input.is_action_pressed("ui_down"):
 		direction = 1
 	# warning-ignore:return_value_discarded
-	move_and_slide(Vector2(0.0,direction*200.0), UP)
+	move_and_slide(Vector2(0.0,direction*climbing_speed), UP)
 	if direction == 0: 
 		$AnimationPlayer.stop(false)
 	else:
@@ -103,13 +105,13 @@ func walking_process(_delta):
 		direction = -1
 
 	# warning-ignore:return_value_discarded
-	move_and_slide(Vector2(direction*300.0,0.0), UP)
+	move_and_slide(Vector2(direction*walking_speed,0.0), UP)
 	if direction == 0.0:
 		$AnimationPlayer.current_animation = "Static"
 	else:
 		$AnimationPlayer.current_animation = "Running"
 	# warning-ignore:return_value_discarded
-	move_and_slide(Vector2(0.0,GRAVITY), UP)
+	move_and_slide(Vector2(0.0,gravity), UP)
 	
 	var can_switch_to_climbing = self.ladder && abs(self.ladder.global_position.x - self.global_position.x) < 10
 	if (Input.is_action_pressed("ui_up") || Input.is_action_pressed("ui_down")) && can_switch_to_climbing:

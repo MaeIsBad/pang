@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/arrows_right.png-cc7ec5faf1fea0928b1dc057939b20c4.image"
+
+[deps]
+
+source_file="res://Assets/Items/arrows_right.png"
+dest_files=[ "res://.import/arrows_right.png-cc7ec5faf1fea0928b1dc057939b20c4.image" ]
+
+[params]
+
