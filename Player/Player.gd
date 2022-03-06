@@ -3,7 +3,16 @@ class_name Player
 
 signal touched_ball(Ball)
 
+# This signal is emited directly by the power-up node
+# warning-ignore:unused_signal
+signal picked_up_life_powerup
+
 onready var weapon := $Weapon
+
+# The speed power up
+export var speed_up := false
+export var speed_power_up_multipl_rate := 1.5
+
 
 enum State {Walking, Climbing}
 

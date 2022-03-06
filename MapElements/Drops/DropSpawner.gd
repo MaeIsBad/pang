@@ -1,19 +1,21 @@
 extends ReferenceRect
 
 const weapon_drop_scn := preload("res://MapElements/Drops/WeaponDrop/WeaponDrop.tscn")
+const life_drop_scn := preload("res://MapElements/Drops/LifeDrop/LifeDrop.tscn")
 
 var timer := Timer.new()
 
-const all_weapons := [
-#	preload("res://Player/Weapons/Gun/Gun.gd"),
-	preload("res://Player/Weapons/Laser/LaserGun.gd"),
-	preload("res://Player/Weapons/Shotgun/Shotgun.gd"),
-	preload("res://Player/Weapons/RPG/RPG.gd")
-]
+export var min_spawn_time := 5.0
+export var max_spawn_time := 15.0
+
+# The power ups that should spawn
+export(int, FLAGS, "Weapons", "Life") var spawnable_powerups = 1
+
+
 
 # Time to spawn the next power-up
 func randomize_time_to_spawn():
-	var time := rand_range(5.0,15.0)
+	var time := rand_range(min_spawn_time,max_spawn_time)
 	timer.start(time)
 
 func _init():
@@ -25,10 +27,10 @@ func _ready():
 	randomize_time_to_spawn()
 	
 func on_timer_timeout():
-	var weapon = all_weapons[randi()%len(all_weapons)].new()
-	var drop := weapon_drop_scn.instance()
-	drop.weapon = weapon
+	var drop := life_drop_scn.instance()	
+	#var drop := weapon_drop_scn.instance()
 	var xpos := rand_range(self.get_rect().position.x, self.get_rect().end.x)
+	
 	drop.position = self.get_rect().position
 	drop.position.x = xpos
 	get_parent().call_deferred("add_child", drop)

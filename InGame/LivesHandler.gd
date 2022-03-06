@@ -30,6 +30,10 @@ func set_lives(lives_: int):
 	
 func on_player_ready(player: Player):
 	assert(player.connect("touched_ball", self, "on_player_touched_ball") == OK)
+	assert(player.connect("picked_up_life_powerup", self, "on_player_picked_up_life_powerup") == OK)
+
+func on_player_picked_up_life_powerup():
+	self.lives += 1
 
 func on_player_touched_ball(_ball):
 	self.lives -= 1

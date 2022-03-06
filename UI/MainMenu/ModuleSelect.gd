@@ -1,6 +1,6 @@
 extends CenterContainer
 
-onready var resume_button := $VBoxContainer/ResumeGame
+onready var resume_button := $VBoxContainer/CenterContainer/ResumeGame
 
 var in_game_scn := preload("res://InGame/InGame.tscn")
 # emit signal is called directly by the buttons
