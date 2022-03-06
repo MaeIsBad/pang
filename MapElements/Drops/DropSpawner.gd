@@ -1,6 +1,6 @@
 extends ReferenceRect
 
-const weapon_drop_scn := preload("res://MapElements/WeaponDrop/WeaponDrop.tscn")
+const weapon_drop_scn := preload("res://MapElements/Drops/WeaponDrop/WeaponDrop.tscn")
 
 var timer := Timer.new()
 
@@ -25,7 +25,6 @@ func _ready():
 	randomize_time_to_spawn()
 	
 func on_timer_timeout():
-	#var x := rand_range(self.get_rect().position.x, self.get_rect().end.x)
 	var weapon = all_weapons[randi()%len(all_weapons)].new()
 	var drop := weapon_drop_scn.instance()
 	drop.weapon = weapon
