@@ -8,8 +8,4 @@ func _ready():
 	assert(connect("player_picked_up", self, "on_player_picked_up") == OK)
 
 func on_player_picked_up(player: Player):
-	var modifier := SpeedBoostModifier.new()
-	modifier.player = player
-	modifier.multiplier = speed_multiplier
-	modifier.duration = powerup_duration
-	player.call_deferred("add_child",modifier)
+	var modifier := SpeedBoostModifier.new(player, speed_multiplier, powerup_duration)

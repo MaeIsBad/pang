@@ -4,7 +4,7 @@ const weapon_drop_scn := preload("res://MapElements/Drops/WeaponDrop/WeaponDrop.
 const life_drop_scn := preload("res://MapElements/Drops/LifeDrop/LifeDrop.tscn")
 const time_stop_drop_scn := preload("res://MapElements/Drops/TimeStopDrop/TimeStopDrop.tscn")
 const speed_boost_drop_scn := preload("res://MapElements/Drops/SpeedBoostDrop/SpeedBoostDrop.tscn")
-
+const ball_bounce_increase_scn := preload("res://MapElements/Drops/BallBounceIncreaseDrop/BallBounceIncreaseDrop.tscn")
 
 var timer := Timer.new()
 
@@ -30,7 +30,7 @@ func _ready():
 	randomize_time_to_spawn()
 	
 func on_timer_timeout():
-	var drop := speed_boost_drop_scn.instance()	
+	var drop := ball_bounce_increase_scn.instance()	
 	#var drop := weapon_drop_scn.instance()
 	var xpos := rand_range(self.get_rect().position.x, self.get_rect().end.x)
 	
