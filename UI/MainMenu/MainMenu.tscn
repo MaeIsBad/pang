@@ -51,6 +51,7 @@ margin_bottom = 1480.0
 margin_top = -1543.0
 margin_bottom = -1543.0
 
+[connection signal="save_pressed" from="MainScreen" to="." method="switch_to_view" binds= [ 5 ]]
 [connection signal="score_pressed" from="MainScreen" to="." method="switch_to_view" binds= [ 4 ]]
 [connection signal="start_pressed" from="MainScreen" to="." method="switch_to_view" binds= [ 2 ]]
 [connection signal="back" from="Stage1LevelSelect" to="." method="switch_to_view" binds= [ 2 ]]
@@ -59,3 +60,4 @@ margin_bottom = -1543.0
 [connection signal="module_1_selected" from="ModuleSelect" to="." method="switch_to_view" binds= [ 1 ]]
 [connection signal="module_2_selected" from="ModuleSelect" to="." method="switch_to_view" binds= [ 3 ]]
 [connection signal="back" from="Scoreboard" to="." method="switch_to_view" binds= [ 0 ]]
+[connection signal="back" from="SavedGamesView" to="." method="switch_to_view" binds= [ 0 ]]

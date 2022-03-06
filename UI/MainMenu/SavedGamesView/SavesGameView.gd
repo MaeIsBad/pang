@@ -1,4 +1,8 @@
 extends VBoxContainer
+
+# warning-ignore:unused_signal
+signal back
+
 const save_view_scn := preload("res://UI/MainMenu/SavedGamesView/SaveView.tscn")
 onready var save_view_container := $ScrollContainer/SaveViewContainer
 

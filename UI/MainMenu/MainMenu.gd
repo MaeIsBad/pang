@@ -6,6 +6,7 @@ enum VIEWS {
 	MODULE_SELECT = 2,
 	LEVEL_SELECT_2 = 3,
 	SCOREBOARD = 4,
+	SAVE = 5
 }
 var current_view = VIEWS.MAIN
 
@@ -21,6 +22,8 @@ func view_to_camera_center_pos(view: int):
 			return $ModuleSelect.rect_position
 		VIEWS.SCOREBOARD:
 			return $Scoreboard.rect_position
+		VIEWS.SAVE:
+			return $SavedGamesView.rect_position
 		_:
 			print("INVALID VIEW, ", view)
 			get_tree().quit()

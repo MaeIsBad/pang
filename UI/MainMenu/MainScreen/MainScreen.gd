@@ -5,7 +5,7 @@ extends CenterContainer
 # warning-ignore:unused_signal
 signal start_pressed
 # warning-ignore:unused_signal
-signal options_pressed
+signal save_pressed
 # warning-ignore:unused_signal
 signal score_pressed
 

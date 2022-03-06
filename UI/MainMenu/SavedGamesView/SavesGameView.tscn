@@ -72,7 +72,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_constants/separation = 75
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="BackButton" type="TextureButton" parent="."]
 margin_left = 896.0
 margin_top = 952.0
 margin_right = 1024.0
@@ -81,3 +81,5 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = SubResource( 3 )
 texture_hover = SubResource( 5 )
+
+[connection signal="pressed" from="BackButton" to="." method="emit_signal" binds= [ "back" ]]
