@@ -6,7 +6,7 @@ func load_splashes() -> Array:
 # warning-ignore:shadowed_variable
 	var splashes = []
 	var splash_file := File.new()
-	assert(splash_file.open("res://splashes.txt", File.READ) == OK)
+	splash_file.open("res://splashes.txt", File.READ)
 	while !splash_file.eof_reached():
 		var line := splash_file.get_line()
 		splashes.push_back(line)
