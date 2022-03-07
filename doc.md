@@ -159,7 +159,7 @@ Dostępna po naciśnięciu kombinacji klawiszy: `Ctrl + ~`
 | `nuke`            |                                                      | Zadaje wszystkim piłkom pojedyncze obrażenie. |
 | `set_lives`       | Ilość żyć [int]                                      | Ustawia ilość żyć.                            |
 | `give_weapon`     | `gun` / `rpg` / `shotgun` / `laser`                  | Zmienia broń.                                 |
-| `timescale`       | Mnożnik czasu [int]                                  | Ustawia szybkość gry.                         |
+| `timescale`       | Mnożnik czasu [float]                                | Ustawia szybkość gry.                         |
 | `add_score`       | Nick [string], Punkty [int], Moduł [`1` / `2` / `3`] | Dodaje punkty.                                |
 | `switch_to_scene` | Ścieżka do sceny [string]                            | Przełącza scenę.                              |
 | `commands`        |                                                      | Wyświetla listę poleceń.                      |
