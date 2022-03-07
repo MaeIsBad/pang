@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Download.png-db6121bf092b413a51ef652491d7005d.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Hover/Download.png"
+dest_files=[ "res://.import/Download.png-db6121bf092b413a51ef652491d7005d.image" ]
+
+[params]
+

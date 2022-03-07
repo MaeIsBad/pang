@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Download.png-3008f5e313aac4edd9da932d6c6e4e72.image"
+
+[deps]
+
+source_file="res://Assets/Buttons/Normal/Download.png"
+dest_files=[ "res://.import/Download.png-3008f5e313aac4edd9da932d6c6e4e72.image" ]
+
+[params]
+
