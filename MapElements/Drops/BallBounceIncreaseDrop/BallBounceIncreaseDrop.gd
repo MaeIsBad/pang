@@ -10,4 +10,3 @@ func _ready():
 func on_player_picked_up(_player: Player):
 	for ball in get_tree().get_nodes_in_group("Balls"):
 		ball_bounce_modifier.new(ball, bounce_multiplier, duration)
-

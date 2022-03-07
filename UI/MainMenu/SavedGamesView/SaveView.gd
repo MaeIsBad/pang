@@ -12,10 +12,8 @@ func _ready():
 	})
 
 func on_play_button_pressed():
-	GameSaveManager.saves.saves.erase(save)
+	GameSaveManager.remove_game(save)
 	SceneLoader.resume_game(save)
-	queue_free()
 
 func on_delete_button_pressed():
-	GameSaveManager.saves.saves.erase(save)
-	queue_free()
+	GameSaveManager.remove_game(save)

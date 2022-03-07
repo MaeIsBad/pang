@@ -22,3 +22,4 @@ Trans rights
 gnap
 kod 0/10 ale przynajmniej fajnie wygląda
 Podstawy Programowania Panga
+Also try przysłowiowy platformer

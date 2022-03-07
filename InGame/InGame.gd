@@ -111,5 +111,4 @@ func on_die():
 func _exit_tree():
 	if !is_game_over:
 		var saved := save()
-		GameSaveManager.saves.saves.push_back(saved)
-		GameSaveManager.save_to_file()
+		GameSaveManager.add_game(saved)
