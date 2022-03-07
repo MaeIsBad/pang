@@ -23,9 +23,9 @@
 ___
 # Uruchomienie gry
 ## Windows
-Do pobrania.
+[Do pobrania.](https://github.com/MaeIsBad/pang/releases)
 ## Ubuntu
-Do pobrania.
+[Do pobrania.](https://github.com/MaeIsBad/pang/releases)
 
 # Ekran startowy
 ![Ekran startowy](Screens/start_screen.jpg)
