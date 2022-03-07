@@ -16,6 +16,7 @@ size = 2
 
 [node name="Ball3" parent="." index="2" instance=ExtResource( 1 )]
 position = Vector2( 964, 228 )
+size = 3
 min_horizontal_velocity = 100.0
 
 [node name="Player" parent="." index="3"]

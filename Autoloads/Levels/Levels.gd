@@ -3,21 +3,21 @@ extends Node
 var module1Levels = [
 	Level.new("test.1","Teegarden's Star b", "res://Maps/Map1.tscn", Level.Difficulty.Easy,3),
 	Level.new("test.2","TOI 700 d", "res://Maps/Map2.tscn", Level.Difficulty.Easy,3),
-	Level.new("test.3","Kepler-1410b", "res://Maps/Map3.tscn", Level.Difficulty.Normal,4),
-	Level.new("test.4","TRAPPIST-1d", "res://Maps/Map4.tscn", Level.Difficulty.Normal,4),
-	Level.new("test.5","Kepler-1649c", "res://Maps/Map5.tscn", Level.Difficulty.Hard,5),
-	Level.new("test.6","Proxima Centauri b", "res://Maps/Map6.tscn", Level.Difficulty.Hard,5),
-	Level.new("test.7","Gliese 1061 d", "res://Maps/Map7.tscn", Level.Difficulty.Easy,3),
-	Level.new("test.8","Tau Ceti f", "res://Maps/Map8.tscn", Level.Difficulty.Easy,3),
+	Level.new("test.3","Kepler-1410b", "res://Maps/Map3.tscn", Level.Difficulty.Easy,4),
+	Level.new("test.4","TRAPPIST-1d", "res://Maps/Map4.tscn", Level.Difficulty.Easy,4),
+	Level.new("test.5","Kepler-1649c", "res://Maps/Map5.tscn", Level.Difficulty.Easy,5),
+	Level.new("test.6","Proxima Centauri b", "res://Maps/Map6.tscn", Level.Difficulty.Easy,5),
+	Level.new("test.7","Gliese 1061 d", "res://Maps/Map7.tscn", Level.Difficulty.Normal,3),
+	Level.new("test.8","Tau Ceti f", "res://Maps/Map8.tscn", Level.Difficulty.Normal,3),
 	Level.new("test.9","Luyten b", "res://Maps/Map9.tscn", Level.Difficulty.Normal,4),
 	Level.new("test.10","Kepler-705b", "res://Maps/Map10.tscn", Level.Difficulty.Normal,4),
-	Level.new("test.11","Gliese 180 c", "res://Maps/Map11.tscn", Level.Difficulty.Hard,5),
+	Level.new("test.11","Gliese 180 c", "res://Maps/Map11.tscn", Level.Difficulty.Normal,5),
 	Level.new("test.12","Kapteyn b", "res://Maps/Map12.tscn", Level.Difficulty.Hard,5),
-	Level.new("test.13","K2-296b", "res://Maps/Map13.tscn", Level.Difficulty.Easy,3),
-	Level.new("test.14","LHS 1140 b", "res://Maps/Map14.tscn", Level.Difficulty.Easy,3),
-	Level.new("test.15","HD 40307 g", "res://Maps/Map15.tscn", Level.Difficulty.Normal,4),
-	Level.new("test.16","Gliese 667 Cc", "res://Maps/Map16.tscn", Level.Difficulty.Normal,4),
-	Level.new("test.22","Gliese 229 Ac", "res://Maps/Map22.tscn", Level.Difficulty.Normal,4)
+	Level.new("test.13","K2-296b", "res://Maps/Map13.tscn", Level.Difficulty.Hard,3),
+	Level.new("test.14","LHS 1140 b", "res://Maps/Map14.tscn", Level.Difficulty.Hard,3),
+	Level.new("test.15","HD 40307 g", "res://Maps/Map15.tscn", Level.Difficulty.Hard,4),
+	Level.new("test.16","Gliese 667 Cc", "res://Maps/Map16.tscn", Level.Difficulty.Hard,4),
+	Level.new("test.22","Gliese 229 Ac", "res://Maps/Map22.tscn", Level.Difficulty.Hard,4)
 ]
 
 var module3Levels = [

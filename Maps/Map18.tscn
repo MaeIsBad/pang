@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://Ball/Ball.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://MapElements/MapElements.tscn" type="PackedScene" id=6]
 [ext_resource path="res://MapElements/Background.gd" type="Script" id=7]
 [ext_resource path="res://MapElements/Drops/DropSpawner.gd" type="Script" id=8]
+[ext_resource path="res://Assets/soundtrack_level.ogg" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 960, 10 )
@@ -82,7 +83,7 @@ size = 3
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1426, 718 )
 linear_velocity = Vector2( -1, 0 )
-size = 3
+size = 2
 
 [node name="Ball6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 121, 459 )
@@ -104,6 +105,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 Background = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
 
 [node name="WeaponSpawner" type="ReferenceRect" parent="."]
 margin_left = 93.0

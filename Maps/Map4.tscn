@@ -7,9 +7,11 @@
 
 [node name="Ball" parent="." index="0" instance=ExtResource( 2 )]
 position = Vector2( 327, 436 )
+size = 3
 
 [node name="Ball2" parent="." index="1" instance=ExtResource( 2 )]
-position = Vector2( 1463, 178 )
+position = Vector2( 1630, 201 )
+size = 3
 
 [node name="Player" parent="." index="2"]
 position = Vector2( 251, 134 )

@@ -10,10 +10,12 @@ position = Vector2( 952, 568 )
 
 [node name="Ball3" parent="." index="3" instance=ExtResource( 2 )]
 position = Vector2( 1603, 580 )
+size = 2
 
 [node name="Ball2" parent="." index="4" instance=ExtResource( 2 )]
 position = Vector2( 322, 576 )
 scale = Vector2( 4, 4 )
+size = 2
 
 [node name="Ball" parent="." index="5" instance=ExtResource( 2 )]
 position = Vector2( 954, 363 )
@@ -24,3 +26,9 @@ tile_data = PoolIntArray( 6, 1, 2, 7, 1, 131073, 8, 1, 131073, 9, 1, 131073, 10,
 
 [node name="MapElements" parent="." index="7"]
 tile_data = PoolIntArray( 589829, 0, 0, 589848, 0, 0, 655365, 0, 65536, 655384, 0, 65536, 720901, 0, 65536, 720920, 0, 65536, 786437, 0, 65536, 786456, 0, 65536, 851973, 0, 65536, 851992, 0, 65536 )
+
+[node name="WeaponSpawner" parent="." index="9"]
+margin_left = 112.0
+margin_top = 147.0
+margin_right = 1811.0
+margin_bottom = 165.0

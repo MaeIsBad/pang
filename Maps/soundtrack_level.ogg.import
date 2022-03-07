@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/soundtrack_level.ogg-8d14cef2e6dbf1927b3e8c25130aceae.oggstr"
+
+[deps]
+
+source_file="res://Maps/soundtrack_level.ogg"
+dest_files=[ "res://.import/soundtrack_level.ogg-8d14cef2e6dbf1927b3e8c25130aceae.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

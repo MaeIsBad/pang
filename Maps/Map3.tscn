@@ -8,9 +8,11 @@
 
 [node name="Ball" parent="." index="0" instance=ExtResource( 1 )]
 position = Vector2( 767, 224 )
+size = 3
 
 [node name="Ball2" parent="." index="1" instance=ExtResource( 1 )]
 position = Vector2( 1140, 219 )
+size = 3
 
 [node name="Player" parent="." index="2"]
 position = Vector2( 963, 758 )
