@@ -10,10 +10,10 @@ func _init(ball: Ball, bounce_multiplier_: float, duration: float):
 	self.start(duration)
 	self.autostart = true 
 	
-	ball.set_deferred("bounce", ball.bounce * bounce_multiplier)	
+	ball.set_deferred("bounce", ball.smallest_bounce_height * bounce_multiplier)	
 	ball.call_deferred("add_child", self)
 
 
 func on_timeout():
-	ball.set_deferred("bounce", ball.bounce / bounce_multiplier)
+	ball.set_deferred("bounce", ball.smallest_bounce_height / bounce_multiplier)
 	queue_free()
