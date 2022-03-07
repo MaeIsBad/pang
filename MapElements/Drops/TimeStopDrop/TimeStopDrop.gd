@@ -5,4 +5,4 @@ func _ready():
 
 func on_player_picked_up(_player: Player):
 	for ball in get_tree().get_nodes_in_group("Balls"):
-		ball.call_deferred("freeze", 2.0)
+		ball.call_deferred("freeze", 5.0)

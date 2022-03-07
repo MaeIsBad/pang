@@ -1,7 +1,7 @@
 extends "res://MapElements/Drops/Drop.gd"
 
 const ball_bounce_modifier := preload("res://MapElements/Drops/BallBounceIncreaseDrop/BallIncreaseBounceModifier.gd")
-export var bounce_multiplier: float = 1.5
+export var bounce_multiplier: float = 2
 export var duration: float = 10.0
 
 func _ready():
