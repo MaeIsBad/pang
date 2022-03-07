@@ -1,6 +1,6 @@
 extends Node
 
-var allLevels = [
+var module1Levels = [
 	Level.new("test.1","Teegarden's Star b", "res://Maps/Map1.tscn", Level.Difficulty.Easy,3),
 	Level.new("test.2","TOI 700 d", "res://Maps/Map2.tscn", Level.Difficulty.Easy,3),
 	Level.new("test.3","Kepler-1410b", "res://Maps/Map3.tscn", Level.Difficulty.Normal,4),
@@ -28,7 +28,7 @@ var module3Levels = [
 	Level.new("test.21","Wolf 1061c", "res://Maps/Map21.tscn", Level.Difficulty.Normal,4)
 ]
 
-var levelsByDifficulty = {
+var module1LevelsByDifficulty = {
 	Level.Difficulty.Easy: [],
 	Level.Difficulty.Normal: [],
 	Level.Difficulty.Hard: []
@@ -37,8 +37,10 @@ var levelsByDifficulty = {
 var levelsById = {}
 
 func update_levels_globals():
-	for level in allLevels:
-		levelsByDifficulty[level.difficulty].append(level)
+	for level in module1Levels:
+		module1LevelsByDifficulty[level.difficulty].append(level)
+		levelsById[level.id] = level
+	for level in module3Levels:
 		levelsById[level.id] = level
 func _ready():
 	update_levels_globals()

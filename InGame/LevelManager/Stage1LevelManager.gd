@@ -10,7 +10,7 @@ var cur_level: Level
 
 func next_level() -> Level:
 	if len(levels_bag) == 0:
-		levels_bag = Levels.levelsByDifficulty[difficulty].duplicate(true)
+		levels_bag = Levels.module1LevelsByDifficulty[difficulty].duplicate(true)
 		# Make sure we don't get the same level twice in a row
 		while true:
 			levels_bag.shuffle()

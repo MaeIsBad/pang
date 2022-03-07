@@ -2,7 +2,7 @@ class_name Stage2LevelManager
 extends LevelManagerBase
 
 # The order of the levels
-var level_path = Levels.allLevels
+var level_path = Levels.module1Levels
 
 var current_level_idx: int = 0 setget set_current_level_idx
 
