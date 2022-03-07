@@ -4,6 +4,7 @@ onready var player: Player = get_parent()
 var multiplier: float
 
 func _init(player: Player, multiplier_: float, time: float):
+	self.multiplier = multiplier_
 	self.one_shot = true
 	# This doesn't work with other modifiers but 
 	# I'm too lazy to do it properly and it's 
@@ -11,7 +12,6 @@ func _init(player: Player, multiplier_: float, time: float):
 	player.walking_speed *= multiplier
 	player.climbing_speed *= multiplier
 	player.add_child(self)
-	self.multiplier = multiplier_
 	self.start(time)
 
 func _ready():
