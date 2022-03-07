@@ -181,6 +181,7 @@ margin_bottom = 224.0
 rect_min_size = Vector2( 500, 0 )
 size_flags_horizontal = 4
 theme = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.921569, 0.839216, 1 )
 custom_fonts/font = SubResource( 25 )
 text = "First Level"
 align = 1

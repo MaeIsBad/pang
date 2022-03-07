@@ -64,7 +64,7 @@ __meta__ = {
 [node name="Module1Scores" parent="VSplitContainer/HBoxContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 914.0
+margin_right = 598.0
 margin_bottom = 860.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -73,28 +73,30 @@ column_name = "Stage 1"
 [node name="Module2Scores" parent="VSplitContainer/HBoxContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 946.0
-margin_right = 1860.0
+margin_left = 630.0
+margin_right = 1229.0
 margin_bottom = 860.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 column_name = "Stage 2"
 
 [node name="Module3Scores" parent="VSplitContainer/HBoxContainer" instance=ExtResource( 1 )]
-visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1301.0
-margin_right = 1920.0
-margin_bottom = 936.0
+margin_left = 1261.0
+margin_right = 1860.0
+margin_bottom = 860.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 column_name = "Stage 3"
 
 [node name="Button" type="TextureButton" parent="VSplitContainer"]
+margin_left = 866.0
 margin_top = 892.0
-margin_right = 1860.0
+margin_right = 994.0
 margin_bottom = 1020.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
 texture_normal = SubResource( 2 )
 texture_hover = SubResource( 4 )
 
