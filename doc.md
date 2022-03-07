@@ -1,36 +1,42 @@
 
+- [Uruchomienie gry](#uruchomienie-gry)
+  - [Windows](#windows)
+  - [Ubuntu](#ubuntu)
 - [Ekran startowy](#ekran-startowy)
 - [Ekran zapisów](#ekran-zapisów)
 - [Ranking](#ranking)
 - [Wybór mudułów](#wybór-mudułów)
-- [Moduł pierwszy](#moduł-pierwszy)
-  - [Opis modułu pierwszego](#opis-modułu-pierwszego)
-- [Moduł drugi](#moduł-drugi)
-  - [Opis modułu drugiego](#opis-modułu-drugiego)
-- [Moduł drugi](#moduł-drugi-1)
-  - [Opis modułu drugiego](#opis-modułu-drugiego-1)
+  - [Moduł pierwszy](#moduł-pierwszy)
+    - [Opis modułu pierwszego](#opis-modułu-pierwszego)
+  - [Moduł drugi](#moduł-drugi)
+    - [Opis modułu drugiego](#opis-modułu-drugiego)
+  - [Moduł drugi](#moduł-drugi-1)
+    - [Opis modułu drugiego](#opis-modułu-drugiego-1)
 - [Interfejs w trakcie rozgrywki](#interfejs-w-trakcie-rozgrywki)
-- [Menu Pauzy](#menu-pauzy)
-- [Ekran końcowy](#ekran-końcowy)
+  - [Menu Pauzy](#menu-pauzy)
+  - [Ekran końcowy](#ekran-końcowy)
 - [Rodzaje broni](#rodzaje-broni)
 - [Artefakty](#artefakty)
 - [Sterowanie](#sterowanie)
-
-
-
-
+- [Konsola](#konsola)
 
 ___
-## Ekran startowy
+# Uruchomienie gry
+## Windows
+Do pobrania.
+## Ubuntu
+Do pobrania.
+
+# Ekran startowy
 ![Ekran startowy](Screens/start_screen.jpg)
 | Ikona                                                                    | Opis                                         |
 | ------------------------------------------------------------------------ | -------------------------------------------- |
 | <img src="Assets/Buttons/Normal/Start.png" alt="Start" width="50"/>      | Przejście do wyboru modułów.                 |
 | <img src="Assets/Buttons/Normal/Save.png" alt="Saves" width="50"/>       | Przejście do zapisanych wcześniej rozgrywek. |
 | <img src="Assets/Buttons/Normal/Score.png" alt="Scoreboard" width="50"/> | Wyświetlenie tablicy wyników.                |
-| <img src="Assets/Buttons/Normal/Start.png" alt="Exit" width="50"/>       | Wyjście z gry.                               |
+| <img src="Assets/Buttons/Normal/Back.png" alt="Exit" width="50"/>        | Wyjście z gry.                               |
 
-## Ekran zapisów 
+# Ekran zapisów 
 ![Ekran zapisów](Screens/saves_screen.jpg)
 | Ikona                                                                 | Opis                               |
 | --------------------------------------------------------------------- | ---------------------------------- |
@@ -38,13 +44,13 @@ ___
 | <img src="Assets/Buttons/Normal/Delete.png" alt="Delete" width="50"/> | Usunięcie zapisanej rozgrywki.     |
 | <img src="Assets/Buttons/Normal/Back.png" alt="Back" width="50"/>     | Cofnięcie do ekranu startowego.    |
 
-## Ranking 
+# Ranking 
 ![Ranking](Screens/results_screen.jpg)
 | Ikona                                                             | Opis                            |
 | ----------------------------------------------------------------- | ------------------------------- |
 | <img src="Assets/Buttons/Normal/Back.png" alt="Back" width="50"/> | Cofnięcie do ekranu startowego. |
 
-## Wybór mudułów
+# Wybór mudułów
 ![Wybór modułów](Screens/module_select_screen.jpg)
 | Ikona                                                                             | Opis                            |
 | --------------------------------------------------------------------------------- | ------------------------------- |
@@ -90,7 +96,7 @@ Moduł drugi umożliwia wybór jednej z ponad 15 plansz. Po przejściu planszy �
 Moduł trzeci posiada 5 ekskluzywnych poziomów przygotowanych specjalnie do tego trybu. Na planszach pojawiają się ułatwienia w postaci spadających artefaktów. Strata wszystkich żyć skutkuje zakończeniem rozgrywki. Celem trybu gry jest uzyskanie najwyższego wyniku. Wynik dodawany jest do rankingu.
 
 
-## Interfejs w trakcie rozgrywki
+# Interfejs w trakcie rozgrywki
 ![Interfejs](Screens/ui_in_game.jpg)
 | Ikona     | Opis                                          |
 | --------- | --------------------------------------------- |
@@ -117,23 +123,23 @@ Moduł trzeci posiada 5 ekskluzywnych poziomów przygotowanych specjalnie do teg
 | <img src="Assets/Buttons/Normal/Accept.png" alt="Accept" width="50"/> | Dodaje wynik do rankingu oraz przenosi do ekranu startowego.           |
 
 
-## Rodzaje broni
-| Ikona                                                                     | Nazwa   | Opis                                                                                              |
-| ------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------- |
-| <img src="Assets/Player/Weapons/weapon_1.png" alt="Gun" width="100"/>     | Gun     | Broń podstawowa, która wystrzeliwuje pojedyncze pociski. Cechuje się szybkostrzelnością.          |
-| <img src="Assets/Player/Weapons/weapon_2.png" alt="Shotgun" width="100"/> | Shotgun | Broń dodatkowa, która wystrzeliwuje 3 pociski jednocześnie.                                       |
-| <img src="Assets/Player/Weapons/weapon_3.png" alt="RPG" width="100"/>     | RPG     | Broń dodatkowa, wystrzeliwuje jedną rakietę, która w momencie wybuchu zadaje obszarowe obrażenia. |
-| <img src="Assets/Player/Weapons/weapon_4.png" alt="Laser" width="100"/>   | Laser   | Broń dodatkowa, wystrzeliwuje wiązkę laseru, która anihiluje wszystkie. __Nie niszczy szkła__.    |
+# Rodzaje broni
+| Ikona                                                                    | Nazwa   | Opis                                                                                              |
+| ------------------------------------------------------------------------ | ------- | ------------------------------------------------------------------------------------------------- |
+| <img src="Assets/Player/Weapons/weapon_1.png" alt="Gun" width="50"/>     | Gun     | Broń podstawowa, która wystrzeliwuje pojedyncze pociski. Cechuje się szybkostrzelnością.          |
+| <img src="Assets/Player/Weapons/weapon_2.png" alt="Shotgun" width="50"/> | Shotgun | Broń dodatkowa, która wystrzeliwuje 3 pociski jednocześnie.                                       |
+| <img src="Assets/Player/Weapons/weapon_3.png" alt="RPG" width="50"/>     | RPG     | Broń dodatkowa, wystrzeliwuje jedną rakietę, która w momencie wybuchu zadaje obszarowe obrażenia. |
+| <img src="Assets/Player/Weapons/weapon_4.png" alt="Laser" width="50"/>   | Laser   | Broń dodatkowa, wystrzeliwuje wiązkę laseru, która anihiluje wszystkie. __Nie niszczy szkła__.    |
 
-## Artefakty
-| Ikona                                                                       | Nazwa             | Opis                                                                                     | Czas trwania |
-| --------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------- | ------------ |
-| <img src="Assets/Items/Heart.png" alt="Serce" width="100"/>                 | Bonusowe życie    | Artefakt zwiększający ilość żyć.                                                         | -            |
-| <img src="Assets/Items/clock.jpg" alt="Zegar" width="100"/>                 | Zatrzymanie czasu | Artefakt zatrzymuje czas poruszania się piłek.                                           | 5s           |
-| <img src="Assets/Items/spring.png" alt="Sprężyna" width="100"/>             | Kauczuk           | Artefakt zwiększający sprężystość piłek, umożliwiający łatwiejsze przemknięcie pod nimi. | 10s          |
-| <img src="Assets/Items/arrows_right.png" alt="Przyspieszenie" width="100"/> | Przyspieszenie    | Artefakt zwiększający prędkość ruchu gracza.                                             | 10s          |
+# Artefakty
+| Ikona                                                                      | Nazwa             | Opis                                                                                     | Czas trwania |
+| -------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------- | ------------ |
+| <img src="Assets/Items/Heart.png" alt="Serce" width="50"/>                 | Bonusowe życie    | Artefakt zwiększający ilość żyć.                                                         | -            |
+| <img src="Assets/Items/clock.jpg" alt="Zegar" width="50"/>                 | Zatrzymanie czasu | Artefakt zatrzymuje czas poruszania się piłek.                                           | 5s           |
+| <img src="Assets/Items/spring.png" alt="Sprężyna" width="50"/>             | Kauczuk           | Artefakt zwiększający sprężystość piłek, umożliwiający łatwiejsze przemknięcie pod nimi. | 10s          |
+| <img src="Assets/Items/arrows_right.png" alt="Przyspieszenie" width="50"/> | Przyspieszenie    | Artefakt zwiększający prędkość ruchu gracza.                                             | 10s          |
 
-## Sterowanie
+# Sterowanie
 | Przycisk             | Działanie                     |
 | -------------------- | ----------------------------- |
 | Strzałka w lewo / A  | Przesuwa gracza w lewo.       |
@@ -142,3 +148,18 @@ Moduł trzeci posiada 5 ekskluzywnych poziomów przygotowanych specjalnie do teg
 | Strzałka w dół / S   | Gracz schodzi po drabinie.    |
 | Spacja / Enter       | Oddanie strzału.              |
 
+# Konsola
+Dostępna po naciśnięciu kombinacji klawiszy: `Ctrl + ~`
+
+| Polecenie         | Argumenty                                            | Opis                                          |
+| ----------------- | ---------------------------------------------------- | --------------------------------------------- |
+| `save`            |                                                      | Zapisuje stan rozgrywki.                      |
+| `load`            |                                                      | Wczytuje stan rozgrywki.                      |
+| `spawn_ball`      | Rozmiar piłki [int]                                  | Tworzy piłkę.                                 |
+| `nuke`            |                                                      | Zadaje wszystkim piłkom pojedyncze obrażenie. |
+| `set_lives`       | Ilość żyć [int]                                      | Ustawia ilość żyć.                            |
+| `give_weapon`     | `gun` / `rpg` / `shotgun` / `laser`                  | Zmienia broń.                                 |
+| `timescale`       | Mnożnik czasu [int]                                  | Ustawia szybkość gry.                         |
+| `add_score`       | Nick [string], Punkty [int], Moduł [`1` / `2` / `3`] | Dodaje punkty.                                |
+| `switch_to_scene` | Ścieżka do sceny [string]                            | Przełącza scenę.                              |
+| `commands`        |                                                      | Wyświetla listę poleceń.                      |
